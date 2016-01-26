@@ -8,37 +8,37 @@
 //  Copyright © 裕之都. All rights reserved.
 //
 //  使用环境:iOS7+ , ARC有效
-//  Version:1.3
+//  Version:1.4
 
 #import <UIKit/UIKit.h>
 
 @interface UIView (YU_frame)
 
 /** 当前View的x值*/
-@property (nonatomic, assign) CGFloat x;
+@property (nonatomic, assign) CGFloat yu_x;
 
 /** 当前View的y值*/
-@property (nonatomic, assign) CGFloat y;
+@property (nonatomic, assign) CGFloat yu_y;
 
 /** 当前View的宽*/
-@property (nonatomic, assign) CGFloat width;
+@property (nonatomic, assign) CGFloat yu_width;
 
 /** 当前View的高*/
-@property (nonatomic, assign) CGFloat height;
+@property (nonatomic, assign) CGFloat yu_height;
 
 /** 当前View的X最大值*/
-@property (nonatomic, assign) CGFloat xMax;
+@property (nonatomic, assign) CGFloat yu_xMax;
 
 /** 当前View的Y最大值*/
-@property (nonatomic, assign) CGFloat yMax;
+@property (nonatomic, assign) CGFloat yu_yMax;
 
 /** 当前View的中心x值*/
-@property (nonatomic, assign) CGFloat centerX;
+@property (nonatomic, assign) CGFloat yu_centerX;
 
 /** 当前View的中心y值*/
-@property (nonatomic, assign) CGFloat centerY;
+@property (nonatomic, assign) CGFloat yu_centerY;
 
 /** 当前View的大小*/
-@property (nonatomic, assign) CGSize size;
+@property (nonatomic, assign) CGSize yu_size;
 
 @end

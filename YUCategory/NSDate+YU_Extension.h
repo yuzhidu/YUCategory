@@ -7,7 +7,7 @@
 //  Github：https://github.com/yuzhidu
 //  Copyright © 裕之都. All rights reserved.
 //  
-//  Version:1.1
+//  Version:1.2
 
 //  格式：@"yyyy-MM-dd HH:mm:ss"
 

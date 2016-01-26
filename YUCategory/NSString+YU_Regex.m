@@ -6,7 +6,7 @@
 //  Github：https://github.com/yuzhidu
 //  Copyright © 裕之都. All rights reserved.
 //
-//  Version:1.0
+//  Version:1.1
 
 #import "NSString+YU_Regex.h"
 
@@ -72,7 +72,7 @@
 }
 
 /** 查找字符串中第一个匹配项 */
-- (NSString *)firstMatchWithPattern:(NSString *)pattern
+- (NSString *)yu_firstMatchWithPattern:(NSString *)pattern
 {
     // 1. 实例化正则
     NSError *error = nil;
@@ -106,7 +106,7 @@
 }
 
 /** 查找字符串中所有匹配项 */
-- (NSArray *)matchsWithPattern:(NSString *)pattern
+- (NSArray *)yu_matchsWithPattern:(NSString *)pattern
 {
     NSError *error = nil;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive | NSRegularExpressionDotMatchesLineSeparators error:&error];

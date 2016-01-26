@@ -6,7 +6,7 @@
 //  Github：https://github.com/yuzhidu
 //  Copyright © 裕之都. All rights reserved.
 //
-//  Version:1.0
+//  Version:1.1
 
 #import <Foundation/Foundation.h>
 

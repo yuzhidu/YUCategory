@@ -21,7 +21,6 @@
     self.view.backgroundColor = [UIColor purpleColor];
     
     // 只需要导入 #import "YUCategory.h" 你就可以使用这么多强大的分类啦！！！
-    
 }
 
 - (void)didReceiveMemoryWarning {

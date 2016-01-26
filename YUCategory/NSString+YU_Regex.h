@@ -6,7 +6,7 @@
 //  Github：https://github.com/yuzhidu
 //  Copyright © 裕之都. All rights reserved.
 //
-//  Version:1.0
+//  Version:1.1
 //  正则验证
 
 #import <Foundation/Foundation.h>
@@ -34,7 +34,7 @@
  *
  *  @return 第一个匹配字符串
  */
-- (NSString *)firstMatchWithPattern:(NSString *)pattern;
+- (NSString *)yu_firstMatchWithPattern:(NSString *)pattern;
 
 /**
  *  查找字符串中所有匹配项
@@ -43,6 +43,6 @@
  *
  *  @return 匹配数组（NSTextCheckingResult）
  */
-- (NSArray *)matchsWithPattern:(NSString *)pattern;
+- (NSArray *)yu_matchsWithPattern:(NSString *)pattern;
 
 @end

@@ -8,121 +8,125 @@
 //  Copyright © 裕之都. All rights reserved.
 //
 //  使用环境:iOS7+ , ARC有效
-//  Version:1.3
+//  Version:1.4
 
 #import "UIView+YU_frame.h"
 
 @implementation UIView (YU_frame)
 
 /** 当前View的x值*/
-- (void)setX:(CGFloat)x
+- (void)setYu_x:(CGFloat)yu_x
 {
     CGRect frame = self.frame;
-    frame.origin.x = x;
+    frame.origin.x = yu_x;
     self.frame = frame;
 }
 
-- (CGFloat)x
-{
+- (CGFloat)yu_x {
     return self.frame.origin.x;
 }
 
 /** 当前View的y值*/
-- (void)setY:(CGFloat)y
+- (void)setYu_y:(CGFloat)yu_y
 {
     CGRect frame = self.frame;
-    frame.origin.y = y;
+    frame.origin.y = yu_y;
     self.frame = frame;
 }
 
-- (CGFloat)y
+- (CGFloat)yu_y
 {
     return self.frame.origin.y;
 }
 
 /** 当前View的宽*/
-- (void)setWidth:(CGFloat)width
+- (void)setYu_width:(CGFloat)yu_width
 {
     CGRect frame = self.frame;
-    frame.size.width = width;
+    frame.size.width = yu_width;
     self.frame = frame;
 }
 
-- (CGFloat)width
+- (CGFloat)yu_width
 {
     return self.frame.size.width;
 }
 
 /** 当前View的高*/
-- (void)setHeight:(CGFloat)height
+- (void)setYu_height:(CGFloat)yu_height
 {
     CGRect frame = self.frame;
-    frame.size.height = height;
+    frame.size.height = yu_height;
     self.frame = frame;
 }
 
-- (CGFloat)height
+- (CGFloat)yu_height
 {
     return self.frame.size.height;
 }
 
 /** 当前View的x最大值*/
-- (void)setXMax:(CGFloat)xMax {
+- (void)setYu_xMax:(CGFloat)yu_xMax
+{
     CGRect frame = self.frame;
-    frame.origin.x = xMax - frame.size.width;
+    frame.origin.x = yu_xMax - frame.size.width;
     self.frame = frame;
 }
 
-- (CGFloat)xMax {
+- (CGFloat)yu_xMax
+{
     return self.frame.origin.x + self.frame.size.width;
 }
 
 /** 当前View的y最大值*/
-- (CGFloat)yMax {
-    return self.frame.origin.y + self.frame.size.height;
-}
-
-- (void)setYMax:(CGFloat)yMax {
+- (void)setYu_yMax:(CGFloat)yu_yMax
+{
     CGRect frame = self.frame;
-    frame.origin.y = yMax - frame.size.height;
+    frame.origin.y = yu_yMax - frame.size.height;
     self.frame = frame;
 }
 
+- (CGFloat)yu_yMax
+{
+    return self.frame.origin.y + self.frame.size.height;
+}
+
+
 /** 当前View的中心x值*/
-- (void)setCenterX:(CGFloat)centerX
+- (void)setYu_centerX:(CGFloat)yu_centerX
 {
     CGPoint center = self.center;
-    center.x = centerX;
+    center.x = yu_centerX;
     self.center = center;
 }
 
-- (CGFloat)centerX
+- (CGFloat)yu_centerX
 {
     return self.center.x;
 }
 
 /** 当前View的中心y值*/
-- (void)setCenterY:(CGFloat)centerY
+- (void)setYu_centerY:(CGFloat)yu_centerY
 {
     CGPoint center = self.center;
-    center.y = centerY;
+    center.y = yu_centerY;
     self.center = center;
 }
 
-- (CGFloat)centerY
+- (CGFloat)yu_centerY
 {
     return self.center.y;
 }
 
 /** 当前View的大小*/
-- (void)setSize:(CGSize)size
+- (void)setYu_size:(CGSize)yu_size
 {
     CGRect frame = self.frame;
-    frame.size = size;
+    frame.size = yu_size;
     self.frame = frame;
 }
 
-- (CGSize)size
+- (CGSize)yu_size
 {
     return self.frame.size;
 }

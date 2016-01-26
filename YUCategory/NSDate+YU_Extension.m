@@ -7,7 +7,7 @@
 //  Github：https://github.com/yuzhidu
 //  Copyright © 裕之都. All rights reserved.
 //  
-//  Version:1.1
+//  Version:1.2
 
 //  格式：@"yyyy-MM-dd HH:mm:ss"
 
@@ -15,7 +15,7 @@
 
 @implementation NSDate (YU_Extension)
 
-+ (NSString *)dateFormatModeStringWith:(DateFormatMode)dateFormatMode {
++ (NSString *)yu_dateFormatModeStringWith:(DateFormatMode)dateFormatMode {
     if (dateFormatMode == DateFormatModeNumber) {
         return @"yyyyMMdd";
     } else if (dateFormatMode == DateFormatModeMinus) {
@@ -34,7 +34,7 @@
  *  @param dateFormat 系统日期格式
  */
 + (NSString *)yu_dateWithSystemFormat:(DateFormatMode)dateFormatMode {
-    return [self yu_dateWithFormat:[self dateFormatModeStringWith:dateFormatMode]];
+    return [self yu_dateWithFormat:[self yu_dateFormatModeStringWith:dateFormatMode]];
 }
 /**
  *  格式化指定日期，指定格式
@@ -42,7 +42,7 @@
  *  @param dateFormat 系统日期格式
  */
 + (NSString *)yu_dateWith:(NSDate *)date systemDateFormat:(DateFormatMode)dateFormatMode {
-    return [self yu_dateWith:date dateFormat:[self dateFormatModeStringWith:dateFormatMode]];
+    return [self yu_dateWith:date dateFormat:[self yu_dateFormatModeStringWith:dateFormatMode]];
 }
 
 /**
