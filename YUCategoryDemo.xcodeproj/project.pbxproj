@@ -13,6 +13,15 @@
 		0C1FE28E1C57B3C1003434E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C1FE28C1C57B3C1003434E3 /* Main.storyboard */; };
 		0C1FE2901C57B3C1003434E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C1FE28F1C57B3C1003434E3 /* Assets.xcassets */; };
 		0C1FE2931C57B3C1003434E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C1FE2911C57B3C1003434E3 /* LaunchScreen.storyboard */; };
+		0C4EB7C91C57B44C00009C29 /* NSArray+YU_NSLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4EB7B71C57B44C00009C29 /* NSArray+YU_NSLog.m */; };
+		0C4EB7CA1C57B44C00009C29 /* NSDate+YU_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4EB7B91C57B44C00009C29 /* NSDate+YU_Extension.m */; };
+		0C4EB7CB1C57B44C00009C29 /* NSString+YU_Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4EB7BB1C57B44C00009C29 /* NSString+YU_Base.m */; };
+		0C4EB7CC1C57B44C00009C29 /* NSString+YU_Check.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4EB7BD1C57B44C00009C29 /* NSString+YU_Check.m */; };
+		0C4EB7CD1C57B44C00009C29 /* NSString+YU_Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4EB7BF1C57B44C00009C29 /* NSString+YU_Hash.m */; };
+		0C4EB7CE1C57B44C00009C29 /* NSString+YU_Path.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4EB7C11C57B44C00009C29 /* NSString+YU_Path.m */; };
+		0C4EB7CF1C57B44C00009C29 /* NSString+YU_Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4EB7C31C57B44C00009C29 /* NSString+YU_Regex.m */; };
+		0C4EB7D01C57B44C00009C29 /* UIView+YU_frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4EB7C51C57B44C00009C29 /* UIView+YU_frame.m */; };
+		0C4EB7D11C57B44C00009C29 /* UIViewController+YU_dealloc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4EB7C71C57B44C00009C29 /* UIViewController+YU_dealloc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +35,25 @@
 		0C1FE28F1C57B3C1003434E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C1FE2921C57B3C1003434E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C1FE2941C57B3C1003434E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C4EB7B61C57B44C00009C29 /* NSArray+YU_NSLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+YU_NSLog.h"; sourceTree = "<group>"; };
+		0C4EB7B71C57B44C00009C29 /* NSArray+YU_NSLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YU_NSLog.m"; sourceTree = "<group>"; };
+		0C4EB7B81C57B44C00009C29 /* NSDate+YU_Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+YU_Extension.h"; sourceTree = "<group>"; };
+		0C4EB7B91C57B44C00009C29 /* NSDate+YU_Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+YU_Extension.m"; sourceTree = "<group>"; };
+		0C4EB7BA1C57B44C00009C29 /* NSString+YU_Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YU_Base.h"; sourceTree = "<group>"; };
+		0C4EB7BB1C57B44C00009C29 /* NSString+YU_Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YU_Base.m"; sourceTree = "<group>"; };
+		0C4EB7BC1C57B44C00009C29 /* NSString+YU_Check.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YU_Check.h"; sourceTree = "<group>"; };
+		0C4EB7BD1C57B44C00009C29 /* NSString+YU_Check.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YU_Check.m"; sourceTree = "<group>"; };
+		0C4EB7BE1C57B44C00009C29 /* NSString+YU_Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YU_Hash.h"; sourceTree = "<group>"; };
+		0C4EB7BF1C57B44C00009C29 /* NSString+YU_Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YU_Hash.m"; sourceTree = "<group>"; };
+		0C4EB7C01C57B44C00009C29 /* NSString+YU_Path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YU_Path.h"; sourceTree = "<group>"; };
+		0C4EB7C11C57B44C00009C29 /* NSString+YU_Path.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YU_Path.m"; sourceTree = "<group>"; };
+		0C4EB7C21C57B44C00009C29 /* NSString+YU_Regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YU_Regex.h"; sourceTree = "<group>"; };
+		0C4EB7C31C57B44C00009C29 /* NSString+YU_Regex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YU_Regex.m"; sourceTree = "<group>"; };
+		0C4EB7C41C57B44C00009C29 /* UIView+YU_frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YU_frame.h"; sourceTree = "<group>"; };
+		0C4EB7C51C57B44C00009C29 /* UIView+YU_frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YU_frame.m"; sourceTree = "<group>"; };
+		0C4EB7C61C57B44C00009C29 /* UIViewController+YU_dealloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+YU_dealloc.h"; sourceTree = "<group>"; };
+		0C4EB7C71C57B44C00009C29 /* UIViewController+YU_dealloc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+YU_dealloc.m"; sourceTree = "<group>"; };
+		0C4EB7C81C57B44C00009C29 /* YUCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUCategory.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +86,7 @@
 		0C1FE2821C57B3C1003434E3 /* YUCategoryDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0C4EB7B51C57B44C00009C29 /* YUCategory */,
 				0C1FE2861C57B3C1003434E3 /* AppDelegate.h */,
 				0C1FE2871C57B3C1003434E3 /* AppDelegate.m */,
 				0C1FE2891C57B3C1003434E3 /* ViewController.h */,
@@ -78,6 +107,32 @@
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
+		};
+		0C4EB7B51C57B44C00009C29 /* YUCategory */ = {
+			isa = PBXGroup;
+			children = (
+				0C4EB7B61C57B44C00009C29 /* NSArray+YU_NSLog.h */,
+				0C4EB7B71C57B44C00009C29 /* NSArray+YU_NSLog.m */,
+				0C4EB7B81C57B44C00009C29 /* NSDate+YU_Extension.h */,
+				0C4EB7B91C57B44C00009C29 /* NSDate+YU_Extension.m */,
+				0C4EB7BA1C57B44C00009C29 /* NSString+YU_Base.h */,
+				0C4EB7BB1C57B44C00009C29 /* NSString+YU_Base.m */,
+				0C4EB7BC1C57B44C00009C29 /* NSString+YU_Check.h */,
+				0C4EB7BD1C57B44C00009C29 /* NSString+YU_Check.m */,
+				0C4EB7BE1C57B44C00009C29 /* NSString+YU_Hash.h */,
+				0C4EB7BF1C57B44C00009C29 /* NSString+YU_Hash.m */,
+				0C4EB7C01C57B44C00009C29 /* NSString+YU_Path.h */,
+				0C4EB7C11C57B44C00009C29 /* NSString+YU_Path.m */,
+				0C4EB7C21C57B44C00009C29 /* NSString+YU_Regex.h */,
+				0C4EB7C31C57B44C00009C29 /* NSString+YU_Regex.m */,
+				0C4EB7C41C57B44C00009C29 /* UIView+YU_frame.h */,
+				0C4EB7C51C57B44C00009C29 /* UIView+YU_frame.m */,
+				0C4EB7C61C57B44C00009C29 /* UIViewController+YU_dealloc.h */,
+				0C4EB7C71C57B44C00009C29 /* UIViewController+YU_dealloc.m */,
+				0C4EB7C81C57B44C00009C29 /* YUCategory.h */,
+			);
+			path = YUCategory;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -149,7 +204,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C4EB7CB1C57B44C00009C29 /* NSString+YU_Base.m in Sources */,
+				0C4EB7CF1C57B44C00009C29 /* NSString+YU_Regex.m in Sources */,
+				0C4EB7CD1C57B44C00009C29 /* NSString+YU_Hash.m in Sources */,
+				0C4EB7C91C57B44C00009C29 /* NSArray+YU_NSLog.m in Sources */,
+				0C4EB7CA1C57B44C00009C29 /* NSDate+YU_Extension.m in Sources */,
+				0C4EB7D11C57B44C00009C29 /* UIViewController+YU_dealloc.m in Sources */,
 				0C1FE28B1C57B3C1003434E3 /* ViewController.m in Sources */,
+				0C4EB7CC1C57B44C00009C29 /* NSString+YU_Check.m in Sources */,
+				0C4EB7D01C57B44C00009C29 /* UIView+YU_frame.m in Sources */,
+				0C4EB7CE1C57B44C00009C29 /* NSString+YU_Path.m in Sources */,
 				0C1FE2881C57B3C1003434E3 /* AppDelegate.m in Sources */,
 				0C1FE2851C57B3C1003434E3 /* main.m in Sources */,
 			);
@@ -264,6 +328,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YUCategoryDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuzhidu.www.YUCategoryDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -275,6 +340,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YUCategoryDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuzhidu.www.YUCategoryDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -300,6 +366,7 @@
 				0C1FE2991C57B3C1003434E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
