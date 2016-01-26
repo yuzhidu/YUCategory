@@ -21,6 +21,7 @@
 		0C4EB7CE1C57B44C00009C29 /* NSString+YU_Path.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4EB7C11C57B44C00009C29 /* NSString+YU_Path.m */; };
 		0C4EB7CF1C57B44C00009C29 /* NSString+YU_Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4EB7C31C57B44C00009C29 /* NSString+YU_Regex.m */; };
 		0C4EB7D01C57B44C00009C29 /* UIView+YU_frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4EB7C51C57B44C00009C29 /* UIView+YU_frame.m */; };
+		0CF2076A1C57D12400265ABD /* UIViewController+YU_dealloc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF207681C57D12400265ABD /* UIViewController+YU_dealloc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,8 @@
 		0C4EB7C41C57B44C00009C29 /* UIView+YU_frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YU_frame.h"; sourceTree = "<group>"; };
 		0C4EB7C51C57B44C00009C29 /* UIView+YU_frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YU_frame.m"; sourceTree = "<group>"; };
 		0C4EB7C81C57B44C00009C29 /* YUCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUCategory.h; sourceTree = "<group>"; };
+		0CF207681C57D12400265ABD /* UIViewController+YU_dealloc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+YU_dealloc.m"; sourceTree = "<group>"; };
+		0CF207691C57D12400265ABD /* UIViewController+YU_dealloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+YU_dealloc.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,8 @@
 				0C4EB7C31C57B44C00009C29 /* NSString+YU_Regex.m */,
 				0C4EB7C41C57B44C00009C29 /* UIView+YU_frame.h */,
 				0C4EB7C51C57B44C00009C29 /* UIView+YU_frame.m */,
+				0CF207681C57D12400265ABD /* UIViewController+YU_dealloc.m */,
+				0CF207691C57D12400265ABD /* UIViewController+YU_dealloc.h */,
 				0C4EB7C81C57B44C00009C29 /* YUCategory.h */,
 			);
 			path = YUCategory;
@@ -204,6 +209,7 @@
 				0C4EB7CD1C57B44C00009C29 /* NSString+YU_Hash.m in Sources */,
 				0C4EB7C91C57B44C00009C29 /* NSArray+YU_NSLog.m in Sources */,
 				0C4EB7CA1C57B44C00009C29 /* NSDate+YU_Extension.m in Sources */,
+				0CF2076A1C57D12400265ABD /* UIViewController+YU_dealloc.m in Sources */,
 				0C1FE28B1C57B3C1003434E3 /* ViewController.m in Sources */,
 				0C4EB7CC1C57B44C00009C29 /* NSString+YU_Check.m in Sources */,
 				0C4EB7D01C57B44C00009C29 /* UIView+YU_frame.m in Sources */,

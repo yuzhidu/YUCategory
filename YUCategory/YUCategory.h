@@ -9,6 +9,7 @@
 #ifndef YUCategory_h
 #define YUCategory_h
 
+#import "UIViewController+YU_dealloc.h"
 #import "UIView+YU_frame.h"
 #import "NSArray+YU_NSLog.h"
 #import "NSDate+YU_Extension.h"
