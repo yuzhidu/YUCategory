@@ -12,8 +12,11 @@
 #import "UIView+YU_frame.h"
 #import "NSArray+YU_NSLog.h"
 #import "NSDate+YU_Extension.h"
+#import "UILabel+YU_textSize.h"
+#import "NSObject+YU_deleteFile.h"
 
 // 字符串
+#import "NSString+YU_Size.h"
 #import "NSString+YU_Check.h"
 #import "NSString+YU_Regex.h"
 #import "NSString+YU_Hash.h"

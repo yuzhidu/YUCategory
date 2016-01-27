@@ -21,6 +21,10 @@
 		0C4EB7CE1C57B44C00009C29 /* NSString+YU_Path.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4EB7C11C57B44C00009C29 /* NSString+YU_Path.m */; };
 		0C4EB7CF1C57B44C00009C29 /* NSString+YU_Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4EB7C31C57B44C00009C29 /* NSString+YU_Regex.m */; };
 		0C4EB7D01C57B44C00009C29 /* UIView+YU_frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4EB7C51C57B44C00009C29 /* UIView+YU_frame.m */; };
+		6A86945C1C58C98D00442B7C /* UILabel+YU_textSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8694571C58C98D00442B7C /* UILabel+YU_textSize.m */; };
+		6A86945D1C58C98D00442B7C /* NSString+YU_Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8694591C58C98D00442B7C /* NSString+YU_Size.m */; };
+		6A86945E1C58C98D00442B7C /* NSObject+YU_deleteFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A86945B1C58C98D00442B7C /* NSObject+YU_deleteFile.m */; };
+		6A8694601C58CA3700442B7C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A86945F1C58CA3700442B7C /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +55,13 @@
 		0C4EB7C41C57B44C00009C29 /* UIView+YU_frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YU_frame.h"; sourceTree = "<group>"; };
 		0C4EB7C51C57B44C00009C29 /* UIView+YU_frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YU_frame.m"; sourceTree = "<group>"; };
 		0C4EB7C81C57B44C00009C29 /* YUCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUCategory.h; sourceTree = "<group>"; };
+		6A8694561C58C98D00442B7C /* NSObject+YU_deleteFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YU_deleteFile.h"; sourceTree = "<group>"; };
+		6A8694571C58C98D00442B7C /* UILabel+YU_textSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+YU_textSize.m"; sourceTree = "<group>"; };
+		6A8694581C58C98D00442B7C /* UILabel+YU_textSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+YU_textSize.h"; sourceTree = "<group>"; };
+		6A8694591C58C98D00442B7C /* NSString+YU_Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YU_Size.m"; sourceTree = "<group>"; };
+		6A86945A1C58C98D00442B7C /* NSString+YU_Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YU_Size.h"; sourceTree = "<group>"; };
+		6A86945B1C58C98D00442B7C /* NSObject+YU_deleteFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YU_deleteFile.m"; sourceTree = "<group>"; };
+		6A86945F1C58CA3700442B7C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A8694601C58CA3700442B7C /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +79,7 @@
 		0C1FE2771C57B3C1003434E3 = {
 			isa = PBXGroup;
 			children = (
+				6A86945F1C58CA3700442B7C /* CoreGraphics.framework */,
 				0C1FE2821C57B3C1003434E3 /* YUCategoryDemo */,
 				0C1FE2811C57B3C1003434E3 /* Products */,
 			);
@@ -122,8 +135,14 @@
 				0C4EB7C11C57B44C00009C29 /* NSString+YU_Path.m */,
 				0C4EB7C21C57B44C00009C29 /* NSString+YU_Regex.h */,
 				0C4EB7C31C57B44C00009C29 /* NSString+YU_Regex.m */,
+				6A86945A1C58C98D00442B7C /* NSString+YU_Size.h */,
+				6A8694591C58C98D00442B7C /* NSString+YU_Size.m */,
+				6A8694561C58C98D00442B7C /* NSObject+YU_deleteFile.h */,
+				6A86945B1C58C98D00442B7C /* NSObject+YU_deleteFile.m */,
 				0C4EB7C41C57B44C00009C29 /* UIView+YU_frame.h */,
 				0C4EB7C51C57B44C00009C29 /* UIView+YU_frame.m */,
+				6A8694571C58C98D00442B7C /* UILabel+YU_textSize.m */,
+				6A8694581C58C98D00442B7C /* UILabel+YU_textSize.h */,
 				0C4EB7C81C57B44C00009C29 /* YUCategory.h */,
 			);
 			path = YUCategory;
@@ -201,10 +220,13 @@
 			files = (
 				0C4EB7CB1C57B44C00009C29 /* NSString+YU_Base.m in Sources */,
 				0C4EB7CF1C57B44C00009C29 /* NSString+YU_Regex.m in Sources */,
+				6A86945C1C58C98D00442B7C /* UILabel+YU_textSize.m in Sources */,
 				0C4EB7CD1C57B44C00009C29 /* NSString+YU_Hash.m in Sources */,
 				0C4EB7C91C57B44C00009C29 /* NSArray+YU_NSLog.m in Sources */,
 				0C4EB7CA1C57B44C00009C29 /* NSDate+YU_Extension.m in Sources */,
+				6A86945D1C58C98D00442B7C /* NSString+YU_Size.m in Sources */,
 				0C1FE28B1C57B3C1003434E3 /* ViewController.m in Sources */,
+				6A86945E1C58C98D00442B7C /* NSObject+YU_deleteFile.m in Sources */,
 				0C4EB7CC1C57B44C00009C29 /* NSString+YU_Check.m in Sources */,
 				0C4EB7D01C57B44C00009C29 /* UIView+YU_frame.m in Sources */,
 				0C4EB7CE1C57B44C00009C29 /* NSString+YU_Path.m in Sources */,
