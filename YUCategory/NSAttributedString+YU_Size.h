@@ -1,21 +1,19 @@
 //
-//  NSString+YU_Base.h
+//  NSAttributedString+YU_Size.h
+//
 //  关注微博：裕之都
 //  微博地址：http://weibo.com/gou9527
 //
 //  Github：https://github.com/yuzhidu
 //  Copyright © 裕之都. All rights reserved.
-//
-//  Version:1.1
+//  使用环境:ARC
+//  Version:1.0
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface NSString (YU_Base)
+@interface NSAttributedString (YU_Size)
 
-/** base64编码 */
-- (NSString *)yu_base64Encode;
-
-/** base64解码 */
-- (NSString *)yu_base64Decode;
+- (CGSize)yu_sizeWithMaxSize:(CGSize)maxSize;
 
 @end
