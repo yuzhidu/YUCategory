@@ -15,6 +15,7 @@
 #import "UILabel+YU_textSize.h"
 #import "NSObject+YU_deleteFile.h"
 #import "UIImage+YU_handleImage.h"
+#import "UIBarButtonItem+YU_custom.h"
 
 // 字符串
 #import "NSString+YU_Check.h"
