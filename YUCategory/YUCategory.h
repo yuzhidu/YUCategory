@@ -18,12 +18,7 @@
 #import "UIBarButtonItem+YU_custom.h"
 
 // 字符串
-#import "NSString+YU_Check.h"
-#import "NSString+YU_Regex.h"
-#import "NSString+YU_Hash.h"
-#import "NSString+YU_Base.h"
-#import "NSString+YU_Path.h"
-#import "NSString+YU_Size.h"
+#import "NSString+YU.h"
 #import "NSAttributedString+YU_Size.h"
 
 #endif /* YUCategory_h */
