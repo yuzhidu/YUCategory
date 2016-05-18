@@ -7,7 +7,7 @@
 //  Github：https://github.com/yuzhidu
 //  Copyright © 裕之都. All rights reserved.
 //  使用环境:ARC
-//  Version:1.0
+//  Version:1.1
 
 #import "NSObject+YU_deleteFile.h"
 
@@ -58,15 +58,14 @@ static NSString *const kRecordAudioFile = @"myRecord.wav";
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     BOOL haveFile = [fileManager fileExistsAtPath:pathStr];
-    BOOL deleteFileSuccess = NO;
+    
     if (!haveFile) {
         // File not exist
         return NO;
     } else {
         // File exist
-        deleteFileSuccess = [fileManager removeItemAtPath:pathStr error:nil];
+        return [fileManager removeItemAtPath:pathStr error:nil];
     }
-    return deleteFileSuccess;
 }
 
 

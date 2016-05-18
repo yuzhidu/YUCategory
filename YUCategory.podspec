@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
   s.name     = 'YUCategory'
-  s.version  = '1.1.1'
+  s.version  = '1.1.2'
   s.summary  = 'Large category for you.'
-  s.description  = "YUCategory is iPad and iPhone compatible. Supports landscape and portrait orientations and can be used inside UINavigationController."
+  s.description  = "YUCategory is iPad and iPhone compatible. Supports landscape and portrait orientations."
   s.homepage = 'https://github.com/yuzhidu/YUCategory'
   s.authors  = { '马裕博' => '1632212092@qq.com' }
   s.platform              = :ios, '7.0'

@@ -7,7 +7,7 @@
 //  Github：https://github.com/yuzhidu
 //  Copyright © 裕之都. All rights reserved.
 //  使用环境:ARC
-//  Version:1.0
+//  Version:1.1
 
 #import <Foundation/Foundation.h>
 
