@@ -19,6 +19,7 @@
 
 // 字符串
 #import "NSString+YU.h"
+#import "NSString+JsonSerialization.h"
 #import "NSAttributedString+YU_Size.h"
 
 #endif /* YUCategory_h */
