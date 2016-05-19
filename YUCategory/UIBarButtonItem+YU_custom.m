@@ -11,7 +11,7 @@
 
 #import "UIBarButtonItem+YU_custom.h"
 
-static const CGFloat kBarButtonHeight = 30.0f;
+static const CGFloat kBarButtonHeight = 20.0f;
 static const CGFloat kFontSize = 16.0f;
 static const CGFloat kTitleMaxWidth = 120.0f;
 static const CGFloat kTitleMaxHeight = 44.0f;
