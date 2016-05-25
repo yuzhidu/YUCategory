@@ -294,4 +294,35 @@
     // 2. 返回base64解码后的字符串
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
+
+//--------------------- 7. 最多保留2位小数，数字末尾去0 --------------------/
+
++ (NSString *)yu_stringChangeWithPrice:(CGFloat)value {
+    NSString *changeStr = [NSString stringWithFormat:@"%.2f", value];
+    return [self yu_stringChangeWithPriceStr:changeStr];
+}
+
++ (NSString *)yu_stringChangeWithPriceStr:(NSString *)stringValue {
+    
+    NSString *changeStr = [NSString stringWithFormat:@"%.2f",[stringValue floatValue]];
+    NSArray *componArr = [changeStr componentsSeparatedByString:@"."];
+    NSString *firstStr = [componArr firstObject];
+    NSString *lastStr = [componArr lastObject];
+    int lastInt  = [lastStr intValue];
+    int firstInt = lastInt/10;
+    int remainderInt = lastInt%10;
+    
+    NSString *finalStr;
+    if (remainderInt == 0) {
+        if (firstInt == 0) {
+            finalStr = [NSString stringWithFormat:@"%@",firstStr];
+        } else {
+            finalStr = [NSString stringWithFormat:@"%@.%d",firstStr,firstInt];
+        }
+    } else {
+        finalStr = [NSString stringWithFormat:@"%@.%d%d",firstStr,firstInt,remainderInt];
+    }
+    
+    return finalStr;
+}
 @end

@@ -102,4 +102,18 @@
 /** base64解码 */
 - (NSString *)yu_base64Decode;
 
+//--------------------- 7. 数字末尾去0 --------------------/
+/**
+ *  数字末尾去0
+ *
+ *  @param value 传入小数值
+ */
++ (NSString *)yu_stringChangeWithPrice:(CGFloat)value;
+/**
+ *  数字末尾去0
+ *
+ *  @param value 传入字符串数值
+ */
++ (NSString *)yu_stringChangeWithPriceStr:(NSString *)stringValue;
+
 @end
