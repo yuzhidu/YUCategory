@@ -29,6 +29,7 @@ static const CGFloat kTitleMaxHeight = 44.0f;
     [control addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     
     UIImageView *imageV = [[UIImageView alloc] init];
+    imageV.contentMode = UIViewContentModeScaleAspectFit;
     imageV.image = [UIImage imageNamed:imageName];
     imageV.frame = CGRectMake(0, 0, kBarButtonHeight, kBarButtonHeight);
     [control addSubview:imageV];
@@ -71,6 +72,7 @@ static const CGFloat kTitleMaxHeight = 44.0f;
     [control addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     
     UIImageView *imageV = [[UIImageView alloc] init];
+    imageV.contentMode = UIViewContentModeScaleAspectFit;
     imageV.image = [UIImage imageNamed:imageName];
     imageV.frame = CGRectMake(0, 0, kBarButtonHeight, kBarButtonHeight);
     [control addSubview:imageV];
@@ -113,6 +115,7 @@ static const CGFloat kTitleMaxHeight = 44.0f;
     titleLab.frame = CGRectMake(0, 0, titleLabWidth, kBarButtonHeight);
     
     UIImageView *imageV = [[UIImageView alloc] init];
+    imageV.contentMode = UIViewContentModeScaleAspectFit;
     imageV.image = [UIImage imageNamed:imageName];
     imageV.frame = CGRectMake(titleLabWidth, 0, kBarButtonHeight, kBarButtonHeight);
     [control addSubview:imageV];
