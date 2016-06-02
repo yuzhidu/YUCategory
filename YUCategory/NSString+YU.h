@@ -77,7 +77,8 @@
 
 //--------------------- 4. 加密 --------------------/
 #pragma mark - 4. Hash 加密
-@property (readonly) NSString *yu_md5String;    // MD5 加密
+/** MD5 加密(32位小) */
+@property (readonly) NSString *yu_md5String;
 @property (readonly) NSString *yu_sha1String;
 @property (readonly) NSString *yu_sha256String;
 @property (readonly) NSString *yu_sha512String;
