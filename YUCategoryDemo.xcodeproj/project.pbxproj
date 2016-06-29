@@ -16,7 +16,8 @@
 		0C4EB7C91C57B44C00009C29 /* NSArray+YU_NSLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4EB7B71C57B44C00009C29 /* NSArray+YU_NSLog.m */; };
 		0C4EB7CA1C57B44C00009C29 /* NSDate+YU_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4EB7B91C57B44C00009C29 /* NSDate+YU_Extension.m */; };
 		0C4EB7D01C57B44C00009C29 /* UIView+YU_frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4EB7C51C57B44C00009C29 /* UIView+YU_frame.m */; };
-		6A0ADB241CEDBE38003F2D7A /* NSString+JsonSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0ADB231CEDBE38003F2D7A /* NSString+JsonSerialization.m */; };
+		6A177D081D239E6B0029E2ED /* NSArray+Serialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A177D051D239E6B0029E2ED /* NSArray+Serialization.m */; };
+		6A177D091D239E6B0029E2ED /* NSDictionary+Serialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A177D071D239E6B0029E2ED /* NSDictionary+Serialization.m */; };
 		6A500ECE1C9C117E00F9A7D8 /* UIBarButtonItem+YU_custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A500ECD1C9C117E00F9A7D8 /* UIBarButtonItem+YU_custom.m */; };
 		6A7EC6B31C5A1B2B00AE4A54 /* NSAttributedString+YU_Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7EC6B01C5A1B2B00AE4A54 /* NSAttributedString+YU_Size.m */; };
 		6A7EC6B41C5A1B2B00AE4A54 /* UIImage+YU_handleImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7EC6B21C5A1B2B00AE4A54 /* UIImage+YU_handleImage.m */; };
@@ -44,8 +45,10 @@
 		0C4EB7C41C57B44C00009C29 /* UIView+YU_frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YU_frame.h"; sourceTree = "<group>"; };
 		0C4EB7C51C57B44C00009C29 /* UIView+YU_frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YU_frame.m"; sourceTree = "<group>"; };
 		0C4EB7C81C57B44C00009C29 /* YUCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUCategory.h; sourceTree = "<group>"; };
-		6A0ADB221CEDBE38003F2D7A /* NSString+JsonSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JsonSerialization.h"; sourceTree = "<group>"; };
-		6A0ADB231CEDBE38003F2D7A /* NSString+JsonSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JsonSerialization.m"; sourceTree = "<group>"; };
+		6A177D041D239E6B0029E2ED /* NSArray+Serialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Serialization.h"; sourceTree = "<group>"; };
+		6A177D051D239E6B0029E2ED /* NSArray+Serialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Serialization.m"; sourceTree = "<group>"; };
+		6A177D061D239E6B0029E2ED /* NSDictionary+Serialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Serialization.h"; sourceTree = "<group>"; };
+		6A177D071D239E6B0029E2ED /* NSDictionary+Serialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Serialization.m"; sourceTree = "<group>"; };
 		6A500ECC1C9C117E00F9A7D8 /* UIBarButtonItem+YU_custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+YU_custom.h"; sourceTree = "<group>"; };
 		6A500ECD1C9C117E00F9A7D8 /* UIBarButtonItem+YU_custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+YU_custom.m"; sourceTree = "<group>"; };
 		6A7EC6AF1C5A1B2B00AE4A54 /* NSAttributedString+YU_Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+YU_Size.h"; sourceTree = "<group>"; };
@@ -126,8 +129,10 @@
 				6A500ECD1C9C117E00F9A7D8 /* UIBarButtonItem+YU_custom.m */,
 				6AE2D59E1C96BB2D0078539C /* NSString+YU.h */,
 				6AE2D59F1C96BB2D0078539C /* NSString+YU.m */,
-				6A0ADB221CEDBE38003F2D7A /* NSString+JsonSerialization.h */,
-				6A0ADB231CEDBE38003F2D7A /* NSString+JsonSerialization.m */,
+				6A177D041D239E6B0029E2ED /* NSArray+Serialization.h */,
+				6A177D051D239E6B0029E2ED /* NSArray+Serialization.m */,
+				6A177D061D239E6B0029E2ED /* NSDictionary+Serialization.h */,
+				6A177D071D239E6B0029E2ED /* NSDictionary+Serialization.m */,
 				6A8694561C58C98D00442B7C /* NSObject+YU_deleteFile.h */,
 				6A86945B1C58C98D00442B7C /* NSObject+YU_deleteFile.m */,
 				0C4EB7C41C57B44C00009C29 /* UIView+YU_frame.h */,
@@ -220,12 +225,13 @@
 				0C1FE28B1C57B3C1003434E3 /* ViewController.m in Sources */,
 				6A86945E1C58C98D00442B7C /* NSObject+YU_deleteFile.m in Sources */,
 				0C4EB7D01C57B44C00009C29 /* UIView+YU_frame.m in Sources */,
+				6A177D081D239E6B0029E2ED /* NSArray+Serialization.m in Sources */,
 				6A500ECE1C9C117E00F9A7D8 /* UIBarButtonItem+YU_custom.m in Sources */,
 				6A7EC6B41C5A1B2B00AE4A54 /* UIImage+YU_handleImage.m in Sources */,
-				6A0ADB241CEDBE38003F2D7A /* NSString+JsonSerialization.m in Sources */,
 				0C1FE2881C57B3C1003434E3 /* AppDelegate.m in Sources */,
 				0C1FE2851C57B3C1003434E3 /* main.m in Sources */,
 				6A7EC6B31C5A1B2B00AE4A54 /* NSAttributedString+YU_Size.m in Sources */,
+				6A177D091D239E6B0029E2ED /* NSDictionary+Serialization.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
