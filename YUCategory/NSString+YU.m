@@ -352,13 +352,13 @@
     if (!days && !hours && !minutes && !seconds) {
         timeStr = @"0秒";
     } else if (!days && !hours && !minutes) {
-        timeStr = [NSString stringWithFormat:@"%ld秒", seconds];
+        timeStr = [NSString stringWithFormat:@"%ld秒", (long)seconds];
     } else if (!days && !hours) {
-        timeStr = [NSString stringWithFormat:@"%ld分%ld秒", minutes, seconds];
+        timeStr = [NSString stringWithFormat:@"%ld分%ld秒", (long)minutes, (long)seconds];
     } else if (!days) {
-        timeStr = [NSString stringWithFormat:@"%ld小时%ld分%ld秒", hours, minutes, seconds];
+        timeStr = [NSString stringWithFormat:@"%ld小时%ld分%ld秒", (long)hours, (long)minutes, (long)seconds];
     } else {
-        timeStr = [NSString stringWithFormat:@"%ld天%ld小时%ld分%ld秒", days, hours, minutes, seconds];
+        timeStr = [NSString stringWithFormat:@"%ld天%ld小时%ld分%ld秒", (long)days, (long)hours, (long)minutes, (long)seconds];
     }
     return timeStr;
 }
