@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'YUCategory'
-  s.version  = '1.2.3'
+  s.version  = '1.2.4'
   s.summary  = 'Large category for you.'
   s.description  = "YUCategory is iPad and iPhone compatible. Supports landscape and portrait orientations."
   s.homepage = 'https://github.com/yuzhidu/YUCategory'

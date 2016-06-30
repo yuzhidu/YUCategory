@@ -103,7 +103,7 @@
 /** base64解码 */
 - (NSString *)yu_base64Decode;
 
-//--------------------- 7. 数字末尾去0 --------------------/
+//--------------------- 7. 最多保留2位小数，数字末尾去0，并且四舍五入 --------------------/
 /**
  *  数字末尾去0
  *
@@ -117,4 +117,9 @@
  */
 + (NSString *)yu_stringChangeWithPriceStr:(NSString *)stringValue;
 
+//--------------------- 8. 将输入的 “秒数” 转换为 几天几小时几分几秒 --------------------/
+- (NSString *)yu_timeFormatted:(NSInteger)totalSeconds;
+
+//--------------------- 9. Json 反序列化为 NSDictionary --------------------/
+- (NSDictionary *)yu_serializationJsonStringToDictionary;
 @end

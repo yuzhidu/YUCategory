@@ -295,34 +295,90 @@
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 
-//--------------------- 7. 最多保留2位小数，数字末尾去0 --------------------/
+//--------------------- 7. 最多保留2位小数，数字末尾去0，并且四舍五入 --------------------/
 
 + (NSString *)yu_stringChangeWithPrice:(CGFloat)value {
-    NSString *changeStr = [NSString stringWithFormat:@"%.2f", value];
+    NSString *changeStr = [NSString stringWithFormat:@"%f", value];
     return [self yu_stringChangeWithPriceStr:changeStr];
 }
 
 + (NSString *)yu_stringChangeWithPriceStr:(NSString *)stringValue {
     
-    NSString *changeStr = [NSString stringWithFormat:@"%.2f",[stringValue floatValue]];
+    NSString *changeStr = [NSString stringWithFormat:@"%.3f",[stringValue floatValue]];
     NSArray *componArr = [changeStr componentsSeparatedByString:@"."];
     NSString *firstStr = [componArr firstObject];
     NSString *lastStr = [componArr lastObject];
+    
+    int firstStrInt = [firstStr intValue];
     int lastInt  = [lastStr intValue];
-    int firstInt = lastInt/10;
-    int remainderInt = lastInt%10;
+    int firstInt = lastInt/100;
+    int secInt = (lastInt%100)/10;
+    int remainderInt = (lastInt%100)%10;
+    
+    if(remainderInt >= 5){
+        secInt = secInt+1;
+        if (secInt >= 10) {
+            secInt = 0;
+            firstInt = firstInt +1;
+            if (firstInt >= 10) {
+                firstInt = 0;
+                firstStrInt = firstStrInt + 1;
+            }
+        }
+    }
     
     NSString *finalStr;
-    if (remainderInt == 0) {
+    if (secInt == 0) {
         if (firstInt == 0) {
-            finalStr = [NSString stringWithFormat:@"%@",firstStr];
+            finalStr = [NSString stringWithFormat:@"%d",firstStrInt];
         } else {
-            finalStr = [NSString stringWithFormat:@"%@.%d",firstStr,firstInt];
+            finalStr = [NSString stringWithFormat:@"%d.%d",firstStrInt,firstInt];
         }
     } else {
-        finalStr = [NSString stringWithFormat:@"%@.%d%d",firstStr,firstInt,remainderInt];
+        finalStr = [NSString stringWithFormat:@"%d.%d%d",firstStrInt,firstInt,secInt];
     }
     
     return finalStr;
 }
+
+//--------------------- 8. 将输入的 “秒数” 转换为 几天几小时几分几秒 --------------------/
+- (NSString *)yu_timeFormatted:(NSInteger)totalSeconds
+{
+    NSInteger seconds = totalSeconds % 60;
+    NSInteger minutes = (totalSeconds / 60) % 60;
+    NSInteger hours = (totalSeconds / 3600) % 24;
+    NSInteger days = totalSeconds / 86400;
+    NSString *timeStr;
+    if (!days && !hours && !minutes && !seconds) {
+        timeStr = @"0秒";
+    } else if (!days && !hours && !minutes) {
+        timeStr = [NSString stringWithFormat:@"%ld秒", seconds];
+    } else if (!days && !hours) {
+        timeStr = [NSString stringWithFormat:@"%ld分%ld秒", minutes, seconds];
+    } else if (!days) {
+        timeStr = [NSString stringWithFormat:@"%ld小时%ld分%ld秒", hours, minutes, seconds];
+    } else {
+        timeStr = [NSString stringWithFormat:@"%ld天%ld小时%ld分%ld秒", days, hours, minutes, seconds];
+    }
+    return timeStr;
+}
+
+//--------------------- 9. Json 反序列化为 NSDictionary --------------------/
+- (NSDictionary *)yu_serializationJsonStringToDictionary {
+    if (self == nil) {
+        return nil;
+    }
+    
+    NSData *jsonData = [self dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *err;
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                        options:NSJSONReadingMutableContainers
+                                                          error:&err];
+    if(err) {
+        NSLog(@"NSString+JsonSerialization  Json解析失败：%@",err);
+        return nil;
+    }
+    return dic;
+}
+
 @end
