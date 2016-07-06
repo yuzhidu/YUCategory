@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'YUCategory'
-  s.version  = '1.2.7'
+  s.version  = '1.2.8'
   s.summary  = 'Large category for you.'
   s.description  = "YUCategory is iPad and iPhone compatible. Supports landscape and portrait orientations."
   s.homepage = 'https://github.com/yuzhidu/YUCategory'
@@ -8,6 +8,7 @@ Pod::Spec.new do |s|
   s.platform              = :ios, '7.0'
   s.requires_arc = true
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
+  s.frameworks = 'Foundation', 'UIKit', 'CoreData', 'QuartzCore', 'CoreLocation', 'MapKit'
   s.source   = { :git => 'https://github.com/yuzhidu/YUCategory.git', :tag => s.version.to_s }
-  s.source_files          = 'YUCategory/*.{h,m}'
+  s.source_files = "YUCategory", "YUCategory/*.{h,m}","YUCategory/**/*.{h,m}"
 end
