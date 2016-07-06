@@ -7,7 +7,7 @@
 //  Github：https://github.com/yuzhidu
 //  Copyright © 裕之都. All rights reserved.
 //
-//  Version:1.0
+//  Version:1.1
 //
 
 #import "NSString+YU.h"
@@ -18,21 +18,34 @@
 
 @implementation NSString (YU)
 
-//--------------------- 1. Size 计算字符串尺寸 --------------------/
+//-----------------------------------------------------------/
 #pragma mark - 1. Size 计算字符串尺寸
-- (CGSize)yu_sizeWithFont:(UIFont *)font maxSize:(CGSize)maxSize
-{
+/**
+ *  根据 "字体" 返回字符串所占用的尺寸
+ */
+- (CGSize)yu_sizeWithFont:(UIFont *)font maxSize:(CGSize)maxSize {
+    
     NSDictionary *attrs = @{NSFontAttributeName : font};
-    return [self boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size;
+    return [self boundingRectWithSize:maxSize
+                              options:NSStringDrawingUsesLineFragmentOrigin
+                           attributes:attrs
+                              context:nil].size;
 }
 
-- (CGSize)yu_sizeWithAttributes:(NSDictionary *)attrs maxSize:(CGSize)maxSize
-{
-    return [self boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size;
+/**
+ *  根据 "字体属性" 返回字符串所占用的尺寸
+ */
+- (CGSize)yu_sizeWithAttributes:(NSDictionary *)attrs maxSize:(CGSize)maxSize {
+    
+    return [self boundingRectWithSize:maxSize
+                              options:NSStringDrawingUsesLineFragmentOrigin
+                           attributes:attrs
+                              context:nil].size;
 }
 
-//--------------------- 2. Regex 正则验证 --------------------/
+//-----------------------------------------------------------/
 #pragma mark - 2. Regex 正则验证
+
 /**
  *  验证密码
  */
@@ -50,12 +63,7 @@
     
     NSPredicate *regexMobile = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", MOBILE];
     BOOL res = [regexMobile evaluateWithObject:self];
-    
-    if (res) {
-        return YES;
-    } else {
-        return NO;
-    }
+    return res;
 }
 
 - (BOOL)yu_checkPhoneNumInputOld
@@ -342,7 +350,7 @@
 }
 
 //--------------------- 8. 将输入的 “秒数” 转换为 几天几小时几分几秒 --------------------/
-- (NSString *)yu_timeFormatted:(NSInteger)totalSeconds
++ (NSString *)yu_timeFormatted:(NSInteger)totalSeconds
 {
     NSInteger seconds = totalSeconds % 60;
     NSInteger minutes = (totalSeconds / 60) % 60;
@@ -375,7 +383,9 @@
                                                         options:NSJSONReadingMutableContainers
                                                           error:&err];
     if(err) {
+#ifdef DEBUG
         NSLog(@"NSString+JsonSerialization  Json解析失败：%@",err);
+#endif
         return nil;
     }
     return dic;

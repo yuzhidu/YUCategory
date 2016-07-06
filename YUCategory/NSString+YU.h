@@ -7,7 +7,7 @@
 //  Github：https://github.com/yuzhidu
 //  Copyright © 裕之都. All rights reserved.
 //
-//  Version:1.0
+//  Version:1.1
 //
 
 #import <Foundation/Foundation.h>
@@ -15,7 +15,7 @@
 
 @interface NSString (YU)
 
-//--------------------- 1. Size 计算字符串尺寸 --------------------/
+//-----------------------------------------------------------/
 #pragma mark - 1. Size 计算字符串尺寸
 /**
  *  根据 "字体" 返回字符串所占用的尺寸
@@ -27,15 +27,16 @@
  */
 - (CGSize)yu_sizeWithAttributes:(NSDictionary *)attrs maxSize:(CGSize)maxSize;
 
-//--------------------- 2. Regex 正则验证 --------------------/
+//-----------------------------------------------------------/
 #pragma mark - 2. Regex 正则验证
+
 /**
- *  验证密码
+ *  密码正则验证(6-32位字母或数字组合)
  */
 - (BOOL)yu_isValidatePassword;
 
 /**
- *  手机号正则验证
+ *  手机号正则验证(以1开头11位数字)
  */
 - (BOOL)yu_checkPhoneNumInput;
 
@@ -47,9 +48,9 @@
 /**
  *  查找字符串中第一个匹配项
  *
- *  @param pattern 匹配方案
+ *  @param pattern 目标字符串
  *
- *  @return 第一个匹配字符串
+ *  @return 结果字符串
  */
 - (NSString *)yu_firstMatchWithPattern:(NSString *)pattern;
 
@@ -62,7 +63,7 @@
  */
 - (NSArray *)yu_matchsWithPattern:(NSString *)pattern;
 
-//--------------------- 3. Path 追加沙盒路径 --------------------/
+//-----------------------------------------------------------/
 #pragma mark - 3. Path 追加沙盒路径
 // 在字符串之前追加路径，拼接文件名在路径后
 
@@ -75,7 +76,7 @@
 /** 追加文档路径 */
 - (NSString *)yu_appendDocumentPath;
 
-//--------------------- 4. 加密 --------------------/
+//-----------------------------------------------------------/
 #pragma mark - 4. Hash 加密
 /** MD5 加密(32位小) */
 @property (readonly) NSString *yu_md5String;
@@ -87,7 +88,7 @@
 - (NSString *)yu_hmacSHA256StringWithKey:(NSString *)key;
 - (NSString *)yu_hmacSHA512StringWithKey:(NSString *)key;
 
-//--------------------- 5. 字符串空判断 --------------------/
+//-----------------------------------------------------------/
 #pragma mark - 5. Check 字符串空判断
 /** 判断字符串是否为空 */
 - (BOOL)yu_isEmpty;
@@ -95,7 +96,7 @@
 /** 截断首部和尾部的空白字符 */
 - (NSString *)yu_trimString;
 
-//--------------------- 6. base64 编解码 --------------------/
+//-----------------------------------------------------------/
 #pragma mark - 6. base64 编解码
 /** base64编码 */
 - (NSString *)yu_base64Encode;
@@ -103,7 +104,8 @@
 /** base64解码 */
 - (NSString *)yu_base64Decode;
 
-//--------------------- 7. 最多保留2位小数，数字末尾去0，并且四舍五入 --------------------/
+//-----------------------------------------------------------/
+#pragma mark - 7. 最多保留2位小数，数字末尾去0，并且四舍五入
 /**
  *  数字末尾去0
  *
@@ -117,9 +119,12 @@
  */
 + (NSString *)yu_stringChangeWithPriceStr:(NSString *)stringValue;
 
-//--------------------- 8. 将输入的 “秒数” 转换为 几天几小时几分几秒 --------------------/
-- (NSString *)yu_timeFormatted:(NSInteger)totalSeconds;
+//-----------------------------------------------------------/
+#pragma mark - 8. 将输入的 “秒数” 转换为 几天几小时几分几秒
++ (NSString *)yu_timeFormatted:(NSInteger)totalSeconds;
 
-//--------------------- 9. Json 反序列化为 NSDictionary --------------------/
+//-----------------------------------------------------------/
+#pragma mark - 9. Json 反序列化为 NSDictionary
 - (NSDictionary *)yu_serializationJsonStringToDictionary;
+
 @end

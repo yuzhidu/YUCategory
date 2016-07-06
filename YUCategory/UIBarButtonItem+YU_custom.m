@@ -23,10 +23,14 @@ static const CGFloat kTitleMaxHeight = 44.0f;
 /**
  *  1.只有图片
  */
-+ (UIBarButtonItem *)yu_barButtonWithImage:(NSString *)imageName target:(id)target action:(SEL)action
-{
++ (UIBarButtonItem *)yu_barButtonWithImage:(NSString *)imageName
+                                    target:(id)target
+                                    action:(SEL)action {
+    
     UIControl *control = [[UIControl alloc] init];
-    [control addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    [control addTarget:target
+                action:action
+      forControlEvents:UIControlEventTouchUpInside];
     
     UIImageView *imageV = [[UIImageView alloc] init];
     imageV.contentMode = UIViewContentModeScaleAspectFit;
@@ -41,10 +45,14 @@ static const CGFloat kTitleMaxHeight = 44.0f;
 /**
  *  2.只有文字
  */
-+ (UIBarButtonItem *)yu_barButtonWithTitle:(NSString *)title target:(id)target action:(SEL)action
-{
++ (UIBarButtonItem *)yu_barButtonWithTitle:(NSString *)title
+                                    target:(id)target
+                                    action:(SEL)action {
+    
     UIControl *control = [[UIControl alloc] init];
-    [control addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    [control addTarget:target
+                action:action
+      forControlEvents:UIControlEventTouchUpInside];
     
     UILabel *titleLab = [[UILabel alloc] init];
     titleLab.textAlignment = NSTextAlignmentCenter;
@@ -54,7 +62,10 @@ static const CGFloat kTitleMaxHeight = 44.0f;
     
     NSDictionary *attrs = @{NSFontAttributeName : titleLab.font};
     CGSize maxSize = CGSizeMake(kTitleMaxWidth, kTitleMaxHeight);
-    CGRect controlSize = [title boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil];
+    CGRect controlSize = [title boundingRectWithSize:maxSize
+                                             options:NSStringDrawingUsesLineFragmentOrigin
+                                          attributes:attrs
+                                             context:nil];
     titleLab.text = title;
     titleLab.frame = CGRectMake(0, 0, controlSize.size.width+1, kBarButtonHeight);
     
@@ -66,10 +77,15 @@ static const CGFloat kTitleMaxHeight = 44.0f;
 /**
  *  3.图片在左，文字在右
  */
-+ (UIBarButtonItem *)yu_barButtonWithImage:(NSString *)imageName title:(NSString *)title target:(id)target action:(SEL)action
-{
++ (UIBarButtonItem *)yu_barButtonWithImage:(NSString *)imageName
+                                     title:(NSString *)title
+                                    target:(id)target
+                                    action:(SEL)action {
+    
     UIControl *control = [[UIControl alloc] init];
-    [control addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    [control addTarget:target
+                action:action
+      forControlEvents:UIControlEventTouchUpInside];
     
     UIImageView *imageV = [[UIImageView alloc] init];
     imageV.contentMode = UIViewContentModeScaleAspectFit;
@@ -85,7 +101,10 @@ static const CGFloat kTitleMaxHeight = 44.0f;
     
     NSDictionary *attrs = @{NSFontAttributeName : titleLab.font};
     CGSize maxSize = CGSizeMake(kTitleMaxWidth, kTitleMaxHeight);
-    CGRect controlSize = [title boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil];
+    CGRect controlSize = [title boundingRectWithSize:maxSize
+                                             options:NSStringDrawingUsesLineFragmentOrigin
+                                          attributes:attrs
+                                             context:nil];
     titleLab.text = title;
     titleLab.frame = CGRectMake(kBarButtonHeight, 0, controlSize.size.width, kBarButtonHeight);
     
@@ -97,10 +116,15 @@ static const CGFloat kTitleMaxHeight = 44.0f;
 /**
  *  4.文字在左，图片在右
  */
-+ (UIBarButtonItem *)yu_barButtonWithTitle:(NSString *)title image:(NSString *)imageName target:(id)target action:(SEL)action
-{
++ (UIBarButtonItem *)yu_barButtonWithTitle:(NSString *)title
+                                     image:(NSString *)imageName
+                                    target:(id)target
+                                    action:(SEL)action {
+    
     UIControl *control = [[UIControl alloc] init];
-    [control addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    [control addTarget:target
+                action:action
+      forControlEvents:UIControlEventTouchUpInside];
     
     UILabel *titleLab = [[UILabel alloc] init];
     titleLab.font = [UIFont systemFontOfSize:kFontSize];
@@ -109,7 +133,10 @@ static const CGFloat kTitleMaxHeight = 44.0f;
     
     NSDictionary *attrs = @{NSFontAttributeName : titleLab.font};
     CGSize maxSize = CGSizeMake(kTitleMaxWidth, kTitleMaxHeight);
-    CGRect controlSize = [title boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil];
+    CGRect controlSize = [title boundingRectWithSize:maxSize
+                                             options:NSStringDrawingUsesLineFragmentOrigin
+                                          attributes:attrs
+                                             context:nil];
     titleLab.text = title;
     CGFloat titleLabWidth = controlSize.size.width+1;
     titleLab.frame = CGRectMake(0, 0, titleLabWidth, kBarButtonHeight);

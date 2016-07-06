@@ -1,5 +1,4 @@
 //
-//  UIView+YU_frame.h
 //
 //  关注微博：裕之都
 //  微博地址：http://weibo.com/gou9527
@@ -7,13 +6,12 @@
 //  Github：https://github.com/yuzhidu
 //  Copyright © 裕之都. All rights reserved.
 //
-//  使用环境:iOS7+ , ARC有效
-//  Version:1.5
+//  使用Frame布局技术
+//
 
-#import "UIView+YU_frame.h"
+#import "UIView+YUFrame.h"
 
-@implementation UIView (YU_frame)
-
+@implementation UIView (YUFrame)
 /** 1.当前View的x值*/
 - (void)setYu_x:(CGFloat)yu_x {
     CGRect frame = self.frame;
@@ -145,5 +143,4 @@
 - (CGSize)yu_size {
     return self.frame.size;
 }
-
 @end

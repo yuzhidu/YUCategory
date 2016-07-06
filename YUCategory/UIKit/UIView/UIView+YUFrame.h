@@ -1,5 +1,4 @@
 //
-//  UIView+YU_frame.h
 //
 //  关注微博：裕之都
 //  微博地址：http://weibo.com/gou9527
@@ -7,12 +6,12 @@
 //  Github：https://github.com/yuzhidu
 //  Copyright © 裕之都. All rights reserved.
 //
-//  使用环境:iOS7+ , ARC有效
-//  Version:1.5
+//  使用Frame布局技术
+//
 
 #import <UIKit/UIKit.h>
 
-@interface UIView (YU_frame)
+@interface UIView (YUFrame)
 
 /** 1.当前View的x值*/
 @property (nonatomic, assign) CGFloat yu_x;

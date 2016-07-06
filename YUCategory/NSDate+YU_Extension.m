@@ -137,7 +137,10 @@
     
     // 获得nowDate和selfDate的差距
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *cmps = [calendar components:NSCalendarUnitDay fromDate:selfDate toDate:nowDate options:0];
+    NSDateComponents *cmps = [calendar components:NSCalendarUnitDay
+                                         fromDate:selfDate
+                                           toDate:nowDate
+                                          options:0];
     return cmps.day == 1;
 }
 /**
@@ -171,7 +174,16 @@
 - (NSDateComponents *)yu_deltaWithNow
 {
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    int unit = NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay| NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
-    return [calendar components:unit fromDate:self toDate:[NSDate date] options:0];
+    int unit = NSCalendarUnitYear |
+                NSCalendarUnitMonth |
+                NSCalendarUnitDay |
+                NSCalendarUnitHour |
+                NSCalendarUnitMinute |
+                NSCalendarUnitSecond;
+    
+    return [calendar components:unit
+                       fromDate:self
+                         toDate:[NSDate date]
+                        options:0];
 }
 @end

@@ -9,6 +9,10 @@
 #ifndef YUCategory_h
 #define YUCategory_h
 
+#import "YUFoundation.h"
+#import "YUUIKit.h"
+
+//-------------以下是旧的需要改--------------
 #import "UIView+YU_frame.h"
 #import "NSArray+YU_NSLog.h"
 #import "NSDate+YU_Extension.h"
