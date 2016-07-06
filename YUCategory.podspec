@@ -1,4 +1,4 @@
-version = "1.2.18";
+version = "1.2.19";
 
 Pod::Spec.new do |s|
   s.name     = 'YUCategory'
@@ -15,8 +15,6 @@ Pod::Spec.new do |s|
   s.source_files = 'YUCategory', 'YUCategory/*.{h,m}'
   
   s.subspec 'UIKit' do |ss|
-    ss.ios.deployment_target = '7.0'
-    ss.source_files = 'YUCategory/UIKit/**/*.{h,m}'
 
     ss.subspec 'UIView' do |sss|
       sss.ios.deployment_target = '7.0'
@@ -25,8 +23,6 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Foundation' do |ss|
-    ss.ios.deployment_target = '7.0'
-    ss.source_files = 'YUCategory/Foundation/**/*.{h,m}'
 
     ss.subspec 'NSString' do |sss|
       sss.ios.deployment_target = '7.0'
