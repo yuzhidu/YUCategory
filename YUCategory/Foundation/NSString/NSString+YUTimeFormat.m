@@ -1,9 +1,12 @@
 //
-//  NSString+YUTimeFormat.m
-//  YUCategoryDemo
 //
-//  Created by mayubo on 16/7/7.
-//  Copyright © 2016年 mayubo. All rights reserved.
+//  关注微博：裕之都
+//  微博地址：http://weibo.com/gou9527
+//
+//  Github：https://github.com/yuzhidu
+//  Copyright © 裕之都. All rights reserved.
+//
+//  时间格式化为字符串
 //
 
 #import "NSString+YUTimeFormat.h"

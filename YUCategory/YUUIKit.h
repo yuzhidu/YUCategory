@@ -1,14 +1,21 @@
 //
 //  YUUIKit.h
-//  YUCategoryDemo
 //
-//  Created by 马裕博 on 16/7/6.
-//  Copyright © 2016年 mayubo. All rights reserved.
+//  关注微博：裕之都
+//  微博地址：http://weibo.com/gou9527
+//
+//  Github：https://github.com/yuzhidu
+//  Copyright © 裕之都. All rights reserved.
 //
 
 #ifndef YUUIKit_h
 #define YUUIKit_h
 
 #import "UIView+YUFrame.h"
+
+#import "UILabel+YUTextSize.h"
+
+#import "UIImage+YUResize.h"
+#import "UIImage+YUScale.h"
 
 #endif /* YUUIKit_h */

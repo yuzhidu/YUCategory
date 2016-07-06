@@ -9,6 +9,7 @@
 //  字符串空判断
 // 一个或者多个空格也算是空
 //
+
 #import "NSString+YUEmpty.h"
 
 @implementation NSString (YUEmpty)
