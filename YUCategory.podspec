@@ -1,4 +1,4 @@
-version = "1.2.10";
+version = "1.2.11";
 
 Pod::Spec.new do |s|
   s.name     = 'YUCategory'
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.frameworks = 'Foundation', 'UIKit'
   s.source   = { :git => 'https://github.com/yuzhidu/YUCategory.git', :tag => "#{version}" }
-  s.public_header_files = 'YUCategory/YUCategory.h'
+  s.source_files = 'YUCategory'
   
   s.subspec 'UIKit' do |ss|
     ss.ios.deployment_target = '7.0'
