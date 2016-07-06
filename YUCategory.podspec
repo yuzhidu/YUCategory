@@ -12,15 +12,15 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.frameworks = 'Foundation', 'UIKit'
   s.source   = { :git => 'https://github.com/yuzhidu/YUCategory.git', :tag => "#{version}" }
-  s.source_files = 'YUCategory'
+  s.source_files = 'YUCategory', 'YUCategory/*.{h}'
   
   s.subspec 'UIKit' do |ss|
     ss.ios.deployment_target = '7.0'
-    ss.source_files = 'YUCategory/UIKit'
+    ss.source_files = 'YUCategory/UIKit/**/*.{h,m}'
   end
   
   s.subspec 'Foundation' do |ss|
     ss.ios.deployment_target = '7.0'
-    ss.source_files = 'YUCategory/Foundation'
+    ss.source_files = 'YUCategory/Foundation/**/*.{h,m}'
   end
 end
