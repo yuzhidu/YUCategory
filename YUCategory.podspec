@@ -1,4 +1,4 @@
-version = "1.2.9";
+version = "1.2.10";
 
 Pod::Spec.new do |s|
   s.name     = 'YUCategory'
@@ -10,8 +10,17 @@ Pod::Spec.new do |s|
   s.platform              = :ios, '7.0'
   s.requires_arc = true
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
-  s.frameworks = 'Foundation', 'UIKit', 'CoreData', 'QuartzCore', 'CoreLocation', 'MapKit'
+  s.frameworks = 'Foundation', 'UIKit'
   s.source   = { :git => 'https://github.com/yuzhidu/YUCategory.git', :tag => "#{version}" }
-  s.source_files = "YUCategory", "YUCategory/*.{h,m}","YUCategory/**/*.{h,m}"
-  #s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
+  s.public_header_files = 'YUCategory/YUCategory.h'
+  
+  s.subspec 'UIKit' do |ss|
+    ss.ios.deployment_target = '7.0'
+    ss.source_files = 'YUCategory/UIKit'
+  end
+  
+  s.subspec 'Foundation' do |ss|
+    ss.ios.deployment_target = '7.0'
+    ss.source_files = 'YUCategory/Foundation'
+  end
 end
