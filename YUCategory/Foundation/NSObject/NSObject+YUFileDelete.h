@@ -1,18 +1,17 @@
 //
-//  NSObject+YU_deleteFile.h
 //
 //  关注微博：裕之都
 //  微博地址：http://weibo.com/gou9527
 //
 //  Github：https://github.com/yuzhidu
 //  Copyright © 裕之都. All rights reserved.
-//  使用环境:ARC
-//  Version:1.1
+//
+//  删除沙盒文件
+//
 
 #import <Foundation/Foundation.h>
 
-@interface NSObject (YU_deleteFile)
-
+@interface NSObject (YUFileDelete)
 /**
  *  1.删除 Document 目录下文件
  */
@@ -46,4 +45,5 @@
  *  删除录音文件（自己用），文件存在 tmp 下
  */
 - (BOOL)yu_deleteVoiceFile;
+
 @end

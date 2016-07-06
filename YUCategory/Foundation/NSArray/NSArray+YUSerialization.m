@@ -1,5 +1,4 @@
 //
-//  NSDictionary+Serialization
 //
 //  关注微博：裕之都
 //  微博地址：http://weibo.com/gou9527
@@ -7,23 +6,25 @@
 //  Github：https://github.com/yuzhidu
 //  Copyright © 裕之都. All rights reserved.
 //
-//  Version:1.0
+//  将数组 序列化为 Json 串
 //
 
-#import "NSDictionary+Serialization.h"
+#import "NSArray+YUSerialization.h"
 
-@implementation NSDictionary (Serialization)
-
-- (NSString*)yu_serializationNSDictionaryToJson {
+@implementation NSArray (YUSerialization)
+- (NSString *)yu_serializationNSArrayToJson {
     NSError *error;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self
                                                        options:NSJSONWritingPrettyPrinted
                                                          error:&error];
     
     if (! jsonData) {
-        NSLog(@"NSDictionary+Serialization error: %@", error.localizedDescription);
+#ifdef DEBUG
+        NSLog(@"NSArray+Serialization error: %@", error.localizedDescription);
+#endif
         return nil;
-    } else {
+    }
+    else {
         return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     }
 }

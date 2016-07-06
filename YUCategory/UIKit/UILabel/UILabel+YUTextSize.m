@@ -1,20 +1,19 @@
 //
-//  UILabel+YU_textSize.m
 //
 //  关注微博：裕之都
 //  微博地址：http://weibo.com/gou9527
 //
 //  Github：https://github.com/yuzhidu
 //  Copyright © 裕之都. All rights reserved.
-//  使用环境:ARC
-//  Version:1.0
+//
+//  计算Label的内容大小，使用Label的字体、段落风格
+//
 
-#import "UILabel+YU_textSize.h"
+#import "UILabel+YUTextSize.h"
 
-@implementation UILabel (YU_textSize)
+@implementation UILabel (YUTextSize)
 
-- (CGSize)yu_ContentSize
-{
+- (CGSize)yu_textSize {
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
     paragraphStyle.alignment = self.textAlignment;
@@ -28,4 +27,5 @@
                                                  context:nil].size;
     return contentSize;
 }
+
 @end

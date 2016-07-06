@@ -1,21 +1,20 @@
 //
-//  NSObject+YU_deleteFile.m
 //
 //  关注微博：裕之都
 //  微博地址：http://weibo.com/gou9527
 //
 //  Github：https://github.com/yuzhidu
 //  Copyright © 裕之都. All rights reserved.
-//  使用环境:ARC
-//  Version:1.1
+//
+//  删除沙盒文件
+//
 
-#import "NSObject+YU_deleteFile.h"
+#import "NSObject+YUFileDelete.h"
 
 static NSString *const kAccountFile = @"account.data";
 static NSString *const kRecordAudioFile = @"myRecord.wav";
 
-@implementation NSObject (YU_deleteFile)
-
+@implementation NSObject (YUFileDelete)
 /**
  *  1.删除 Document 目录下文件
  */
@@ -42,8 +41,8 @@ static NSString *const kRecordAudioFile = @"myRecord.wav";
     return [self yu_deleteFileWithPathStr:uniquePath fileName:fileName];
 }
 
-- (BOOL)yu_deleteFileWithDirPath:(NSSearchPathDirectory)dirPath fileName:(NSString *)fileName
-{
+- (BOOL)yu_deleteFileWithDirPath:(NSSearchPathDirectory)dirPath fileName:(NSString *)fileName {
+    
     NSArray *paths = NSSearchPathForDirectoriesInDomains(dirPath, NSUserDomainMask, YES);
     // 文件路径
     NSString *uniquePath = [[paths firstObject] stringByAppendingPathComponent:fileName];
@@ -54,15 +53,16 @@ static NSString *const kRecordAudioFile = @"myRecord.wav";
 /**
  *  5.删除 指定目录下 文件
  */
-- (BOOL)yu_deleteFileWithPathStr:(NSString *)pathStr fileName:(NSString *)fileName
-{
+- (BOOL)yu_deleteFileWithPathStr:(NSString *)pathStr fileName:(NSString *)fileName {
+    
     NSFileManager *fileManager = [NSFileManager defaultManager];
     BOOL haveFile = [fileManager fileExistsAtPath:pathStr];
     
-    if (!haveFile) {
+    if (! haveFile) {
         // File not exist
         return NO;
-    } else {
+    }
+    else {
         // File exist
         return [fileManager removeItemAtPath:pathStr error:nil];
     }
@@ -70,13 +70,11 @@ static NSString *const kRecordAudioFile = @"myRecord.wav";
 
 
 //--------------------------------我自己用的-------------------------------//
-- (BOOL)yu_deleteAccountFile
-{
+- (BOOL)yu_deleteAccountFile {
     return [self yu_deleteDocumentFileWith:kAccountFile];
 }
 
-- (BOOL)yu_deleteVoiceFile
-{
+- (BOOL)yu_deleteVoiceFile {
     return [self yu_deleteTmpFileWith:kRecordAudioFile];
 }
 @end

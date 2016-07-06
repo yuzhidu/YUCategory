@@ -1,4 +1,4 @@
-version = "1.2.19";
+version = "1.2.20";
 
 Pod::Spec.new do |s|
   s.name     = 'YUCategory'
@@ -20,13 +20,43 @@ Pod::Spec.new do |s|
       sss.ios.deployment_target = '7.0'
       sss.source_files = 'YUCategory/UIKit/UIView/*.{h,m}'
     end
+
+    ss.subspec 'UILabel' do |sss|
+      sss.ios.deployment_target = '7.0'
+      sss.source_files = 'YUCategory/UIKit/UILabel/*.{h,m}'
+    end
+
+    ss.subspec 'UIImage' do |sss|
+      sss.ios.deployment_target = '7.0'
+      sss.source_files = 'YUCategory/UIKit/UIImage/*.{h,m}'
+    end
   end
 
   s.subspec 'Foundation' do |ss|
 
+    ss.subspec 'NSObject' do |sss|
+      sss.ios.deployment_target = '7.0'
+      sss.source_files = 'YUCategory/Foundation/NSObject/*.{h,m}'
+    end
+
     ss.subspec 'NSString' do |sss|
       sss.ios.deployment_target = '7.0'
       sss.source_files = 'YUCategory/Foundation/NSString/*.{h,m}'
+    end
+
+    ss.subspec 'NSAttributedString' do |sss|
+      sss.ios.deployment_target = '7.0'
+      sss.source_files = 'YUCategory/Foundation/NSAttributedString/*.{h,m}'
+    end
+
+    ss.subspec 'NSArray' do |sss|
+      sss.ios.deployment_target = '7.0'
+      sss.source_files = 'YUCategory/Foundation/NSArray/*.{h,m}'
+    end
+
+    ss.subspec 'NSDictionary' do |sss|
+      sss.ios.deployment_target = '7.0'
+      sss.source_files = 'YUCategory/Foundation/NSDictionary/*.{h,m}'
     end
   end
   

@@ -1,21 +1,20 @@
 //
-//  NSArray+YU_NSLog.h
-//  NSDictionary+YU_NSLog
 //
 //  关注微博：裕之都
 //  微博地址：http://weibo.com/gou9527
 //
 //  Github：https://github.com/yuzhidu
 //  Copyright © 裕之都. All rights reserved.
-//  
-//  Version:1.1
+//
+//  时间格式化为字符串
+//
 
 #import <Foundation/Foundation.h>
 
-@interface NSArray (YU_NSLog)
+@interface NSString (YUTimeFormat)
 
-@end
-
-@interface NSDictionary (YU_NSLog)
-
+/**
+ *  将 “秒数” 转换为 几天几小时几分几秒
+ */
++ (NSString *)yu_timeFormatted:(NSInteger)totalSeconds;
 @end

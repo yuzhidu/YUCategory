@@ -12,4 +12,8 @@
 
 #import "NSString+YURegEx.h"
 
+#import "NSDictionary+YUFormatNSLog.h"
+
+#import "NSArray+YUFormatNSLog.h"
+
 #endif /* YUFoundation_h */
