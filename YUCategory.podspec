@@ -1,4 +1,4 @@
-version = "1.2.20";
+version = "1.2.22";
 
 Pod::Spec.new do |s|
   s.name     = 'YUCategory'
