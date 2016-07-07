@@ -88,12 +88,12 @@
 		0C56F36A1D2D7347007D0C83 /* NSString+YUMatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YUMatch.m"; sourceTree = "<group>"; };
 		0C56F36C1D2D7551007D0C83 /* NSString+YUEmpty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YUEmpty.h"; sourceTree = "<group>"; };
 		0C56F36D1D2D7551007D0C83 /* NSString+YUEmpty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YUEmpty.m"; sourceTree = "<group>"; };
+		6A2695641D2E1E8700F787D5 /* YUFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUFoundation.h; sourceTree = "<group>"; };
 		6A500ECC1C9C117E00F9A7D8 /* UIBarButtonItem+YU_custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+YU_custom.h"; sourceTree = "<group>"; };
 		6A500ECD1C9C117E00F9A7D8 /* UIBarButtonItem+YU_custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+YU_custom.m"; sourceTree = "<group>"; };
 		6A86945F1C58CA3700442B7C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6AAA01271D2CF64D00A43696 /* NSString+YURegEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YURegEx.h"; sourceTree = "<group>"; };
 		6AAA01281D2CF64D00A43696 /* NSString+YURegEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YURegEx.m"; sourceTree = "<group>"; };
-		6AAA012A1D2CFB8700A43696 /* YUFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUFoundation.h; sourceTree = "<group>"; };
 		6AAA012D1D2D0BC000A43696 /* UIView+YUFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YUFrame.h"; sourceTree = "<group>"; };
 		6AAA012E1D2D0BC000A43696 /* UIView+YUFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YUFrame.m"; sourceTree = "<group>"; };
 		6AAA01301D2D0C9700A43696 /* YUUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUIKit.h; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 				6A500ECC1C9C117E00F9A7D8 /* UIBarButtonItem+YU_custom.h */,
 				6A500ECD1C9C117E00F9A7D8 /* UIBarButtonItem+YU_custom.m */,
 				0C4EB7C81C57B44C00009C29 /* YUCategory.h */,
-				6AAA012A1D2CFB8700A43696 /* YUFoundation.h */,
+				6A2695641D2E1E8700F787D5 /* YUFoundation.h */,
 				6AAA01301D2D0C9700A43696 /* YUUIKit.h */,
 			);
 			path = YUCategory;

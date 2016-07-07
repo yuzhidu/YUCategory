@@ -1,4 +1,4 @@
-version = "1.3.10";
+version = "1.3.12";
 
 Pod::Spec.new do |s|
   s.name     = 'YUCategory'
@@ -11,7 +11,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.frameworks = 'Foundation', 'UIKit', 'CoreData', 'QuartzCore', 'CoreLocation', 'MapKit'
-  s.public_header_files = 'YUCategory/YUCategory.h'
   s.source   = { :git => 'https://github.com/yuzhidu/YUCategory.git', :tag => "#{version}" }
   s.source_files = 'YUCategory', 'YUCategory/*.{h,m}'
   
