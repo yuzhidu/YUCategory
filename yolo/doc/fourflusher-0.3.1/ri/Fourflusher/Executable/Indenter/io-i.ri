@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"io:ETI")Fourflusher::Executable::Indenter#io;FI"RW;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"A@return [IO] the {IO} to which the output should be printed.;T:
+@fileI""lib/fourflusher/executable.rb;T:0@omit_headings_from_table_of_contents_below0F@I"&Fourflusher::Executable::Indenter;FcRDoc::NormalClass0
