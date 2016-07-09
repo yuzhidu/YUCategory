@@ -31,6 +31,7 @@
 
 #import "NSArray+YUFormatNSLog.h"
 #import "NSArray+YUSerialization.h"
+#import "NSDictionary+YUSafeAccess.h"
 
 #import "NSDate+YUFormat.h"
 #import "NSDate+YUJudge.h"

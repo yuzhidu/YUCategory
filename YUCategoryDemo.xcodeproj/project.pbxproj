@@ -13,6 +13,7 @@
 		0C1FE28E1C57B3C1003434E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C1FE28C1C57B3C1003434E3 /* Main.storyboard */; };
 		0C1FE2901C57B3C1003434E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C1FE28F1C57B3C1003434E3 /* Assets.xcassets */; };
 		0C1FE2931C57B3C1003434E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C1FE2911C57B3C1003434E3 /* LaunchScreen.storyboard */; };
+		0C4F03141D3134C800A0AC15 /* NSDictionary+YUSafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4F03131D3134C800A0AC15 /* NSDictionary+YUSafeAccess.m */; };
 		0C56F3301D2D5805007D0C83 /* NSArray+YUFormatNSLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56F32F1D2D5805007D0C83 /* NSArray+YUFormatNSLog.m */; };
 		0C56F3341D2D5844007D0C83 /* NSDictionary+YUFormatNSLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56F3331D2D5844007D0C83 /* NSDictionary+YUFormatNSLog.m */; };
 		0C56F3371D2D5B51007D0C83 /* NSArray+YUSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56F3361D2D5B51007D0C83 /* NSArray+YUSerialization.m */; };
@@ -52,6 +53,8 @@
 		0C1FE2921C57B3C1003434E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C1FE2941C57B3C1003434E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C4EB7C81C57B44C00009C29 /* YUCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUCategory.h; sourceTree = "<group>"; };
+		0C4F03121D3134C800A0AC15 /* NSDictionary+YUSafeAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+YUSafeAccess.h"; sourceTree = "<group>"; };
+		0C4F03131D3134C800A0AC15 /* NSDictionary+YUSafeAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+YUSafeAccess.m"; sourceTree = "<group>"; };
 		0C56F32E1D2D5805007D0C83 /* NSArray+YUFormatNSLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+YUFormatNSLog.h"; sourceTree = "<group>"; };
 		0C56F32F1D2D5805007D0C83 /* NSArray+YUFormatNSLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YUFormatNSLog.m"; sourceTree = "<group>"; };
 		0C56F3321D2D5844007D0C83 /* NSDictionary+YUFormatNSLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+YUFormatNSLog.h"; sourceTree = "<group>"; };
@@ -189,6 +192,8 @@
 				0C56F3331D2D5844007D0C83 /* NSDictionary+YUFormatNSLog.m */,
 				0C56F3381D2D5C20007D0C83 /* NSDictionary+YUSerialization.h */,
 				0C56F3391D2D5C20007D0C83 /* NSDictionary+YUSerialization.m */,
+				0C4F03121D3134C800A0AC15 /* NSDictionary+YUSafeAccess.h */,
+				0C4F03131D3134C800A0AC15 /* NSDictionary+YUSafeAccess.m */,
 			);
 			path = NSDictionary;
 			sourceTree = "<group>";
@@ -390,6 +395,7 @@
 				0C56F3341D2D5844007D0C83 /* NSDictionary+YUFormatNSLog.m in Sources */,
 				0C1FE28B1C57B3C1003434E3 /* ViewController.m in Sources */,
 				0C56F3371D2D5B51007D0C83 /* NSArray+YUSerialization.m in Sources */,
+				0C4F03141D3134C800A0AC15 /* NSDictionary+YUSafeAccess.m in Sources */,
 				0C56F3651D2D7210007D0C83 /* NSString+YUOther.m in Sources */,
 				0C56F36E1D2D7551007D0C83 /* NSString+YUEmpty.m in Sources */,
 				6AF1999C1D31046500FC6C6D /* NSDate+YUJudge.m in Sources */,
