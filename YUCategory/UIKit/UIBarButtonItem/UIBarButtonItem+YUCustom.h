@@ -1,17 +1,14 @@
 //
-//  UIBarButtonItem+YU_custom.h
+//  UIBarButtonItem+YUCustom.h
+//  YUCategoryDemo
 //
-//  关注微博：裕之都
-//  微博地址：http://weibo.com/gou9527
+//  Created by 马裕博 on 16/7/9.
+//  Copyright © 2016年 mayubo. All rights reserved.
 //
-//  Github：https://github.com/yuzhidu
-//  Copyright © 裕之都. All rights reserved.
-//  使用环境:ARC
-//  Version:1.2
 
 #import <UIKit/UIKit.h>
 
-@interface UIBarButtonItem (YU_custom)
+@interface UIBarButtonItem (YUCustom)
 
 /**
  *  1.只有图片

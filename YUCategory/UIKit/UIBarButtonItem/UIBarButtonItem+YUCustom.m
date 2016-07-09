@@ -1,25 +1,21 @@
 //
-//  UIBarButtonItem+YU_custom.h
+//  UIBarButtonItem+YUCustom.m
+//  YUCategoryDemo
 //
-//  关注微博：裕之都
-//  微博地址：http://weibo.com/gou9527
+//  Created by 马裕博 on 16/7/9.
+//  Copyright © 2016年 mayubo. All rights reserved.
 //
-//  Github：https://github.com/yuzhidu
-//  Copyright © 裕之都. All rights reserved.
-//  使用环境:ARC
-//  Version:1.2
 
-#import "UIBarButtonItem+YU_custom.h"
+#import "UIBarButtonItem+YUCustom.h"
 
 static const CGFloat kBarButtonHeight = 20.0f;
 static const CGFloat kFontSize = 16.0f;
 static const CGFloat kTitleMaxWidth = 120.0f;
 static const CGFloat kTitleMaxHeight = 44.0f;
 
-#define kTitleColor     [UIColor whiteColor]
+#define kBarButtonItemCustomTitleColor     [UIColor whiteColor]
 
-@implementation UIBarButtonItem (YU_custom)
-
+@implementation UIBarButtonItem (YUCustom)
 /**
  *  1.只有图片
  */
@@ -57,7 +53,7 @@ static const CGFloat kTitleMaxHeight = 44.0f;
     UILabel *titleLab = [[UILabel alloc] init];
     titleLab.textAlignment = NSTextAlignmentCenter;
     titleLab.font = [UIFont systemFontOfSize:kFontSize];
-    titleLab.textColor = kTitleColor;
+    titleLab.textColor = kBarButtonItemCustomTitleColor;
     [control addSubview:titleLab];
     
     NSDictionary *attrs = @{NSFontAttributeName : titleLab.font};
@@ -96,7 +92,7 @@ static const CGFloat kTitleMaxHeight = 44.0f;
     UILabel *titleLab = [[UILabel alloc] init];
     titleLab.textAlignment = NSTextAlignmentCenter;
     titleLab.font = [UIFont systemFontOfSize:kFontSize];
-    titleLab.textColor = kTitleColor;
+    titleLab.textColor = kBarButtonItemCustomTitleColor;
     [control addSubview:titleLab];
     
     NSDictionary *attrs = @{NSFontAttributeName : titleLab.font};
@@ -109,7 +105,7 @@ static const CGFloat kTitleMaxHeight = 44.0f;
     titleLab.frame = CGRectMake(kBarButtonHeight, 0, controlSize.size.width, kBarButtonHeight);
     
     control.frame = CGRectMake(0, 0, kBarButtonHeight+controlSize.size.width+1, kBarButtonHeight);
-
+    
     return [[UIBarButtonItem alloc] initWithCustomView:control];
 }
 
@@ -128,7 +124,7 @@ static const CGFloat kTitleMaxHeight = 44.0f;
     
     UILabel *titleLab = [[UILabel alloc] init];
     titleLab.font = [UIFont systemFontOfSize:kFontSize];
-    titleLab.textColor = kTitleColor;
+    titleLab.textColor = kBarButtonItemCustomTitleColor;
     [control addSubview:titleLab];
     
     NSDictionary *attrs = @{NSFontAttributeName : titleLab.font};

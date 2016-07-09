@@ -1,4 +1,4 @@
-version = "1.3.13";
+version = "1.3.14";
 
 Pod::Spec.new do |s|
   s.name     = 'YUCategory'
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.frameworks = 'Foundation', 'UIKit', 'CoreData', 'QuartzCore', 'CoreLocation', 'MapKit'
   s.source   = { :git => 'https://github.com/yuzhidu/YUCategory.git', :tag => "#{version}" }
-  s.source_files = 'YUCategory', 'YUCategory/*.{h,m}'
+  s.source_files = 'YUCategory', 'YUCategory/*.{h}'
   
   s.subspec 'UIKit' do |ss|
 
@@ -30,6 +30,12 @@ Pod::Spec.new do |s|
       sss.ios.deployment_target = '7.0'
       sss.source_files = 'YUCategory/UIKit/UIImage/*.{h,m}'
     end
+
+    ss.subspec 'UIBarButtonItem' do |sss|
+      sss.ios.deployment_target = '7.0'
+      sss.source_files = 'YUCategory/UIKit/UIBarButtonItem/*.{h,m}'
+    end
+
   end
 
   s.subspec 'Foundation' do |ss|
@@ -57,6 +63,11 @@ Pod::Spec.new do |s|
     ss.subspec 'NSDictionary' do |sss|
       sss.ios.deployment_target = '7.0'
       sss.source_files = 'YUCategory/Foundation/NSDictionary/*.{h,m}'
+    end
+
+    ss.subspec 'NSDate' do |sss|
+      sss.ios.deployment_target = '7.0'
+      sss.source_files = 'YUCategory/Foundation/NSDate/*.{h,m}'
     end
   end
   

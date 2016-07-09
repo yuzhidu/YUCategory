@@ -1,15 +1,14 @@
 //
-//  NSDate+YU_Extension.h
 //
 //  关注微博：裕之都
 //  微博地址：http://weibo.com/gou9527
 //
 //  Github：https://github.com/yuzhidu
 //  Copyright © 裕之都. All rights reserved.
-//  
-//  Version:1.2
-
+//
+//
 //  格式：@"yyyy-MM-dd HH:mm:ss"
+//
 
 #import <Foundation/Foundation.h>
 
@@ -27,7 +26,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
     DateFormatModeText
 };
 
-@interface NSDate (YU_Extension)
+@interface NSDate (YUFormat)
 
 /**
  *  1.1 格式化当前(Now)日期
@@ -83,27 +82,4 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
  */
 + (NSString *)yu_dateAppendWeekWith:(NSDate *)date dateFormat:(NSString *)dateFormat;
 
-//-----------------------------------------我是主人“裕之都”的分割线---------------------------//
-/**
- *  是否为今天
- */
-- (BOOL)yu_isToday;
-/**
- *  是否为昨天
- */
-- (BOOL)yu_isYesterday;
-/**
- *  是否为今年
- */
-- (BOOL)yu_isThisYear;
-
-/**
- *  返回一个只有年月日的时间 @"yyyy-MM-dd"
- */
-- (NSDate *)yu_dateWithYMD;
-
-/**
- *  获得与当前时间的差距
- */
-- (NSDateComponents *)yu_deltaWithNow;
 @end
