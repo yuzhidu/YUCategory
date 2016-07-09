@@ -18,4 +18,6 @@
 #import "UIImage+YUResize.h"
 #import "UIImage+YUScale.h"
 
+#import "UIBarButtonItem+YUCustom.h"
+
 #endif /* YUUIKit_h */

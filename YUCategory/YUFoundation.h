@@ -32,4 +32,8 @@
 #import "NSArray+YUFormatNSLog.h"
 #import "NSArray+YUSerialization.h"
 
+#import "NSDate+YUFormat.h"
+#import "NSDate+YUJudge.h"
+#import "NSDate+YUOther.h"
+
 #endif /* YUFoundation_h */
