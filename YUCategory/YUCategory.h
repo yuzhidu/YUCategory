@@ -12,8 +12,4 @@
 #import "YUFoundation.h"
 #import "YUUIKit.h"
 
-//-------------以下是旧的需要改--------------
-#import "NSDate+YU_Extension.h"
-#import "UIBarButtonItem+YU_custom.h"
-
 #endif /* YUCategory_h */
