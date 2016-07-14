@@ -21,7 +21,6 @@
 		0C56F33E1D2D5CDC007D0C83 /* UILabel+YUTextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56F33D1D2D5CDC007D0C83 /* UILabel+YUTextSize.m */; };
 		0C56F3421D2D5E84007D0C83 /* NSAttributedString+YUTextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56F3411D2D5E84007D0C83 /* NSAttributedString+YUTextSize.m */; };
 		0C56F3491D2D612D007D0C83 /* UIImage+YUResize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56F3481D2D612D007D0C83 /* UIImage+YUResize.m */; };
-		0C56F34C1D2D6353007D0C83 /* UIImage+YUScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56F34B1D2D6353007D0C83 /* UIImage+YUScale.m */; };
 		0C56F3501D2D66AD007D0C83 /* NSObject+YUFileDelete.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56F34F1D2D66AD007D0C83 /* NSObject+YUFileDelete.m */; };
 		0C56F3531D2D6978007D0C83 /* NSString+YUSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56F3521D2D6978007D0C83 /* NSString+YUSize.m */; };
 		0C56F3561D2D6A75007D0C83 /* NSString+YUBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56F3551D2D6A75007D0C83 /* NSString+YUBase.m */; };
@@ -32,6 +31,7 @@
 		0C56F3651D2D7210007D0C83 /* NSString+YUOther.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56F3641D2D7210007D0C83 /* NSString+YUOther.m */; };
 		0C56F36B1D2D7348007D0C83 /* NSString+YUMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56F36A1D2D7347007D0C83 /* NSString+YUMatch.m */; };
 		0C56F36E1D2D7551007D0C83 /* NSString+YUEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56F36D1D2D7551007D0C83 /* NSString+YUEmpty.m */; };
+		6A71688A1D37817F0065EE35 /* UIImage+YUCompress.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7168891D37817F0065EE35 /* UIImage+YUCompress.m */; };
 		6A8694601C58CA3700442B7C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A86945F1C58CA3700442B7C /* CoreGraphics.framework */; };
 		6AAA01291D2CF64D00A43696 /* NSString+YURegEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAA01281D2CF64D00A43696 /* NSString+YURegEx.m */; };
 		6AAA012F1D2D0BC000A43696 /* UIView+YUFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAA012E1D2D0BC000A43696 /* UIView+YUFrame.m */; };
@@ -69,8 +69,6 @@
 		0C56F3411D2D5E84007D0C83 /* NSAttributedString+YUTextSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+YUTextSize.m"; sourceTree = "<group>"; };
 		0C56F3471D2D612D007D0C83 /* UIImage+YUResize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+YUResize.h"; sourceTree = "<group>"; };
 		0C56F3481D2D612D007D0C83 /* UIImage+YUResize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YUResize.m"; sourceTree = "<group>"; };
-		0C56F34A1D2D6353007D0C83 /* UIImage+YUScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+YUScale.h"; sourceTree = "<group>"; };
-		0C56F34B1D2D6353007D0C83 /* UIImage+YUScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YUScale.m"; sourceTree = "<group>"; };
 		0C56F34E1D2D66AD007D0C83 /* NSObject+YUFileDelete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YUFileDelete.h"; sourceTree = "<group>"; };
 		0C56F34F1D2D66AD007D0C83 /* NSObject+YUFileDelete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YUFileDelete.m"; sourceTree = "<group>"; };
 		0C56F3511D2D6978007D0C83 /* NSString+YUSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YUSize.h"; sourceTree = "<group>"; };
@@ -92,6 +90,8 @@
 		0C56F36C1D2D7551007D0C83 /* NSString+YUEmpty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YUEmpty.h"; sourceTree = "<group>"; };
 		0C56F36D1D2D7551007D0C83 /* NSString+YUEmpty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YUEmpty.m"; sourceTree = "<group>"; };
 		6A2695641D2E1E8700F787D5 /* YUFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUFoundation.h; sourceTree = "<group>"; };
+		6A7168881D37817F0065EE35 /* UIImage+YUCompress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+YUCompress.h"; sourceTree = "<group>"; };
+		6A7168891D37817F0065EE35 /* UIImage+YUCompress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YUCompress.m"; sourceTree = "<group>"; };
 		6A86945F1C58CA3700442B7C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6AAA01271D2CF64D00A43696 /* NSString+YURegEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YURegEx.h"; sourceTree = "<group>"; };
 		6AAA01281D2CF64D00A43696 /* NSString+YURegEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YURegEx.m"; sourceTree = "<group>"; };
@@ -221,8 +221,8 @@
 			children = (
 				0C56F3471D2D612D007D0C83 /* UIImage+YUResize.h */,
 				0C56F3481D2D612D007D0C83 /* UIImage+YUResize.m */,
-				0C56F34A1D2D6353007D0C83 /* UIImage+YUScale.h */,
-				0C56F34B1D2D6353007D0C83 /* UIImage+YUScale.m */,
+				6A7168881D37817F0065EE35 /* UIImage+YUCompress.h */,
+				6A7168891D37817F0065EE35 /* UIImage+YUCompress.m */,
 			);
 			path = UIImage;
 			sourceTree = "<group>";
@@ -390,7 +390,6 @@
 			files = (
 				0C56F35F1D2D6FCC007D0C83 /* NSString+YUAppendPath.m in Sources */,
 				6AF199991D31034200FC6C6D /* NSDate+YUFormat.m in Sources */,
-				0C56F34C1D2D6353007D0C83 /* UIImage+YUScale.m in Sources */,
 				0C56F35C1D2D6D31007D0C83 /* NSString+YUHash.m in Sources */,
 				0C56F3341D2D5844007D0C83 /* NSDictionary+YUFormatNSLog.m in Sources */,
 				0C1FE28B1C57B3C1003434E3 /* ViewController.m in Sources */,
@@ -414,6 +413,7 @@
 				0C56F3531D2D6978007D0C83 /* NSString+YUSize.m in Sources */,
 				0C56F33E1D2D5CDC007D0C83 /* UILabel+YUTextSize.m in Sources */,
 				0C1FE2881C57B3C1003434E3 /* AppDelegate.m in Sources */,
+				6A71688A1D37817F0065EE35 /* UIImage+YUCompress.m in Sources */,
 				0C1FE2851C57B3C1003434E3 /* main.m in Sources */,
 				0C56F3561D2D6A75007D0C83 /* NSString+YUBase.m in Sources */,
 			);
