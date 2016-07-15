@@ -36,17 +36,17 @@
 /**
  *  1.改变图片尺寸，正方形图片，指定图片宽高尺寸
  */
-- (UIImage *)yu_scaleWithSize:(CGFloat)newSize;
++ (UIImage *)yu_scaleImage:(UIImage *)sourceImage withSize:(CGFloat)newSize;
 
 /**
  *  2.改变图片尺寸，指定图片宽，高度根据宽度自动计算
  */
-- (UIImage *)yu_scaleWithWidth:(CGFloat)newWidth;
++ (UIImage *)yu_scaleImage:(UIImage *)sourceImage withWidth:(CGFloat)newWidth;
 
 /**
  *  3.改变图片尺寸，指定图片高，宽度根据高度自动计算
  */
-- (UIImage *)yu_scaleWithHeight:(CGFloat)newHeight;
++ (UIImage *)yu_scaleImage:(UIImage *)sourceImage withHeight:(CGFloat)newHeight;
 
 // Tips：如果改变的是正方形图片，上边方法1，2，3其实是等效的
 
@@ -55,20 +55,20 @@
 /**
  *  改变图片体积，使用PNG格式
  */
-- (NSData *)yu_compressByPNG;
++ (NSData *)yu_compressByPNG:(UIImage *)sourceImage;
 
 /**
  *  改变图片体积，使用JPEG格式
  */
-- (NSData *)yu_compressByJPEG_WithQuality:(CGFloat)compressionQuality;
++ (NSData *)yu_compressByJPEG:(UIImage *)sourceImage quality:(CGFloat)compressionQuality;
 
 /**
  *  计算图片字节数 PNG格式
  */
-- (NSInteger)yu_computeBytesByPNG;
++ (NSInteger)yu_computeBytesByPNG:(UIImage *)sourceImage;
 
 /**
  *  计算图片字节数 JPEG格式
  */
-- (NSInteger)yu_computeBytesByJPEG;
++ (NSInteger)yu_computeBytesByJPEG:(UIImage *)sourceImage;
 @end

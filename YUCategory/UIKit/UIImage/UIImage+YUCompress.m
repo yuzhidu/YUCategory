@@ -35,12 +35,12 @@
 /**
  *  通用方法
  */
-- (UIImage *)yu_drawWithWidth:(CGFloat)width height:(CGFloat)height {
++ (UIImage *)yu_draw:(UIImage *)image withWidth:(CGFloat)width height:(CGFloat)height {
     
     // 使用图形上下文处理
     UIGraphicsBeginImageContext(CGSizeMake(width, height));
     
-    [self drawInRect:CGRectMake(0, 0, width, height)];
+    [image drawInRect:CGRectMake(0, 0, width, height)];
     
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     
@@ -52,29 +52,29 @@
 /**
  *  1.改变图片尺寸，正方形图片，指定图片宽高尺寸
  */
-- (UIImage *)yu_scaleWithSize:(CGFloat)newSize {
++ (UIImage *)yu_scaleImage:(UIImage *)sourceImage withSize:(CGFloat)newSize {
     
-    return [self yu_drawWithWidth:newSize height:newSize];
+    return [self yu_draw:sourceImage withWidth:newSize height:newSize];
 }
 
 /**
  *  2.改变图片尺寸，指定图片宽，高度根据宽度自动计算
  */
-- (UIImage *)yu_scaleWithWidth:(CGFloat)newWidth {
++ (UIImage *)yu_scaleImage:(UIImage *)sourceImage withWidth:(CGFloat)newWidth {
     
-    CGFloat newHeight = (newWidth * self.size.height) / self.size.width;
+    CGFloat newHeight = (newWidth * sourceImage.size.height) / sourceImage.size.width;
     
-    return [self yu_drawWithWidth:newWidth height:newHeight];
+    return [self yu_draw:sourceImage withWidth:newWidth height:newHeight];
 }
 
 /**
  *  3.改变图片尺寸，指定图片高，宽度根据高度自动计算
  */
-- (UIImage *)yu_scaleWithHeight:(CGFloat)newHeight {
++ (UIImage *)yu_scaleImage:(UIImage *)sourceImage withHeight:(CGFloat)newHeight {
     
-    CGFloat newWidth = (newHeight * self.size.width) / self.size.height;
+    CGFloat newWidth = (newHeight * sourceImage.size.width) / sourceImage.size.height;
     
-    return [self yu_drawWithWidth:newWidth height:newHeight];
+    return [self yu_draw:sourceImage withWidth:newWidth height:newHeight];
 }
 
 /****************************************改变图片体积************************************/
@@ -83,17 +83,17 @@
 /**
  *  改变图片体积，使用PNG格式
  */
-- (NSData *)yu_compressByPNG {
++ (NSData *)yu_compressByPNG:(UIImage *)sourceImage {
     
     // return image as PNG.
     // May return nil if image has no CGImageRef or invalid bitmap format
-    return UIImagePNGRepresentation(self);
+    return UIImagePNGRepresentation(sourceImage);
 }
 
 /**
  *  改变图片体积，使用JPEG格式
  */
-- (NSData *)yu_compressByJPEG_WithQuality:(CGFloat)compressionQuality {
++ (NSData *)yu_compressByJPEG:(UIImage *)sourceImage quality:(CGFloat)compressionQuality {
     
     // return image as JPEG.
     // May return nil if image has no CGImageRef or invalid bitmap format.
@@ -102,24 +102,24 @@
         return nil;
     }
     else {
-        return UIImageJPEGRepresentation(self, compressionQuality);
+        return UIImageJPEGRepresentation(sourceImage, compressionQuality);
     }
 }
 
 /**
  *  计算图片字节数 PNG格式
  */
-- (NSInteger)yu_computeBytesByPNG {
++ (NSInteger)yu_computeBytesByPNG:(UIImage *)sourceImage {
     
-    NSData *data = UIImagePNGRepresentation(self);
+    NSData *data = UIImagePNGRepresentation(sourceImage);
     return [data length];
 }
 /**
  *  计算图片字节数 JPEG格式
  */
-- (NSInteger)yu_computeBytesByJPEG {
++ (NSInteger)yu_computeBytesByJPEG:(UIImage *)sourceImage {
     
-    NSData *data = UIImageJPEGRepresentation(self, 1);
+    NSData *data = UIImageJPEGRepresentation(sourceImage, 1);
     return [data length];
 }
 
