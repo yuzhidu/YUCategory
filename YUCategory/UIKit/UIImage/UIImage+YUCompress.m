@@ -35,12 +35,31 @@
 /**
  *  通用方法
  */
-+ (UIImage *)yu_draw:(UIImage *)image withWidth:(CGFloat)width height:(CGFloat)height {
+//+ (UIImage *)yu_draw:(UIImage *)image withWidth:(CGFloat)width height:(CGFloat)height {
+//    
+//    // 使用图形上下文处理
+//    UIGraphicsBeginImageContext(CGSizeMake(width, height));
+//    
+//    [image drawInRect:CGRectMake(0, 0, width, height)];
+//    
+//    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+//    
+//    UIGraphicsEndImageContext();
+//    
+//    return newImage;
+//}
+
+/**
+ *  1.改变图片尺寸，正方形图片，指定图片宽高尺寸
+ */
++ (UIImage *)yu_scaleImage:(UIImage *)sourceImage withSize:(CGFloat)newSize {
+    
+//    return [self yu_draw:sourceImage withWidth:newSize height:newSize];
     
     // 使用图形上下文处理
-    UIGraphicsBeginImageContext(CGSizeMake(width, height));
+    UIGraphicsBeginImageContext(CGSizeMake(newSize, newSize));
     
-    [image drawInRect:CGRectMake(0, 0, width, height)];
+    [sourceImage drawInRect:CGRectMake(0, 0, newSize, newSize)];
     
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     
@@ -50,21 +69,23 @@
 }
 
 /**
- *  1.改变图片尺寸，正方形图片，指定图片宽高尺寸
- */
-+ (UIImage *)yu_scaleImage:(UIImage *)sourceImage withSize:(CGFloat)newSize {
-    
-    return [self yu_draw:sourceImage withWidth:newSize height:newSize];
-}
-
-/**
  *  2.改变图片尺寸，指定图片宽，高度根据宽度自动计算
  */
 + (UIImage *)yu_scaleImage:(UIImage *)sourceImage withWidth:(CGFloat)newWidth {
     
     CGFloat newHeight = (newWidth * sourceImage.size.height) / sourceImage.size.width;
     
-    return [self yu_draw:sourceImage withWidth:newWidth height:newHeight];
+//    return [self yu_draw:sourceImage withWidth:newWidth height:newHeight];
+    // 使用图形上下文处理
+    UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight));
+    
+    [sourceImage drawInRect:CGRectMake(0, 0, newWidth, newHeight)];
+    
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 /**
@@ -74,7 +95,16 @@
     
     CGFloat newWidth = (newHeight * sourceImage.size.width) / sourceImage.size.height;
     
-    return [self yu_draw:sourceImage withWidth:newWidth height:newHeight];
+//    return [self yu_draw:sourceImage withWidth:newWidth height:newHeight];
+    UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight));
+    
+    [sourceImage drawInRect:CGRectMake(0, 0, newWidth, newHeight)];
+    
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 /****************************************改变图片体积************************************/
