@@ -15,7 +15,7 @@
 
 #import "UILabel+YUTextSize.h"
 
-#import "UIImage+YUCompress.h"
+//#import "UIImage+YUCompress.h"
 #import "UIImage+YUResize.h"
 
 #import "UIBarButtonItem+YUCustom.h"
