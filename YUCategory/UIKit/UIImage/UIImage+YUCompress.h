@@ -32,6 +32,15 @@
 
 @interface UIImage (YUCompress)
 
+/****************************************修复图片方向************************************/
+#pragma mark - 修复图片方向
+// 拍摄之后的图片会在拍摄水平的基础上自动发生90°旋转
+
+/**
+ *  修复图片旋转
+ */
++ (UIImage *)fixOrientation:(UIImage *)aImage;
+
 /****************************************改变图片尺寸************************************/
 #pragma mark - 改变图片尺寸
 /**
@@ -50,6 +59,13 @@
 + (UIImage *)yu_scaleImage:(UIImage *)sourceImage withHeight:(CGFloat)newHeight;
 
 // Tips：如果改变的是正方形图片，上边方法1，2，3其实是等效的
+
+/**
+ *  4.压缩图片，指定图片的形变值
+ *
+ *  @param scale 形变值(百分比)
+ */
++ (UIImage *)yu_scaleWithImage:(UIImage *)image scale:(CGFloat)scale;
 
 /****************************************改变图片体积************************************/
 #pragma mark - 改变图片体积

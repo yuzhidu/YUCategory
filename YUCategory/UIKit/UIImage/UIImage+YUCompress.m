@@ -30,6 +30,96 @@
 #import "UIImage+YUCompress.h"
 
 @implementation UIImage (YUCompress)
+/****************************************修复图片方向************************************/
+#pragma mark - 修复图片方向
+// 拍摄之后的图片会在拍摄水平的基础上自动发生90°旋转
+
+/**
+ *  修复图片旋转
+ */
++ (UIImage *)fixOrientation:(UIImage *)aImage {
+    
+    // No-op if the orientation is already correct
+    // 如果图片是向上的就不用旋转
+    if (aImage.imageOrientation == UIImageOrientationUp)
+        return aImage;
+    
+    // We need to calculate the proper transformation to make the image upright.
+    // We do it in 2 steps: Rotate if Left/Right/Down, and then flip if Mirrored.
+    // 我们需要计算正确的形变，保证图片向上
+    // 需要2步：从左/右/下旋转，如果镜像翻转
+    CGAffineTransform transform = CGAffineTransformIdentity;
+    
+    switch (aImage.imageOrientation) {
+        case UIImageOrientationDown:
+        case UIImageOrientationDownMirrored:
+            transform = CGAffineTransformTranslate(transform, aImage.size.width, aImage.size.height);
+            transform = CGAffineTransformRotate(transform, M_PI);
+            break;
+            
+        case UIImageOrientationLeft:
+        case UIImageOrientationLeftMirrored:
+            transform = CGAffineTransformTranslate(transform, aImage.size.width, 0);
+            transform = CGAffineTransformRotate(transform, M_PI_2);
+            break;
+            
+        case UIImageOrientationRight:
+        case UIImageOrientationRightMirrored:
+            transform = CGAffineTransformTranslate(transform, 0, aImage.size.height);
+            transform = CGAffineTransformRotate(transform, -M_PI_2);
+            break;
+        default:
+            break;
+    }
+    
+    switch (aImage.imageOrientation) {
+        case UIImageOrientationUpMirrored:
+        case UIImageOrientationDownMirrored:
+            transform = CGAffineTransformTranslate(transform, aImage.size.width, 0);
+            transform = CGAffineTransformScale(transform, -1, 1);
+            break;
+            
+        case UIImageOrientationLeftMirrored:
+        case UIImageOrientationRightMirrored:
+            transform = CGAffineTransformTranslate(transform, aImage.size.height, 0);
+            transform = CGAffineTransformScale(transform, -1, 1);
+            break;
+        default:
+            break;
+    }
+    
+    // Now we draw the underlying CGImage into a new context, applying the transform
+    // calculated above.
+    // 至此，我们把CGImage画到新的上下文中，然后应用旋转
+    // 在以上基础上计算
+    CGContextRef ctx = CGBitmapContextCreate(NULL, aImage.size.width, aImage.size.height,
+                                             CGImageGetBitsPerComponent(aImage.CGImage), 0,
+                                             CGImageGetColorSpace(aImage.CGImage),
+                                             CGImageGetBitmapInfo(aImage.CGImage));
+    CGContextConcatCTM(ctx, transform);
+    switch (aImage.imageOrientation) {
+        case UIImageOrientationLeft:
+        case UIImageOrientationLeftMirrored:
+        case UIImageOrientationRight:
+        case UIImageOrientationRightMirrored:
+            // Grr...
+            CGContextDrawImage(ctx, CGRectMake(0,0,aImage.size.height,aImage.size.width), aImage.CGImage);
+            break;
+            
+        default:
+            CGContextDrawImage(ctx, CGRectMake(0,0,aImage.size.width,aImage.size.height), aImage.CGImage);
+            break;
+    }
+    
+    // And now we just create a new UIImage from the drawing context
+    // 至此，我们就从画布中创建了一个新的 UIImage
+    CGImageRef cgimg = CGBitmapContextCreateImage(ctx);
+    UIImage *img = [UIImage imageWithCGImage:cgimg];
+    CGContextRelease(ctx);
+    CGImageRelease(cgimg);
+    return img;
+}
+
 /****************************************改变图片尺寸************************************/
 #pragma mark - 改变图片尺寸
 /**
@@ -99,6 +189,25 @@
     UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight));
     
     [sourceImage drawInRect:CGRectMake(0, 0, newWidth, newHeight)];
+    
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
+/**
+ *  4.压缩图片，指定图片的形变值
+ *
+ *  @param scale 形变值(百分比)
+ */
++ (UIImage *)yu_scaleWithImage:(UIImage *)image scale:(CGFloat)scale {
+    
+    // 使用图形上下文处理
+    UIGraphicsBeginImageContext(CGSizeMake(image.size.width*scale, image.size.height*scale));
+    
+    [image drawInRect:CGRectMake(0,0,image.size.width*scale, image.size.height*scale)];
     
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     
