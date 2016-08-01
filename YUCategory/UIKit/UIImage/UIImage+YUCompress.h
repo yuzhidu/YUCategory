@@ -39,7 +39,7 @@
 /**
  *  修复图片旋转
  */
-+ (UIImage *)fixOrientation:(UIImage *)aImage;
++ (UIImage *)yu_fixOrientation:(UIImage *)image;
 
 /****************************************改变图片尺寸************************************/
 #pragma mark - 改变图片尺寸
