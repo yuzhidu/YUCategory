@@ -11,10 +11,10 @@
 
 #import "UIBarButtonItem+YUCustom.h"
 
-static const CGFloat kBarButtonHeight = 20.0f;
-static const CGFloat kFontSize = 16.0f;
-static const CGFloat kTitleMaxWidth = 120.0f;
-static const CGFloat kTitleMaxHeight = 44.0f;
+static const CGFloat kBarButtonHeight = 36.f;
+static const CGFloat kFontSize = 16.f;
+static const CGFloat kTitleMaxWidth = 120.f;
+static const CGFloat kTitleMaxHeight = 36.f;
 
 #define kBarButtonItemCustomTitleColor     [UIColor whiteColor]
 
@@ -32,7 +32,7 @@ static const CGFloat kTitleMaxHeight = 44.0f;
       forControlEvents:UIControlEventTouchUpInside];
     
     UIImageView *imageV = [[UIImageView alloc] init];
-    imageV.contentMode = UIViewContentModeScaleAspectFit;
+    imageV.contentMode = UIViewContentModeCenter;
     imageV.image = [UIImage imageNamed:imageName];
     imageV.frame = CGRectMake(0, 0, kBarButtonHeight, kBarButtonHeight);
     [control addSubview:imageV];
@@ -87,7 +87,7 @@ static const CGFloat kTitleMaxHeight = 44.0f;
       forControlEvents:UIControlEventTouchUpInside];
     
     UIImageView *imageV = [[UIImageView alloc] init];
-    imageV.contentMode = UIViewContentModeScaleAspectFit;
+    imageV.contentMode = UIViewContentModeCenter;
     imageV.image = [UIImage imageNamed:imageName];
     imageV.frame = CGRectMake(0, 0, kBarButtonHeight, kBarButtonHeight);
     [control addSubview:imageV];
@@ -141,7 +141,7 @@ static const CGFloat kTitleMaxHeight = 44.0f;
     titleLab.frame = CGRectMake(0, 0, titleLabWidth, kBarButtonHeight);
     
     UIImageView *imageV = [[UIImageView alloc] init];
-    imageV.contentMode = UIViewContentModeScaleAspectFit;
+    imageV.contentMode = UIViewContentModeCenter;
     imageV.image = [UIImage imageNamed:imageName];
     imageV.frame = CGRectMake(titleLabWidth, 0, kBarButtonHeight, kBarButtonHeight);
     [control addSubview:imageV];
