@@ -11,10 +11,9 @@
 
 #import "UIBarButtonItem+YUCustom.h"
 
-static const CGFloat kBarButtonHeight = 36.f;
-static const CGFloat kFontSize = 16.f;
+static const CGFloat kMaxHeight = 30.f;
+static const CGFloat kFontSize = 15.f;
 static const CGFloat kTitleMaxWidth = 120.f;
-static const CGFloat kTitleMaxHeight = 36.f;
 
 #define kBarButtonItemCustomTitleColor     [UIColor whiteColor]
 
@@ -34,7 +33,7 @@ static const CGFloat kTitleMaxHeight = 36.f;
     UIImageView *imageV = [[UIImageView alloc] init];
     imageV.contentMode = UIViewContentModeCenter;
     imageV.image = [UIImage imageNamed:imageName];
-    imageV.frame = CGRectMake(0, 0, kBarButtonHeight, kBarButtonHeight);
+    imageV.frame = CGRectMake(0, 0, kMaxHeight, kMaxHeight);
     [control addSubview:imageV];
     control.frame = imageV.frame;
     
@@ -60,13 +59,13 @@ static const CGFloat kTitleMaxHeight = 36.f;
     [control addSubview:titleLab];
     
     NSDictionary *attrs = @{NSFontAttributeName : titleLab.font};
-    CGSize maxSize = CGSizeMake(kTitleMaxWidth, kTitleMaxHeight);
+    CGSize maxSize = CGSizeMake(kTitleMaxWidth, kMaxHeight);
     CGRect controlSize = [title boundingRectWithSize:maxSize
                                              options:NSStringDrawingUsesLineFragmentOrigin
                                           attributes:attrs
                                              context:nil];
     titleLab.text = title;
-    titleLab.frame = CGRectMake(0, 0, controlSize.size.width+1, kBarButtonHeight);
+    titleLab.frame = CGRectMake(0, 0, controlSize.size.width+1, kMaxHeight);
     
     control.frame = titleLab.frame;
     
@@ -89,7 +88,7 @@ static const CGFloat kTitleMaxHeight = 36.f;
     UIImageView *imageV = [[UIImageView alloc] init];
     imageV.contentMode = UIViewContentModeCenter;
     imageV.image = [UIImage imageNamed:imageName];
-    imageV.frame = CGRectMake(0, 0, kBarButtonHeight, kBarButtonHeight);
+    imageV.frame = CGRectMake(0, 0, kMaxHeight, kMaxHeight);
     [control addSubview:imageV];
     
     UILabel *titleLab = [[UILabel alloc] init];
@@ -99,15 +98,15 @@ static const CGFloat kTitleMaxHeight = 36.f;
     [control addSubview:titleLab];
     
     NSDictionary *attrs = @{NSFontAttributeName : titleLab.font};
-    CGSize maxSize = CGSizeMake(kTitleMaxWidth, kTitleMaxHeight);
+    CGSize maxSize = CGSizeMake(kTitleMaxWidth, kMaxHeight);
     CGRect controlSize = [title boundingRectWithSize:maxSize
                                              options:NSStringDrawingUsesLineFragmentOrigin
                                           attributes:attrs
                                              context:nil];
     titleLab.text = title;
-    titleLab.frame = CGRectMake(kBarButtonHeight, 0, controlSize.size.width, kBarButtonHeight);
+    titleLab.frame = CGRectMake(kMaxHeight, 0, controlSize.size.width, kMaxHeight);
     
-    control.frame = CGRectMake(0, 0, kBarButtonHeight+controlSize.size.width+1, kBarButtonHeight);
+    control.frame = CGRectMake(0, 0, kMaxHeight+controlSize.size.width+1, kMaxHeight);
     
     return [[UIBarButtonItem alloc] initWithCustomView:control];
 }
@@ -131,22 +130,22 @@ static const CGFloat kTitleMaxHeight = 36.f;
     [control addSubview:titleLab];
     
     NSDictionary *attrs = @{NSFontAttributeName : titleLab.font};
-    CGSize maxSize = CGSizeMake(kTitleMaxWidth, kTitleMaxHeight);
+    CGSize maxSize = CGSizeMake(kTitleMaxWidth, kMaxHeight);
     CGRect controlSize = [title boundingRectWithSize:maxSize
                                              options:NSStringDrawingUsesLineFragmentOrigin
                                           attributes:attrs
                                              context:nil];
     titleLab.text = title;
     CGFloat titleLabWidth = controlSize.size.width+1;
-    titleLab.frame = CGRectMake(0, 0, titleLabWidth, kBarButtonHeight);
+    titleLab.frame = CGRectMake(0, 0, titleLabWidth, kMaxHeight);
     
     UIImageView *imageV = [[UIImageView alloc] init];
     imageV.contentMode = UIViewContentModeCenter;
     imageV.image = [UIImage imageNamed:imageName];
-    imageV.frame = CGRectMake(titleLabWidth, 0, kBarButtonHeight, kBarButtonHeight);
+    imageV.frame = CGRectMake(titleLabWidth, 0, kMaxHeight, kMaxHeight);
     [control addSubview:imageV];
     
-    control.frame = CGRectMake(0, 0, kBarButtonHeight+controlSize.size.width+1, kBarButtonHeight);
+    control.frame = CGRectMake(0, 0, kMaxHeight+controlSize.size.width+1, kMaxHeight);
     
     return [[UIBarButtonItem alloc] initWithCustomView:control];
 }
