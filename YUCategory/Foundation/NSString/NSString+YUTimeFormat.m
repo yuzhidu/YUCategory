@@ -42,4 +42,30 @@
     return timeStr;
 }
 
+/**
+ 将 “秒数” 转换为 小时:分:秒
+ 比如 1:29:35
+    00:00
+ */
++ (NSString *)yu_timeFormattedColon:(NSInteger)totalSeconds {
+    NSInteger seconds = totalSeconds % 60;
+    NSInteger minutes = (totalSeconds / 60) % 60;
+    NSInteger hours = (totalSeconds / 3600) % 24;
+    NSString *timeStr;
+    if (!hours && !minutes && !seconds) {
+        timeStr = @"00:00";
+    }
+    else if (!hours && !minutes) {
+        timeStr = [NSString stringWithFormat:@"00:%02ld", (long)seconds];
+    }
+    else if (!hours) {
+        timeStr = [NSString stringWithFormat:@"%02ld:%02ld",
+                   (long)minutes, (long)seconds];
+    }
+    else {
+        timeStr = [NSString stringWithFormat:@"%ld:%02ld:%02ld",
+                   (long)hours, (long)minutes, (long)seconds];
+    }
+    return timeStr;
+}
 @end

@@ -17,4 +17,9 @@
  *  将 “秒数” 转换为 几天几小时几分几秒
  */
 + (NSString *)yu_timeFormatted:(NSInteger)totalSeconds;
+
+/**
+ *  将 “秒数” 转换为 天:小时:分:秒
+ */
++ (NSString *)yu_timeFormattedColon:(NSInteger)totalSeconds;
 @end
