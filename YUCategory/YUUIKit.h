@@ -17,6 +17,7 @@
 
 #import "UIImage+YUCompress.h"
 #import "UIImage+YUResize.h"
+#import "UIImage+YUCreateImageByRGB.h"
 
 #import "UIBarButtonItem+YUCustom.h"
 
