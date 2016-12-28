@@ -18,13 +18,13 @@
 /**
  *  数字末尾去0
  *
- *  @param value 传入浮点型
+ *  @param stringValue 传入浮点型
  */
 + (NSString *)yu_stringChangeWithPrice:(CGFloat)value;
 /**
  *  数字末尾去0
  *
- *  @param value 传入字符串
+ *  @param stringValue 传入字符串
  */
 + (NSString *)yu_stringChangeWithPriceStr:(NSString *)stringValue;
 
