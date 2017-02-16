@@ -7,9 +7,9 @@
 //  Copyright © 裕之都. All rights reserved.
 //
 
-#import "UIImage+YUCreateImageByRGB.h"
+#import "UIImage+YUCreateImage.h"
 
-@implementation UIImage (YUCreateImageByRGB)
+@implementation UIImage (YUCreateImage)
 
 + (UIImage *)yu_createImageWithColor:(UIColor *)color {
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);

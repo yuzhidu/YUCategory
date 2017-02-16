@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImage (YUCreateImageByRGB)
+@interface UIImage (YUCreateImage)
 
 /**
  用颜色生成图片，默认1x1

@@ -1,0 +1,54 @@
+//
+//  PrefixHeader.pch
+//  YUCategoryDemo
+//
+//  Created by 马裕博 on 2017/2/14.
+//  Copyright © 2017年 mayubo. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+/********************** 1.Log宏 ***************/
+#ifdef DEBUG
+//#define HYLog(...)  printf("%f %s\n",[[NSDate date] timeIntervalSince1970],[[NSString stringWithFormat:__VA_ARGS__] UTF8String])
+#define YULog(...)  NSLog(__VA_ARGS__)
+#else
+#define YULog(...)
+#endif
+
+/********************** 2.颜色 ***************/
+// 随机生成颜色
+#define kColorRandom                ([UIColor colorWithRed:arc4random_uniform(255)/255.f green:arc4random_uniform(255)/255.f blue:arc4random_uniform(255)/255.f alpha:1.f])
+// 设置RGB色值
+#define kColorWithRGB(r, g, b)      ([UIColor colorWithRed:(r)/255.f green:(g)/255.f blue:(b)/255.f alpha:1.f])
+#define kColorWithRGBA(r, g, b, a)  ([UIColor colorWithRed:(r)/255.f green:(g)/255.f blue:(b)/255.f alpha:(a)])
+// 主题色值(天蓝色)
+#define kColorTheme                 ([UIColor colorWithRed:(0)/255.f green:(192)/255.f blue:(255)/255.f alpha:1.f])
+// 背景色值(浅灰)
+#define kColorBackground            ([UIColor colorWithRed:(246)/255.f green:(246)/255.f blue:(246)/255.f alpha:1.f])
+// 分割线颜色
+#define kColorDriveLine             ([UIColor colorWithRed:(221)/255.f green:(221)/255.f blue:(221)/255.f alpha:1.f])
+// 遮罩视图颜色
+#define kColorShade                 ([UIColor colorWithRed:0 green:0 blue:0 alpha:0.3f])
+
+
+/********************** 3.尺寸宏 ***************/
+// 当前屏幕宽和高
+#define kScreenWidth            ([UIScreen mainScreen].bounds.size.width)
+#define kScreenHeight           ([UIScreen mainScreen].bounds.size.height)
+#define kScreenWidthHalf        ([UIScreen mainScreen].bounds.size.width/2)
+#define kScreenHeightHalf       ([UIScreen mainScreen].bounds.size.height/2)
+#define kDriveLineH             0.5f
+
+#define isInchFour              ([UIScreen mainScreen].bounds.size.width == 320.f)
+#define isInchFourPointSeven    ([UIScreen mainScreen].bounds.size.width == 375.f)
+#define isInchFivePointFive     ([UIScreen mainScreen].bounds.size.width == 414.f)
+
+/********************** 4.常用 ***************/
+#import "YUCategory.h"
+
+#endif /* PrefixHeader_pch */
