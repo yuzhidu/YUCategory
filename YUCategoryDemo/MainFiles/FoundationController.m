@@ -9,7 +9,9 @@
 #import "FoundationController.h"
 
 @interface FoundationController ()
-
+/** 标题 */
+@property (nonatomic, strong) NSArray<NSString *> *itemsTitle;
+@property (nonatomic, strong) NSArray<NSArray *> *itemsSubTitle;
 @end
 
 @implementation FoundationController
@@ -19,8 +21,93 @@
     
     self.view.backgroundColor = kColorBackground;
     
-    self.navigationItem.title = @"Foundation分类";
+    self.navigationItem.title = @"Foundation分类(列表按字母排序)";
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return [self.itemsTitle count];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.itemsSubTitle[section] count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *identifer = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifer];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifer];
+    }
+    cell.detailTextLabel.text = self.itemsSubTitle[indexPath.section][indexPath.row];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return self.itemsTitle[section];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSString *name =  self.itemsSubTitle[indexPath.section][indexPath.row];
+    NSString *className = [name stringByAppendingString:@"Controller"];
+    className = [className stringByReplacingOccurrencesOfString:@"+" withString:@"_"];
+    Class class = NSClassFromString(className);
+    UIViewController *controller = [[class alloc] init];
+    controller.title = name;
+    controller.view.backgroundColor = kColorBackground;
+    controller.navigationItem.leftBarButtonItem = [UIBarButtonItem yu_barButtonWithImage:@"arrowBack" target:self action:@selector(leftBarButtonItemClick)];
+    [self.navigationController pushViewController:controller animated:YES];
+    
+}
+- (void)leftBarButtonItemClick {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (NSArray<NSString *> *)itemsTitle {
+    if (_itemsTitle == nil) {
+        _itemsTitle = @[@"NSArray",
+                        @"NSAttributedString",
+                        @"NSDate",
+                        @"NSDictionary",
+                        @"NSObject",
+                        @"NSString"
+                        ];
+    }
+    return _itemsTitle;
+}
+- (NSArray<NSArray *> *)itemsSubTitle {
+    if (_itemsSubTitle == nil) {
+        _itemsSubTitle = @[
+                           @[@"NSArray+YUFormatNSLog",
+                             @"NSArray+YUSerialization"],
+                           
+                           @[@"NSAttributedString+YUTextSize"],
+                           
+                           @[@"NSDate+YUFormat",
+                             @"NSDate+YUJudge",
+                             @"NSDate+YUOther"],
+                           
+                           @[@"NSDictionary+YUFormatNSLog",
+                             @"NSDictionary+YUSafeAccess",
+                             @"NSDictionary+YUSerialization"],
+                           
+                           @[@"NSObject+YUFileDelete"],
+                           
+                           @[@"NSString+YUAppendPath",
+                             @"NSString+YUBase",
+                             @"NSString+YUEmpty",
+                             @"NSString+YUHash",
+                             @"NSString+YUMatch",
+                             @"NSString+YUOther",
+                             @"NSString+YURegEx",
+                             @"NSString+YUSerialization",
+                             @"NSString+YUSize",
+                             @"NSString+YUTimeFormat"]
+                           ];
+    }
+    return _itemsSubTitle;
+}
 
 @end

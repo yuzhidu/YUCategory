@@ -21,7 +21,7 @@
     
     self.view.backgroundColor = kColorBackground;
     
-    self.navigationItem.title = @"UIKit分类";
+    self.navigationItem.title = @"UIKit分类(列表按字母排序)";
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -67,27 +67,26 @@
 
 - (NSArray<NSString *> *)itemsTitle {
     if (_itemsTitle == nil) {
-        _itemsTitle = @[@"UIView",
+        _itemsTitle = @[
+                        @"UIBarButtonItem",
                         @"UIImage",
                         @"UILabel",
-                        @"UIBarButtonItem"
-                        ];
+                        @"UIView"];
     }
     return _itemsTitle;
 }
 - (NSArray<NSArray *> *)itemsSubTitle {
     if (_itemsSubTitle == nil) {
         _itemsSubTitle = @[
-                            @[@"UIView+YUFrame"
-                             ],
-                            @[@"UIImage+YUResize",
-                              @"UIImage+YUCompress",
-                              @"UIImage+YUCreateImage"
-                              ],
-                            @[@"UILabel+YUTextSize"
-                              ],
-                            @[@"UIBarButtonItem+YUCustom"
-                              ]
+                           @[@"UIBarButtonItem+YUCustom"],
+                           
+                           @[@"UIImage+YUCompress",
+                             @"UIImage+YUCreateImage",
+                             @"UIImage+YUResize"],
+                           
+                           @[@"UILabel+YUTextSize"],
+                           
+                           @[@"UIView+YUFrame"]
                            ];
     }
     return _itemsSubTitle;
