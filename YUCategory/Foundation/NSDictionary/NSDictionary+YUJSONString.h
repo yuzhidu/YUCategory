@@ -11,12 +11,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSDictionary (YUSerialization)
+@interface NSDictionary (YUJSONString)
 /**
  *  将“字典”序列化为 Json串
  *
  *  @return 返回nil 表示序列化失败
  */
 - (NSString *)yu_serializationNSDictionaryToJson;
-
 @end

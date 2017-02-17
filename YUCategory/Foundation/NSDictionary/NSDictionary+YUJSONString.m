@@ -9,9 +9,9 @@
 //  将字典 序列化为 Json 串
 //
 
-#import "NSDictionary+YUSerialization.h"
+#import "NSDictionary+YUJSONString.h"
 
-@implementation NSDictionary (YUSerialization)
+@implementation NSDictionary (YUJSONString)
 - (NSString *)yu_serializationNSDictionaryToJson {
     NSError *error;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self

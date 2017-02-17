@@ -50,16 +50,15 @@
 }
 - (void)setupChildViews {
     UIKitController *kitVC = [[UIKitController alloc] init];
-    [self addOneChildController:kitVC
-                          title:@"UIKit"
-                       norImage:@"tabBar_UIKit_normal"
-                  selectedImage:@"tabBar_UIKit_selected"];
-    
     FoundationController *foundationVC = [[FoundationController alloc] init];
     [self addOneChildController:foundationVC
                           title:@"Foundation"
                        norImage:@"tabBar_foundation_normal"
                   selectedImage:@"tabBar_foundation_selected"];
+    [self addOneChildController:kitVC
+                          title:@"UIKit"
+                       norImage:@"tabBar_UIKit_normal"
+                  selectedImage:@"tabBar_UIKit_selected"];
 }
 - (void)addOneChildController:(UIViewController *)childVC
                         title:(NSString *)title

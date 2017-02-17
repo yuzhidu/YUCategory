@@ -1,18 +1,18 @@
 //
-//  NDDate_YUJudgeController.m
+//  NSDate_YUJudgeController.m
 //  YUCategoryDemo
 //
-//  Created by 马裕博 on 2017/2/16.
+//  Created by 马裕博 on 2017/2/17.
 //  Copyright © 2017年 mayubo. All rights reserved.
 //
 
-#import "NDDate_YUJudgeController.h"
+#import "NSDate_YUJudgeController.h"
 
-@interface NDDate_YUJudgeController ()
+@interface NSDate_YUJudgeController ()
 
 @end
 
-@implementation NDDate_YUJudgeController
+@implementation NSDate_YUJudgeController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

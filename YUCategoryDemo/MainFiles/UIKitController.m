@@ -21,7 +21,7 @@
     
     self.view.backgroundColor = kColorBackground;
     
-    self.navigationItem.title = @"UIKit分类(列表按字母排序)";
+    self.navigationItem.title = @"UIKit分类(按字母排序)";
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

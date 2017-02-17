@@ -11,14 +11,15 @@
 #ifndef YUUIKit_h
 #define YUUIKit_h
 
-#import "UIView+YUFrame.h"
+#import "UIBarButtonItem+YUCustom.h"
+
+#import "UIImage+YUCompress.h"
+#import "UIImage+YUCreateImage.h"
+#import "UIImage+YUResize.h"
 
 #import "UILabel+YUTextSize.h"
 
-#import "UIImage+YUCompress.h"
-#import "UIImage+YUResize.h"
-#import "UIImage+YUCreateImage.h"
+#import "UIView+YUFrame.h"
 
-#import "UIBarButtonItem+YUCustom.h"
 
 #endif /* YUUIKit_h */

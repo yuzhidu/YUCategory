@@ -21,7 +21,7 @@
     
     self.view.backgroundColor = kColorBackground;
     
-    self.navigationItem.title = @"Foundation分类(列表按字母排序)";
+    self.navigationItem.title = @"Foundation分类(按字母排序)";
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -59,7 +59,6 @@
     controller.view.backgroundColor = kColorBackground;
     controller.navigationItem.leftBarButtonItem = [UIBarButtonItem yu_barButtonWithImage:@"arrowBack" target:self action:@selector(leftBarButtonItemClick)];
     [self.navigationController pushViewController:controller animated:YES];
-    
 }
 - (void)leftBarButtonItemClick {
     [self.navigationController popViewControllerAnimated:YES];
@@ -81,6 +80,7 @@
     if (_itemsSubTitle == nil) {
         _itemsSubTitle = @[
                            @[@"NSArray+YUFormatNSLog",
+                             @"NSArray+YUSafeAccess",
                              @"NSArray+YUSerialization"],
                            
                            @[@"NSAttributedString+YUTextSize"],
@@ -90,8 +90,8 @@
                              @"NSDate+YUOther"],
                            
                            @[@"NSDictionary+YUFormatNSLog",
-                             @"NSDictionary+YUSafeAccess",
-                             @"NSDictionary+YUSerialization"],
+                             @"NSDictionary+YUJSONString",
+                             @"NSDictionary+YUSafeAccess"],
                            
                            @[@"NSObject+YUFileDelete"],
                            
