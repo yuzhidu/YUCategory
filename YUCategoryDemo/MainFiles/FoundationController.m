@@ -97,6 +97,7 @@
                            
                            @[@"NSString+YUAppendPath",
                              @"NSString+YUBase",
+                             @"NSString+YUEmoji",
                              @"NSString+YUEmpty",
                              @"NSString+YUHash",
                              @"NSString+YUMatch",

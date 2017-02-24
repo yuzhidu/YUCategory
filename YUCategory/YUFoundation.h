@@ -29,6 +29,7 @@
 
 #import "NSString+YUAppendPath.h"
 #import "NSString+YUBase.h"
+#import "NSString+YUEmoji.h"
 #import "NSString+YUEmpty.h"
 #import "NSString+YUHash.h"
 #import "NSString+YUMatch.h"
