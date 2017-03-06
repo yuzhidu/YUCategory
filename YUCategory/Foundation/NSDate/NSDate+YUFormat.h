@@ -31,7 +31,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 /**
  *  1.1 格式化当前(Now)日期
  *
- *  @param DateFormatMode 系统日期格式
+ *  @param  系统日期格式
  *
  *  @return 格式化后的字符串
  */
@@ -39,7 +39,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 /**
  *  1.2 格式化指定日期，指定格式
  *
- *  @param DateFormatMode 系统日期格式
+ *  @param  系统日期格式
  *
  *  @return 格式化后的字符串
  */
@@ -48,7 +48,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 /**
  *  2.1 格式化当前(Now)日期
  *
- *  @param dateFormat 日期格式
+ *  @param  日期格式
  *
  *  @return 格式化后的字符串
  */

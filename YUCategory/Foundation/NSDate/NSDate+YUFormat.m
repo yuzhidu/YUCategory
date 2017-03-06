@@ -32,7 +32,7 @@
 /**
  *  格式化当前(Now)日期
  *
- *  @param dateFormat 系统日期格式
+ *  @param 系统日期格式
  */
 + (NSString *)yu_dateWithSystemFormat:(DateFormatMode)dateFormatMode {
     return [self yu_dateWithFormat:[self yu_dateFormatModeStringWith:dateFormatMode]];
@@ -40,7 +40,7 @@
 /**
  *  格式化指定日期，指定格式
  *
- *  @param dateFormat 系统日期格式
+ *  @param 系统日期格式
  */
 + (NSString *)yu_dateWith:(NSDate *)date systemDateFormat:(DateFormatMode)dateFormatMode {
     return [self yu_dateWith:date dateFormat:[self yu_dateFormatModeStringWith:dateFormatMode]];
