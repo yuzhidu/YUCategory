@@ -9,17 +9,48 @@ pod 'YUCategory'
 
 **注意：分类按字母排序，可根据字母快速找到对应分类**
 
-Foundation
+目录:
+1. Foundation
 - [NSArray](#NSArray)
 	- [NSArray+YUFormatNSLog](#NSArray+YUFormatNSLog)
 	- [NSArray+YUSafeAccess](#NSArray+YUSafeAccess)
 	- [NSArray+YUSerialization](#NSArray+YUSerialization)
-
-UIKit
+- [NSAttributedString](#NSAttributedString)
+	- [NSAttributedString+YUTextSize](#NSAttributedString+YUTextSize)
+- [NSDate](#NSDate)
+	- [NSDate+YUFormat](#NSDate+YUFormat)
+	- [NSDate+YUJudge](#NSDate+YUJudge)
+	- [NSDate+YUOther](#NSDate+YUOther)
+- [NSDictionary](#NSDictionary)
+	- [NSDictionary+YUFormatNSLog](#NSDictionary+YUFormatNSLog)
+	- [NSDictionary+YUJSONString](#NSDictionary+YUJSONString)
+	- [NSDictionary+YUSafeAccess](#NSDictionary+YUSafeAccess)
+- [NSObject](#NSObject)
+	- [NSObject+YUFileDelete](#NSObject+YUFileDelete)
+- [NSString](#NSString)
+	- [NSString+YUAppendPath](#NSString+YUAppendPath)
+	- [NSString+YUBase](#NSString+YUBase)
+	- [NSString+YUEmoji](#NSString+YUEmoji)
+	- [NSString+YUEmpty](#NSString+YUEmpty)
+	- [NSString+YUHash](#NSString+YUHash)
+	- [NSString+YUMatch](#NSString+YUMatch)
+	- [NSString+YUOther](#NSString+YUOther)
+	- [NSString+YURegEx](#NSString+YURegEx)
+	- [NSString+YUSerialization](#NSString+YUSerialization)
+	- [NSString+YUSize](#NSString+YUSize)
+	- [NSString+YUTimeFormat](#NSString+YUTimeFormat)
+	
+2. UIKit
 - [UIBarButtonItem](#UIBarButtonItem)
 	- [UIBarButtonItem+YUCustom](#UIBarButtonItem+YUCustom)
 - [UIImage](#UIImage)
 	- [UIImage+YUCompress](#UIImage+YUCompress)
+	- [UIImage+YUCreateImage](#UIImage+YUCreateImage)
+	- [UIImage+YUResize](#UIImage+YUResize)
+- [UILabel](#UILabel)
+	- [UILabel+YUTextSize](#UILabel+YUTextSize)
+- [UIView](#UIView)
+	- [UIView+YUFrame](#UIView+YUFrame)
 
 ## 1. Foundation 
 
@@ -71,7 +102,7 @@ UIKit
 - (void)yu_addRect:(CGRect)rect;
 ```
 
-#### NSArray+YUSerialization
+#### NSArray+YUSerialization <div id="NSArray+YUSerialization"></div>
 ```
 /**
  *  将“数组”序列化为 Json串
@@ -82,8 +113,9 @@ UIKit
 ```
 
 
-### NSAttributedString
-NSAttributedString+YUTextSize
+### NSAttributedString <div id="NSAttributedString"></div>
+
+#### NSAttributedString+YUTextSize <div id="NSAttributedString+YUTextSize"></div>
 ```
 /**
  *  计算 属性字符串 的大小
@@ -96,8 +128,9 @@ NSAttributedString+YUTextSize
 ```
 
 
-### NSDate
-NSDate+YUFormat
+### NSDate <div id="NSDate"></div>
+
+#### NSDate+YUFormat <div id="NSDate+YUFormat"></div>
 ```
 常用的几种日期表示格式
 typedef NS_ENUM(NSInteger, DateFormatMode) {
@@ -168,7 +201,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 + (NSString *)yu_dateAppendWeekWith:(NSDate *)date dateFormat:(NSString *)dateFormat;
 ```
 
-NSDate+YUJudge
+#### NSDate+YUJudge <div id="NSDate+YUJudge"></div>
 ```
 /**
  *  是否为今天
@@ -189,7 +222,7 @@ NSDate+YUJudge
 - (NSDate *)yu_dateWithYMD;
 ```
 
-NSDate+YUOther
+#### NSDate+YUOther <div id="NSDate+YUOther"></div>
 ```
 /**
  *  获得与当前时间的差距
@@ -198,14 +231,15 @@ NSDate+YUOther
 ```
 
 
-### NSDictionary
-NSDictionary+YUFormatNSLog
+### NSDictionary <div id="NSDictionary"></div>
+
+#### NSDictionary+YUFormatNSLog <div id="NSDictionary+YUFormatNSLog"></div>
 ```
 格式化（“美化”）控制台输出
 重写 - (NSString *)descriptionWithLocale:(id)locale; 方法
 ```
 
-NSDictionary+YUJSONString
+#### NSDictionary+YUJSONString <div id="NSDictionary+YUJSONString"></div>
 ```
 /**
  *  将“字典”序列化为 Json串
@@ -215,7 +249,7 @@ NSDictionary+YUJSONString
 - (NSString *)yu_serializationNSDictionaryToJson;
 ```
 
-NSDictionary+YUSafeAccess
+#### NSDictionary+YUSafeAccess <div id="NSDictionary+YUSafeAccess"></div>
 ```
 安全使用字典
 - (BOOL)yu_hasKey:(NSString *)key;
@@ -261,8 +295,9 @@ NSDictionary+YUSafeAccess
 ```
 
 
-### NSObject
-NSObject+YUFileDelete
+### NSObject <div id="NSObject"></div>
+
+#### NSObject+YUFileDelete <div id="NSObject+YUFileDelete"></div>
 ```
 删除沙盒文件
 
@@ -290,8 +325,9 @@ NSObject+YUFileDelete
 ```
 
 
-### NSString
-NSString+YUAppendPath
+### NSString <div id="NSString"></div>
+
+#### NSString+YUAppendPath <div id="NSString+YUAppendPath"></div>
 ```
 在字符串之前追加路径，文件名在路径最后
 
@@ -305,7 +341,7 @@ NSString+YUAppendPath
 - (NSString *)yu_appendPathDocument;
 ```
 
-NSString+YUBase
+#### NSString+YUBase <div id="NSString+YUBase"></div>
 ```
 /** base64编码 */
 - (NSString *)yu_base64Encode;
@@ -314,7 +350,7 @@ NSString+YUBase
 - (NSString *)yu_base64Decode;
 ```
 
-NSString+YUEmoji
+#### NSString+YUEmoji <div id="NSString+YUEmoji"></div>
 查询 emoji <http://emojipedia.org>
 表情符号替换表<http://www.emoji-cheat-sheet.com>
 ```
@@ -353,14 +389,14 @@ NSString+YUEmoji
 - (instancetype)yu_emojiRemoved;
 ```
 
-NSString+YUEmpty
+#### NSString+YUEmpty <div id="NSString+YUEmpty"></div>
 ```
 一个或者多个空格也算是空
 /** 判断字符串是否为空 */
 - (BOOL)yu_isEmpty;
 ```
 
-NSString+YUHash
+#### NSString+YUHash <div id="NSString+YUHash"></div>
 ```
 /** MD5 加密(32位小) */
 @property (readonly) NSString *yu_md5String;
@@ -393,7 +429,7 @@ NSString+YUHash
  */
 ```
 
-NSString+YUMatch
+#### NSString+YUMatch <div id="NSString+YUMatch"></div>
 ```
 /**
  *  查找字符串中第一个匹配项
@@ -414,7 +450,7 @@ NSString+YUMatch
 - (NSArray *)yu_matchsWithPattern:(NSString *)pattern;
 ```
 
-NSString+YUOther
+#### NSString+YUOther <div id="NSString+YUOther"></div>
 ```
 /**
  *  数字末尾去0
@@ -433,7 +469,7 @@ NSString+YUOther
 - (NSString *)yu_trimString;
 ```
 
-NSString+YURegEx
+#### NSString+YURegEx <div id="NSString+YURegEx"></div>
 ```
 /**
  *  手机号码的有效性:分电信、联通、移动和小灵通
@@ -547,7 +583,7 @@ NSString+YURegEx
              firstCannotBeDigtal:(BOOL)firstCannotBeDigtal;
 ```
 
-NSString+YUSerialization
+#### NSString+YUSerialization <div id="NSString+YUSerialization"></div>
 ```
 /**
  *  Json 串 反序列化为 NSDictionary
@@ -555,7 +591,7 @@ NSString+YUSerialization
 - (NSDictionary *)yu_serializationJsonStringToDictionary;
 ```
 
-NSString+YUSize
+#### NSString+YUSize <div id="NSString+YUSize"></div>
 ```
 /**
  *  依据 "字体" 返回字符串所占用的尺寸
@@ -568,7 +604,7 @@ NSString+YUSize
 - (CGSize)yu_sizeWithAttributes:(NSDictionary *)attrs maxSize:(CGSize)maxSize;
 ```
 
-NSString+YUTimeFormat
+### NSString+YUTimeFormat <div id="NSString+YUTimeFormat"></div>
 ```
 /**
  *  将 “秒数” 转换为 几天几小时几分几秒
@@ -705,7 +741,7 @@ NSString+YUTimeFormat
 + (NSInteger)yu_computeBytesByJPEG:(UIImage *)sourceImage;
 ```
 
-#### UIImage+YUCreateImage
+#### UIImage+YUCreateImage <div id="UIImage+YUCreateImage"></div>
 ```
 /**
  用颜色生成图片，默认1x1
@@ -726,7 +762,7 @@ NSString+YUTimeFormat
 + (UIImage *)yu_createImageWithColor:(UIColor *)color size:(CGSize)size;
 ```
 
-#### UIImage+YUResize
+#### UIImage+YUResize <div id="UIImage+YUResize"></div>
 ```
 //  图片拉伸平铺
 //  注意：默认图片的模式是 UIImageResizingModeTile（瓦片）
@@ -762,9 +798,9 @@ NSString+YUTimeFormat
                       resizingMode:(UIImageResizingMode)resizingMode;
 ```
 
-### UILabel
+### UILabel <div id="UILabel"></div>
 
-#### UILabel+YUTextSize
+#### UILabel+YUTextSize <div id="UILabel+YUTextSize"></div>
 ```
 /**
  *  计算Label的内容大小
@@ -772,9 +808,9 @@ NSString+YUTimeFormat
 - (CGSize)yu_textSize;
 ```
 
-### UIView
+### UIView <div id="UIView"></div>
 
-#### UIView+YUFrame
+#### UIView+YUFrame <div id="UIView+YUFrame"></div>
 ```
 适用于使用Frame布局
 
