@@ -34,16 +34,4 @@
  */
 - (BOOL)yu_deleteFileWithPathStr:(NSString *)pathStr fileName:(NSString *)fileName;
 
-
-//--------------------------------我自己用的-------------------------------//
-/**
- *  删除账户文件（自己用），文件存在 Document 下
- */
-- (BOOL)yu_deleteAccountFile;
-
-/**
- *  删除录音文件（自己用），文件存在 tmp 下
- */
-- (BOOL)yu_deleteVoiceFile;
-
 @end

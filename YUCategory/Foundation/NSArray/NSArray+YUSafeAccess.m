@@ -163,7 +163,7 @@
 - (BOOL)yu_boolAtIndex:(NSUInteger)index {
     id value = [self yu_objectAtIndex:index];
     if (value == nil || value == [NSNull null]) {
-        return NO;
+        return nil;
     }
     if ([value isKindOfClass:[NSNumber class]]) {
         return [value boolValue];
@@ -171,7 +171,7 @@
     if ([value isKindOfClass:[NSString class]]) {
         return [value boolValue];
     }
-    return NO;
+    return nil;
 }
 
 /**

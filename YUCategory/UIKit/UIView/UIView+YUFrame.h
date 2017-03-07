@@ -6,7 +6,7 @@
 //  Github：https://github.com/yuzhidu
 //  Copyright © 裕之都. All rights reserved.
 //
-//  使用Frame布局技术
+//  适用于使用Frame布局技术
 //
 
 #import <UIKit/UIKit.h>
@@ -16,13 +16,13 @@
 /** 1.当前View的x值*/
 @property (nonatomic, assign) CGFloat yu_x;
 
-/** 2.当前View的X最大值*/
+/** 2.当前View的X最大值=x+width*/
 @property (nonatomic, assign) CGFloat yu_xMax;
 
 /** 3.当前View的y值*/
 @property (nonatomic, assign) CGFloat yu_y;
 
-/** 4.当前View的Y最大值*/
+/** 4.当前View的Y最大值=y+height*/
 @property (nonatomic, assign) CGFloat yu_yMax;
 
 //---------------------

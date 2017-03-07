@@ -32,21 +32,4 @@
 /** 截断首部和尾部的空白字符 */
 - (NSString *)yu_trimString;
 
-//------------------------以下方法已经没用-----------------------/
-#pragma mark - Regex 正则验证
-/**
- *  密码正则验证(6-32位字母或数字组合)
- */
-- (BOOL)yu_isValidatePassword;
-
-/**
- *  手机号正则验证(以1开头11位数字)
- */
-- (BOOL)yu_checkPhoneNumInput;
-
-/**
- *  手机号正则验证 (旧方法)
- */
-- (BOOL)yu_checkPhoneNumInputOld;
-
 @end

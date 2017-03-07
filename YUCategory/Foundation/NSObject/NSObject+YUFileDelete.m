@@ -11,9 +11,6 @@
 
 #import "NSObject+YUFileDelete.h"
 
-static NSString *const kAccountFile = @"account.data";
-static NSString *const kRecordAudioFile = @"myRecord.wav";
-
 @implementation NSObject (YUFileDelete)
 /**
  *  1.删除 Document 目录下文件
@@ -68,13 +65,4 @@ static NSString *const kRecordAudioFile = @"myRecord.wav";
     }
 }
 
-
-//--------------------------------我自己用的-------------------------------//
-- (BOOL)yu_deleteAccountFile {
-    return [self yu_deleteDocumentFileWith:kAccountFile];
-}
-
-- (BOOL)yu_deleteVoiceFile {
-    return [self yu_deleteTmpFileWith:kRecordAudioFile];
-}
 @end

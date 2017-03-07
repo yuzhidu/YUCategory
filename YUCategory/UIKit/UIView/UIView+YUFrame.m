@@ -6,7 +6,7 @@
 //  Github：https://github.com/yuzhidu
 //  Copyright © 裕之都. All rights reserved.
 //
-//  使用Frame布局技术
+//  适用于使用Frame布局技术
 //
 
 #import "UIView+YUFrame.h"

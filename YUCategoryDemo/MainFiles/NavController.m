@@ -44,5 +44,7 @@
     }
     [super pushViewController:viewController animated:YES];
 }
-
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
 @end
