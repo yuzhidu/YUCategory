@@ -9,18 +9,29 @@ pod 'YUCategory'
 
 **注意：分类按字母排序，可根据字母快速找到对应分类**
 
-- [1. Foundation](#1)
-- [2. UIKit](#2)
+Foundation
+- [NSArray](#NSArray)
+	- [NSArray+YUFormatNSLog](#NSArray+YUFormatNSLog)
+	- [NSArray+YUSafeAccess](#NSArray+YUSafeAccess)
+	- [NSArray+YUSerialization](#NSArray+YUSerialization)
 
-## 1. Foundation <div id="1"></div>
+UIKit
+- [UIBarButtonItem](#UIBarButtonItem)
+	- [UIBarButtonItem+YUCustom](#UIBarButtonItem+YUCustom)
+- [UIImage](#UIImage)
+	- [UIImage+YUCompress](#UIImage+YUCompress)
 
-### NSArray
-NSArray+YUFormatNSLog
+## 1. Foundation 
+
+### NSArray <div id="NSArray"></div>
+
+#### NSArray+YUFormatNSLog <div id="NSArray+YUFormatNSLog"></div>
 ```
 重写了 descriptionWithLocale 方法，作用是排版控制台的输出内容
+- (NSString *)descriptionWithLocale:(id)locale;
 ```
 
-NSArray+YUSafeAccess
+#### NSArray+YUSafeAccess <div id="NSArray+YUSafeAccess"></div>
 ```
 安全取出数组中的所对应类型的值
 - (id)yu_objectAtIndex:(NSUInteger)index;
@@ -60,7 +71,7 @@ NSArray+YUSafeAccess
 - (void)yu_addRect:(CGRect)rect;
 ```
 
-NSArray+YUSerialization
+#### NSArray+YUSerialization
 ```
 /**
  *  将“数组”序列化为 Json串
@@ -572,8 +583,11 @@ NSString+YUTimeFormat
 
 
 
-## 2. UIKit <div id="2"></div>
-UIBarButtonItem+YUCustom
+## 2. UIKit
+
+### UIBarButtonItem <div id="UIBarButtonItem"></div>
+
+#### UIBarButtonItem+YUCustom <div id="UIBarButtonItem+YUCustom"></div>
 ```
 自定义 BarButtonItem 样式
 
@@ -608,7 +622,9 @@ UIBarButtonItem+YUCustom
                                     action:(SEL)action;
 ```
 
-UIImage+YUCompress
+### UIImage <span id="UIImage"></span>
+
+#### UIImage+YUCompress <a id="UIImage+YUCompress"></a>
 ```
 //  压缩图片
 //
@@ -689,7 +705,7 @@ UIImage+YUCompress
 + (NSInteger)yu_computeBytesByJPEG:(UIImage *)sourceImage;
 ```
 
-UIImage+YUCreateImage
+#### UIImage+YUCreateImage
 ```
 /**
  用颜色生成图片，默认1x1
@@ -710,7 +726,7 @@ UIImage+YUCreateImage
 + (UIImage *)yu_createImageWithColor:(UIColor *)color size:(CGSize)size;
 ```
 
-UIImage+YUResize
+#### UIImage+YUResize
 ```
 //  图片拉伸平铺
 //  注意：默认图片的模式是 UIImageResizingModeTile（瓦片）
@@ -746,7 +762,9 @@ UIImage+YUResize
                       resizingMode:(UIImageResizingMode)resizingMode;
 ```
 
-UILabel+YUTextSize
+### UILabel
+
+#### UILabel+YUTextSize
 ```
 /**
  *  计算Label的内容大小
@@ -754,7 +772,9 @@ UILabel+YUTextSize
 - (CGSize)yu_textSize;
 ```
 
-UIView+YUFrame
+### UIView
+
+#### UIView+YUFrame
 ```
 适用于使用Frame布局
 
