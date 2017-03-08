@@ -54,15 +54,18 @@ pod 'YUCategory'
 
 ## 1. Foundation 
 
-### NSArray <div id="NSArray"></div>
+<div id="NSArray"></div>
+### NSArray 
 
-#### NSArray+YUFormatNSLog <div id="NSArray+YUFormatNSLog"></div>
+<div id="NSArray+YUFormatNSLog"></div>
+#### NSArray+YUFormatNSLog 
 ```
 重写了 descriptionWithLocale 方法，作用是排版控制台的输出内容
 - (NSString *)descriptionWithLocale:(id)locale;
 ```
 
-#### NSArray+YUSafeAccess <div id="NSArray+YUSafeAccess"></div>
+<div id="NSArray+YUSafeAccess"></div>
+#### NSArray+YUSafeAccess 
 ```
 安全取出数组中的所对应类型的值
 - (id)yu_objectAtIndex:(NSUInteger)index;
@@ -102,7 +105,8 @@ pod 'YUCategory'
 - (void)yu_addRect:(CGRect)rect;
 ```
 
-#### NSArray+YUSerialization <div id="NSArray+YUSerialization"></div>
+<div id="NSArray+YUSerialization"></div>
+#### NSArray+YUSerialization 
 ```
 /**
  *  将“数组”序列化为 Json串
@@ -113,9 +117,11 @@ pod 'YUCategory'
 ```
 
 
-### NSAttributedString <div id="NSAttributedString"></div>
+<div id="NSAttributedString"></div>
+### NSAttributedString 
 
-#### NSAttributedString+YUTextSize <div id="NSAttributedString+YUTextSize"></div>
+<div id="NSAttributedString+YUTextSize"></div>
+#### NSAttributedString+YUTextSize 
 ```
 /**
  *  计算 属性字符串 的大小
@@ -128,9 +134,11 @@ pod 'YUCategory'
 ```
 
 
-### NSDate <div id="NSDate"></div>
+<div id="NSDate"></div>
+### NSDate 
 
-#### NSDate+YUFormat <div id="NSDate+YUFormat"></div>
+<div id="NSDate+YUFormat"></div>
+#### NSDate+YUFormat 
 ```
 常用的几种日期表示格式
 typedef NS_ENUM(NSInteger, DateFormatMode) {
@@ -201,7 +209,8 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 + (NSString *)yu_dateAppendWeekWith:(NSDate *)date dateFormat:(NSString *)dateFormat;
 ```
 
-#### NSDate+YUJudge <div id="NSDate+YUJudge"></div>
+<div id="NSDate+YUJudge"></div>
+#### NSDate+YUJudge 
 ```
 /**
  *  是否为今天
@@ -222,7 +231,8 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 - (NSDate *)yu_dateWithYMD;
 ```
 
-#### NSDate+YUOther <div id="NSDate+YUOther"></div>
+<div id="NSDate+YUOther"></div>
+#### NSDate+YUOther 
 ```
 /**
  *  获得与当前时间的差距
@@ -231,15 +241,18 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 ```
 
 
-### NSDictionary <div id="NSDictionary"></div>
+<div id="NSDictionary"></div>
+### NSDictionary 
 
-#### NSDictionary+YUFormatNSLog <div id="NSDictionary+YUFormatNSLog"></div>
+<div id="NSDictionary+YUFormatNSLog"></div>
+#### NSDictionary+YUFormatNSLog 
 ```
 格式化（“美化”）控制台输出
 重写 - (NSString *)descriptionWithLocale:(id)locale; 方法
 ```
 
-#### NSDictionary+YUJSONString <div id="NSDictionary+YUJSONString"></div>
+<div id="NSDictionary+YUJSONString"></div>
+#### NSDictionary+YUJSONString 
 ```
 /**
  *  将“字典”序列化为 Json串
@@ -249,7 +262,8 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 - (NSString *)yu_serializationNSDictionaryToJson;
 ```
 
-#### NSDictionary+YUSafeAccess <div id="NSDictionary+YUSafeAccess"></div>
+<div id="NSDictionary+YUSafeAccess"></div>
+#### NSDictionary+YUSafeAccess 
 ```
 安全使用字典
 - (BOOL)yu_hasKey:(NSString *)key;
@@ -295,9 +309,11 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 ```
 
 
-### NSObject <div id="NSObject"></div>
+<div id="NSObject"></div>
+### NSObject 
 
-#### NSObject+YUFileDelete <div id="NSObject+YUFileDelete"></div>
+<div id="NSObject+YUFileDelete"></div>
+#### NSObject+YUFileDelete 
 ```
 删除沙盒文件
 
@@ -325,9 +341,11 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 ```
 
 
-### NSString <div id="NSString"></div>
+<div id="NSString"></div>
+### NSString 
 
-#### NSString+YUAppendPath <div id="NSString+YUAppendPath"></div>
+<div id="NSString+YUAppendPath"></div>
+#### NSString+YUAppendPath 
 ```
 在字符串之前追加路径，文件名在路径最后
 
@@ -341,7 +359,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 - (NSString *)yu_appendPathDocument;
 ```
 
-#### NSString+YUBase <div id="NSString+YUBase"></div>
+#### <div id="NSString+YUBase"></div> NSString+YUBase 
 ```
 /** base64编码 */
 - (NSString *)yu_base64Encode;
