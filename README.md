@@ -797,8 +797,8 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
                              right:(CGFloat)rightCapInsets
                       resizingMode:(UIImageResizingMode)resizingMode;
 ```
-
-### UILabel <div id="UILabel"></div>
+<div id="UILabel"></div>
+### UILabel 
 
 #### UILabel+YUTextSize <div id="UILabel+YUTextSize"></div>
 ```
@@ -810,6 +810,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 
 ### UIView <div id="UIView"></div>
 
+<div id="UIView+YUFrame"></div>
 #### UIView+YUFrame
 ```
 适用于使用Frame布局
