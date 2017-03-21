@@ -30,55 +30,30 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 
 /**
  *  1.1 格式化当前(Now)日期
- *
- *  @param  系统日期格式
- *
- *  @return 格式化后的字符串
  */
 + (NSString *)yu_dateWithSystemFormat:(DateFormatMode)dateFormatMode;
 /**
  *  1.2 格式化指定日期，指定格式
- *
- *  @param  系统日期格式
- *
- *  @return 格式化后的字符串
  */
 + (NSString *)yu_dateWith:(NSDate *)date systemDateFormat:(DateFormatMode)dateFormatMode;
 
 /**
  *  2.1 格式化当前(Now)日期
- *
- *  @param  日期格式
- *
- *  @return 格式化后的字符串
  */
 + (NSString *)yu_dateWithFormat:(NSString *)dateFormat;
 
 /**
  *  2.2 格式化指定日期，指定格式
- *
- *  @param date       被格式化的日期
- *  @param dateFormat 日期格式
- *
- *  @return 字符串：格式化后的
  */
 + (NSString *)yu_dateWith:(NSDate *)date dateFormat:(NSString *)dateFormat;
 
 /**
  *  3.1 格式化当前(Now)日期，后面拼接星期几
- *
- *  @param dateFormat 日期格式
- *
- *  @return 字符串：格式化后的
  */
 + (NSString *)yu_dateAppendWeekWith:(NSString *)dateFormat;
 
 /**
  *  3.2 格式化指定日期，后面拼接星期几
- *
- *  @param dateFormat 日期格式
- *
- *  @return 字符串：格式化后的
  */
 + (NSString *)yu_dateAppendWeekWith:(NSDate *)date dateFormat:(NSString *)dateFormat;
 

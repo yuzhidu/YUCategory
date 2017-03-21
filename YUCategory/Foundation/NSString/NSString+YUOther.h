@@ -17,14 +17,10 @@
 #pragma mark - 最多保留2位小数，数字末尾去0，并且四舍五入
 /**
  *  数字末尾去0
- *
- *  @param 传入浮点型
  */
 + (NSString *)yu_stringChangeWithPrice:(CGFloat)value;
 /**
  *  数字末尾去0
- *
- *  @param 传入字符串
  */
 + (NSString *)yu_stringChangeWithPriceStr:(NSString *)stringValue;
 

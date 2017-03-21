@@ -30,24 +30,20 @@
 }
 
 /**
- *  格式化当前(Now)日期
- *
- *  @param 系统日期格式
+ *  1.1 格式化当前(Now)日期
  */
 + (NSString *)yu_dateWithSystemFormat:(DateFormatMode)dateFormatMode {
     return [self yu_dateWithFormat:[self yu_dateFormatModeStringWith:dateFormatMode]];
 }
 /**
- *  格式化指定日期，指定格式
- *
- *  @param 系统日期格式
+ *  1.2 格式化指定日期，指定格式
  */
 + (NSString *)yu_dateWith:(NSDate *)date systemDateFormat:(DateFormatMode)dateFormatMode {
     return [self yu_dateWith:date dateFormat:[self yu_dateFormatModeStringWith:dateFormatMode]];
 }
 
 /**
- *  格式化当前(Now)日期
+ *  2.1 格式化当前(Now)日期
  */
 + (NSString *)yu_dateWithFormat:(NSString *)dateFormat {
     
@@ -55,7 +51,7 @@
 }
 
 /**
- *  格式化指定日期，指定格式
+ *  2.2 格式化指定日期，指定格式
  */
 + (NSString *)yu_dateWith:(NSDate *)date dateFormat:(NSString *)dateFormat {
     // 1.设定日期格式
@@ -70,14 +66,14 @@
 }
 
 /**
- *  格式化当前(Now)日期，后面拼接星期几
+ *  3.1 格式化当前(Now)日期，后面拼接星期几
  */
 + (NSString *)yu_dateAppendWeekWith:(NSString *)dateFormat {
     
     return [self yu_dateAppendWeekWith:[NSDate date] dateFormat:dateFormat];
 }
 /**
- *  格式化指定日期，后面拼接星期几
+ *  3.2 格式化指定日期，后面拼接星期几
  */
 + (NSString *)yu_dateAppendWeekWith:(NSDate *)date dateFormat:(NSString *)dateFormat {
     // 1.取得日期
