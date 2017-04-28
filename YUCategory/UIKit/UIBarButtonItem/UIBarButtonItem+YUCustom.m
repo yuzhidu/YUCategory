@@ -11,7 +11,7 @@
 
 #import "UIBarButtonItem+YUCustom.h"
 
-static const CGFloat kMaxHeight = 30.f;
+static const CGFloat kMaxHeight = 21.f;
 static const CGFloat kFontSize = 15.f;
 static const CGFloat kTitleMaxWidth = 120.f;
 
@@ -24,6 +24,18 @@ static const CGFloat kTitleMaxWidth = 120.f;
 + (UIBarButtonItem *)yu_barButtonWithImage:(NSString *)imageName
                                     target:(id)target
                                     action:(SEL)action {
+    return [UIBarButtonItem yu_barButtonWithImage:imageName
+                                           target:target
+                                           action:action
+                                             size:CGSizeMake(kMaxHeight, kMaxHeight)];
+}
+/**
+ *  1.只有图片，自定义宽高
+ */
++ (UIBarButtonItem *)yu_barButtonWithImage:(NSString *)imageName
+                                    target:(id)target
+                                    action:(SEL)action
+                                      size:(CGSize)size {
     
     UIControl *control = [[UIControl alloc] init];
     [control addTarget:target
@@ -31,9 +43,9 @@ static const CGFloat kTitleMaxWidth = 120.f;
       forControlEvents:UIControlEventTouchUpInside];
     
     UIImageView *imageV = [[UIImageView alloc] init];
-    imageV.contentMode = UIViewContentModeCenter;
+    imageV.contentMode = UIViewContentModeScaleAspectFit;
     imageV.image = [UIImage imageNamed:imageName];
-    imageV.frame = CGRectMake(0, 0, kMaxHeight, kMaxHeight);
+    imageV.frame = CGRectMake(0, 0, size.width, size.height);
     [control addSubview:imageV];
     control.frame = imageV.frame;
     
@@ -46,6 +58,28 @@ static const CGFloat kTitleMaxWidth = 120.f;
 + (UIBarButtonItem *)yu_barButtonWithTitle:(NSString *)title
                                     target:(id)target
                                     action:(SEL)action {
+    NSDictionary *attrs = @{NSFontAttributeName : [UIFont systemFontOfSize:kFontSize]};
+    CGSize maxSize = CGSizeMake(kTitleMaxWidth, kMaxHeight);
+    CGRect controlSize = [title boundingRectWithSize:maxSize
+                                             options:NSStringDrawingUsesLineFragmentOrigin
+                                          attributes:attrs
+                                             context:nil];
+    return [UIBarButtonItem yu_barButtonWithTitle:title
+                                           target:target
+                                           action:action
+                                             font:[UIFont systemFontOfSize:kFontSize]
+                                            color:kBarButtonItemCustomTitleColor
+                                             size:CGSizeMake(controlSize.size.width+1, kMaxHeight)];
+}
+/**
+ *  2.只有文字，自定义字体、颜色、宽高
+ */
++ (UIBarButtonItem *)yu_barButtonWithTitle:(NSString *)title
+                                    target:(id)target
+                                    action:(SEL)action
+                                      font:(UIFont *)font
+                                     color:(UIColor *)color
+                                      size:(CGSize)size {
     
     UIControl *control = [[UIControl alloc] init];
     [control addTarget:target
@@ -54,18 +88,11 @@ static const CGFloat kTitleMaxWidth = 120.f;
     
     UILabel *titleLab = [[UILabel alloc] init];
     titleLab.textAlignment = NSTextAlignmentCenter;
-    titleLab.font = [UIFont systemFontOfSize:kFontSize];
-    titleLab.textColor = kBarButtonItemCustomTitleColor;
-    [control addSubview:titleLab];
-    
-    NSDictionary *attrs = @{NSFontAttributeName : titleLab.font};
-    CGSize maxSize = CGSizeMake(kTitleMaxWidth, kMaxHeight);
-    CGRect controlSize = [title boundingRectWithSize:maxSize
-                                             options:NSStringDrawingUsesLineFragmentOrigin
-                                          attributes:attrs
-                                             context:nil];
+    titleLab.font = font!=nil?font:[UIFont systemFontOfSize:kFontSize];
+    titleLab.textColor = color!=nil?color:kBarButtonItemCustomTitleColor;
     titleLab.text = title;
-    titleLab.frame = CGRectMake(0, 0, controlSize.size.width+1, kMaxHeight);
+    titleLab.frame = CGRectMake(0, 0, size.width, size.height);
+    [control addSubview:titleLab];
     
     control.frame = titleLab.frame;
     
@@ -86,7 +113,7 @@ static const CGFloat kTitleMaxWidth = 120.f;
       forControlEvents:UIControlEventTouchUpInside];
     
     UIImageView *imageV = [[UIImageView alloc] init];
-    imageV.contentMode = UIViewContentModeCenter;
+    imageV.contentMode = UIViewContentModeScaleAspectFit;
     imageV.image = [UIImage imageNamed:imageName];
     imageV.frame = CGRectMake(0, 0, kMaxHeight, kMaxHeight);
     [control addSubview:imageV];
@@ -140,7 +167,7 @@ static const CGFloat kTitleMaxWidth = 120.f;
     titleLab.frame = CGRectMake(0, 0, titleLabWidth, kMaxHeight);
     
     UIImageView *imageV = [[UIImageView alloc] init];
-    imageV.contentMode = UIViewContentModeCenter;
+    imageV.contentMode = UIViewContentModeScaleAspectFit;
     imageV.image = [UIImage imageNamed:imageName];
     imageV.frame = CGRectMake(titleLabWidth, 0, kMaxHeight, kMaxHeight);
     [control addSubview:imageV];

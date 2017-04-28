@@ -19,6 +19,13 @@
 + (UIBarButtonItem *)yu_barButtonWithImage:(NSString *)imageName
                                     target:(id)target
                                     action:(SEL)action;
+/**
+ *  1.只有图片，自定义宽高
+ */
++ (UIBarButtonItem *)yu_barButtonWithImage:(NSString *)imageName
+                                    target:(id)target
+                                    action:(SEL)action
+                                      size:(CGSize)size;
 
 /**
  *  2.只有文字
@@ -26,6 +33,15 @@
 + (UIBarButtonItem *)yu_barButtonWithTitle:(NSString *)title
                                     target:(id)target
                                     action:(SEL)action;
+/**
+ *  2.只有文字，自定义字体、颜色、宽高
+ */
++ (UIBarButtonItem *)yu_barButtonWithTitle:(NSString *)title
+                                    target:(id)target
+                                    action:(SEL)action
+                                      font:(UIFont *)font
+                                     color:(UIColor *)color
+                                      size:(CGSize)size;
 
 /**
  *  3.图片在左，文字在右
