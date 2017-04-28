@@ -26,43 +26,50 @@
     switch (self.row) {
         case 0:
         {
-            self.navigationItem.leftBarButtonItems = [UIBarButtonItem yu_barButtonWithImage:@"arrowBack"
-                                                                                     target:self
-                                                                                     action:@selector(leftBarButtonItemClick)];
-            
-            self.navigationItem.rightBarButtonItems = [UIBarButtonItem yu_barButtonWithImage:@"share"
-                                                                                      target:self
-                                                                                      action:@selector(leftBarButtonItemClick)];
+            self.navigationItem.leftBarButtonItems = [UIBarButtonItem yu_barWithImage:@"arrowBack"
+                                                                               target:self
+                                                                               action:@selector(leftBarButtonItemClick)
+                                                                     highlightedImage:@"share"
+                                                                               margin:15
+                                                                                 size:CGSizeMake(30, 30)];
         }
             break;
         case 1:
         {
-            self.navigationItem.leftBarButtonItems = [UIBarButtonItem yu_barButtonWithImage:@"arrowBack"
-                                                                                     target:self
-                                                                                     action:@selector(leftBarButtonItemClick)
-                                                                                     margin:-15];
+            self.navigationItem.leftBarButtonItems = [UIBarButtonItem yu_barWithImage:@"arrowBack"
+                                                                               target:self
+                                                                               action:@selector(leftBarButtonItemClick)];
+            
+            self.navigationItem.rightBarButtonItems = [UIBarButtonItem yu_barWithImage:@"share"
+                                                                                target:self
+                                                                                action:@selector(leftBarButtonItemClick)];
         }
             break;
         case 2:
         {
-            self.navigationItem.leftBarButtonItems = [UIBarButtonItem yu_barButtonWithImage:@"arrowBack"
-                                                                           highlightedImage:@"share"
-                                                                                     target:self
-                                                                                     action:@selector(leftBarButtonItemClick)
-                                                                                     margin:3];
+            self.navigationItem.leftBarButtonItems = [UIBarButtonItem yu_barWithImage:@"arrowBack"
+                                                                               target:self
+                                                                               action:@selector(leftBarButtonItemClick)
+                                                                     highlightedImage:@"share"];
         }
             break;
         case 3:
         {
-            self.navigationItem.leftBarButtonItems = [UIBarButtonItem yu_barButtonWithImage:@"arrowBack"
-                                                                           highlightedImage:nil
-                                                                                     target:self
-                                                                                     action:@selector(leftBarButtonItemClick)
-                                                                                     margin:12
-                                                                                       size:CGSizeMake(30, 30)];
+            self.navigationItem.leftBarButtonItems = [UIBarButtonItem yu_barWithImage:@"arrowBack"
+                                                                               target:self
+                                                                               action:@selector(leftBarButtonItemClick)
+                                                                               margin:3];
         }
             break;
-            
+        case 4:
+        {
+            self.navigationItem.leftBarButtonItems = [UIBarButtonItem yu_barWithImage:@"arrowBack"
+                                                                               target:self
+                                                                               action:@selector(leftBarButtonItemClick)
+                                                                     highlightedImage:@"share"
+                                                                               margin:15];
+        }
+            break;
         default:
             break;
     }

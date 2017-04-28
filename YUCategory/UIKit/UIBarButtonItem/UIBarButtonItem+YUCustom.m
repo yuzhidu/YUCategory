@@ -11,67 +11,29 @@
 
 #import "UIBarButtonItem+YUCustom.h"
 
-static const CGFloat kMaxHeight = 44.f;
-static const CGFloat kFontSize = 15.f;
-static const CGFloat kTitleMaxWidth = 120.f;
-
-#define kBarButtonItemCustomTitleColor     [UIColor whiteColor]
+#define kMaxHeight      44.f
+#define kMinMargin      -16.f
+#define kFontSize       15.f
 
 @implementation UIBarButtonItem (YUCustom)
 /**
- *  1.1 只有图片
+ *  1.0 图片：有高亮图，调整间隙，自定义宽高
  */
-+ (NSArray<UIBarButtonItem *> *)yu_barButtonWithImage:(NSString *)imageName
-                                               target:(id)target
-                                               action:(SEL)action {
-    return [UIBarButtonItem yu_barButtonWithImage:imageName
-                                           target:target
-                                           action:action
-                                           margin:-16];
-}
-/**
- *  1.2 只有图片，调整间隙
- */
-+ (NSArray<UIBarButtonItem *> *)yu_barButtonWithImage:(NSString *)imageName
-                                               target:(id)target
-                                               action:(SEL)action
-                                               margin:(CGFloat)margin {
-    return [UIBarButtonItem yu_barButtonWithImage:imageName
-                                 highlightedImage:nil
-                                           target:target
-                                           action:action
-                                           margin:margin];
-}
-/**
- *  1.3 只有图片，有高亮图，调整间隙
- */
-+ (NSArray<UIBarButtonItem *> *)yu_barButtonWithImage:(NSString *)imageName
-                                     highlightedImage:(NSString *)highlightedImageName
-                                               target:(id)target
-                                               action:(SEL)action
-                                               margin:(CGFloat)margin {
-    return [UIBarButtonItem yu_barButtonWithImage:imageName
-                                 highlightedImage:highlightedImageName
-                                           target:target
-                                           action:action
-                                           margin:margin
-                                             size:CGSizeMake(kMaxHeight, kMaxHeight)];
-}
-/**
- *  1.4 只有图片，有高亮图，调整间隙、自定义宽高
- */
-+ (NSArray<UIBarButtonItem *> *)yu_barButtonWithImage:(NSString *)imageName
-                                     highlightedImage:(NSString *)highlightedImageName
-                                               target:(id)target
-                                               action:(SEL)action
-                                               margin:(CGFloat)margin
-                                                 size:(CGSize)size {
++ (NSArray<UIBarButtonItem *> *)yu_barWithImage:(NSString *)name
+                                         target:(id)target
+                                         action:(SEL)action
+                               highlightedImage:(NSString *)highlightedName
+                                         margin:(CGFloat)margin
+                                           size:(CGSize)size
+{
     UIButton *btn = [[UIButton alloc] init];
     btn.imageView.contentMode = UIViewContentModeCenter;
-    [btn setImage:[UIImage imageNamed:imageName]
+    [btn setImage:[UIImage imageNamed:name]
          forState:UIControlStateNormal];
-    [btn setImage:[UIImage imageNamed:highlightedImageName?highlightedImageName:@""]
-         forState:UIControlStateHighlighted];
+    if (highlightedName != nil) {
+        [btn setImage:[UIImage imageNamed:highlightedName]
+             forState:UIControlStateHighlighted];
+    }
     [btn addTarget:target
             action:action forControlEvents:UIControlEventTouchUpInside];
     btn.frame = CGRectMake(0, 0, size.width, size.height);
@@ -83,54 +45,181 @@ static const CGFloat kTitleMaxWidth = 120.f;
     NSArray<UIBarButtonItem *> *arr = @[negativeSpacer, barButtonItem];
     return arr;
 }
-
 /**
- *  2.1 只有文字
+ *  1.1 图片
  */
-+ (UIBarButtonItem *)yu_barButtonWithTitle:(NSString *)title
-                                    target:(id)target
-                                    action:(SEL)action {
-    NSDictionary *attrs = @{NSFontAttributeName : [UIFont systemFontOfSize:kFontSize]};
-    CGSize maxSize = CGSizeMake(kTitleMaxWidth, kMaxHeight);
-    CGRect controlSize = [title boundingRectWithSize:maxSize
-                                             options:NSStringDrawingUsesLineFragmentOrigin
-                                          attributes:attrs
-                                             context:nil];
-    return [UIBarButtonItem yu_barButtonWithTitle:title
-                                           target:target
-                                           action:action
-                                             font:[UIFont systemFontOfSize:kFontSize]
-                                            color:kBarButtonItemCustomTitleColor
-                                             size:CGSizeMake(controlSize.size.width+1, kMaxHeight)];
++ (NSArray<UIBarButtonItem *> *)yu_barWithImage:(NSString *)name
+                                         target:(id)target
+                                         action:(SEL)action
+{
+    return [UIBarButtonItem yu_barWithImage:name
+                                     target:target
+                                     action:action
+                           highlightedImage:nil
+                                     margin:kMinMargin
+                                       size:CGSizeMake(kMaxHeight, kMaxHeight)];
+}
+/**
+ *  1.2 图片：有高亮图
+ */
++ (NSArray<UIBarButtonItem *> *)yu_barWithImage:(NSString *)name
+                                         target:(id)target
+                                         action:(SEL)action
+                               highlightedImage:(NSString *)highlightedName
+{
+    return [UIBarButtonItem yu_barWithImage:name
+                                     target:target
+                                     action:action
+                           highlightedImage:highlightedName
+                                     margin:kMinMargin
+                                       size:CGSizeMake(kMaxHeight, kMaxHeight)];
+}
+/**
+ *  1.3 图片：调整间隙
+ */
++ (NSArray<UIBarButtonItem *> *)yu_barWithImage:(NSString *)name
+                                         target:(id)target
+                                         action:(SEL)action
+                                         margin:(CGFloat)margin
+{
+    return [UIBarButtonItem yu_barWithImage:name
+                                     target:target
+                                     action:action
+                           highlightedImage:nil
+                                     margin:margin
+                                       size:CGSizeMake(kMaxHeight, kMaxHeight)];
+}
+/**
+ *  1.4 图片：有高亮图，调整间隙
+ */
++ (NSArray<UIBarButtonItem *> *)yu_barWithImage:(NSString *)name
+                                         target:(id)target
+                                         action:(SEL)action
+                               highlightedImage:(NSString *)highlightedName
+                                         margin:(CGFloat)margin
+{
+    return [UIBarButtonItem yu_barWithImage:name
+                                     target:target
+                                     action:action
+                           highlightedImage:highlightedName
+                                     margin:margin
+                                       size:CGSizeMake(kMaxHeight, kMaxHeight)];
 }
 
 
 /**
- *  2.只有文字，自定义字体、颜色、宽高
+ *  2.0 文字：自定义颜色、字体、间隙、高亮文字、高亮颜色、字体排列方式、控件大小
  */
-+ (UIBarButtonItem *)yu_barButtonWithTitle:(NSString *)title
-                                    target:(id)target
-                                    action:(SEL)action
-                                      font:(UIFont *)font
-                                     color:(UIColor *)color
-                                      size:(CGSize)size {
-    
-    UIControl *control = [[UIControl alloc] init];
-    [control addTarget:target
-                action:action
-      forControlEvents:UIControlEventTouchUpInside];
-    
-    UILabel *titleLab = [[UILabel alloc] init];
-    titleLab.textAlignment = NSTextAlignmentCenter;
-    titleLab.font = font!=nil?font:[UIFont systemFontOfSize:kFontSize];
-    titleLab.textColor = color!=nil?color:kBarButtonItemCustomTitleColor;
-    titleLab.text = title;
-    titleLab.frame = CGRectMake(0, 0, size.width, size.height);
-    [control addSubview:titleLab];
-    
-    control.frame = titleLab.frame;
-    
-    return [[UIBarButtonItem alloc] initWithCustomView:control];
++ (NSArray<UIBarButtonItem *> *)yu_barWithTitle:(NSString *)title
+                                         target:(id)target
+                                         action:(SEL)action
+                                          color:(UIColor *)color
+                                           font:(UIFont *)font
+                                         margin:(CGFloat)margin
+                               highlightedTitle:(NSString *)highlightedTitle
+                               highlightedColor:(UIColor *)highlightedColor
+                                  textAlignment:(NSTextAlignment)textAlignment
+                                           size:(CGSize)size
+{
+    UIButton *btn = [[UIButton alloc] init];
+    [btn setTitle:title forState:UIControlStateNormal];
+    if (highlightedTitle != nil) {
+        [btn setTitle:highlightedTitle forState:UIControlStateHighlighted];
+    }
+    [btn setTitleColor:color forState:UIControlStateNormal];
+    if (highlightedColor != nil) {
+        [btn setTitleColor:highlightedColor forState:UIControlStateHighlighted];
+    }
+    btn.titleLabel.textAlignment = textAlignment;
+    [btn addTarget:target
+            action:action forControlEvents:UIControlEventTouchUpInside];
+    btn.frame = CGRectMake(0, 0, size.width, size.height);
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                                                                    target:nil
+                                                                                    action:nil];
+    negativeSpacer.width = margin;
+    NSArray<UIBarButtonItem *> *arr = @[negativeSpacer, barButtonItem];
+    return arr;
+}
+/**
+ *  2.1 文字
+ */
++ (NSArray<UIBarButtonItem *> *)yu_barWithTitle:(NSString *)title
+                                         target:(id)target
+                                         action:(SEL)action
+{
+    NSDictionary *attrs = @{NSFontAttributeName : [UIFont systemFontOfSize:kFontSize]};
+    CGSize maxSize = CGSizeMake(MAXFLOAT, kMaxHeight);
+    CGSize controlSize = [title boundingRectWithSize:maxSize
+                                             options:NSStringDrawingUsesLineFragmentOrigin
+                                          attributes:attrs
+                                             context:nil].size;
+    return [UIBarButtonItem yu_barWithTitle:title
+                                     target:target
+                                     action:action
+                                      color:[UIColor whiteColor]
+                                       font:[UIFont systemFontOfSize:kFontSize]
+                                     margin:kMinMargin
+                           highlightedTitle:nil
+                           highlightedColor:nil
+                              textAlignment:NSTextAlignmentCenter
+                                       size:CGSizeMake(controlSize.width+10, kFontSize)];
+}
+/**
+ *  2.2 文字：自定义颜色、字体
+ */
++ (NSArray<UIBarButtonItem *> *)yu_barWithTitle:(NSString *)title
+                                         target:(id)target
+                                         action:(SEL)action
+                                          color:(UIColor *)color
+                                           font:(UIFont *)font
+{
+    NSDictionary *attrs = @{NSFontAttributeName : font};
+    CGSize maxSize = CGSizeMake(MAXFLOAT, kMaxHeight);
+    CGSize controlSize = [title boundingRectWithSize:maxSize
+                                             options:NSStringDrawingUsesLineFragmentOrigin
+                                          attributes:attrs
+                                             context:nil].size;
+    return [UIBarButtonItem yu_barWithTitle:title
+                                     target:target
+                                     action:action
+                                      color:color
+                                       font:font
+                                     margin:kMinMargin
+                           highlightedTitle:nil
+                           highlightedColor:nil
+                              textAlignment:NSTextAlignmentCenter
+                                       size:CGSizeMake(controlSize.width+10, kFontSize)];
+}
+
+/**
+ *  2.3 文字：自定义颜色、字体、间隙、字体排列方式
+ */
++ (NSArray<UIBarButtonItem *> *)yu_barWithTitle:(NSString *)title
+                                         target:(id)target
+                                         action:(SEL)action
+                                          color:(UIColor *)color
+                                           font:(UIFont *)font
+                                         margin:(CGFloat)margin
+                                  textAlignment:(NSTextAlignment)textAlignment
+{
+    NSDictionary *attrs = @{NSFontAttributeName : font};
+    CGSize maxSize = CGSizeMake(MAXFLOAT, kMaxHeight);
+    CGSize controlSize = [title boundingRectWithSize:maxSize
+                                             options:NSStringDrawingUsesLineFragmentOrigin
+                                          attributes:attrs
+                                             context:nil].size;
+    return [UIBarButtonItem yu_barWithTitle:title
+                                     target:target
+                                     action:action
+                                      color:color
+                                       font:font
+                                     margin:margin
+                           highlightedTitle:nil
+                           highlightedColor:nil
+                              textAlignment:NSTextAlignmentCenter
+                                       size:CGSizeMake(controlSize.width+10, kFontSize)];
 }
 
 /**
@@ -155,11 +244,11 @@ static const CGFloat kTitleMaxWidth = 120.f;
     UILabel *titleLab = [[UILabel alloc] init];
     titleLab.textAlignment = NSTextAlignmentCenter;
     titleLab.font = [UIFont systemFontOfSize:kFontSize];
-    titleLab.textColor = kBarButtonItemCustomTitleColor;
+    titleLab.textColor = [UIColor whiteColor];
     [control addSubview:titleLab];
     
     NSDictionary *attrs = @{NSFontAttributeName : titleLab.font};
-    CGSize maxSize = CGSizeMake(kTitleMaxWidth, kMaxHeight);
+    CGSize maxSize = CGSizeMake(120, kMaxHeight);
     CGRect controlSize = [title boundingRectWithSize:maxSize
                                              options:NSStringDrawingUsesLineFragmentOrigin
                                           attributes:attrs
@@ -187,11 +276,11 @@ static const CGFloat kTitleMaxWidth = 120.f;
     
     UILabel *titleLab = [[UILabel alloc] init];
     titleLab.font = [UIFont systemFontOfSize:kFontSize];
-    titleLab.textColor = kBarButtonItemCustomTitleColor;
+    titleLab.textColor = [UIColor whiteColor];
     [control addSubview:titleLab];
     
     NSDictionary *attrs = @{NSFontAttributeName : titleLab.font};
-    CGSize maxSize = CGSizeMake(kTitleMaxWidth, kMaxHeight);
+    CGSize maxSize = CGSizeMake(120, kMaxHeight);
     CGRect controlSize = [title boundingRectWithSize:maxSize
                                              options:NSStringDrawingUsesLineFragmentOrigin
                                           attributes:attrs

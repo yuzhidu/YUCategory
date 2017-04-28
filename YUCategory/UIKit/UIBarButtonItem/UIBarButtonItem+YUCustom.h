@@ -19,75 +19,87 @@
 
 @interface UIBarButtonItem (YUCustom)
 /**
- 1.1 只有图片
- */
-+ (NSArray<UIBarButtonItem *> *)yu_barButtonWithImage:(NSString *)imageName
-                                               target:(id)target
-                                               action:(SEL)action;
-/**
- 1.2 只有图片，调整间隙
- */
-+ (NSArray<UIBarButtonItem *> *)yu_barButtonWithImage:(NSString *)imageName
-                                               target:(id)target
-                                               action:(SEL)action
-                                               margin:(CGFloat)margin;
-/**
- 1.3 只有图片，调整间隙，有高亮图
- */
-+ (NSArray<UIBarButtonItem *> *)yu_barButtonWithImage:(NSString *)imageName
-                                     highlightedImage:(NSString *)highlightedImageName
-                                               target:(id)target
-                                               action:(SEL)action
-                                               margin:(CGFloat)margin;
-/**
- 1.4 只有图片，调整间隙，有高亮图，自定义宽高
+ 1.0 图片：调整间隙，有高亮图，自定义宽高
  
- @param imageName 图片名
- @param highlightedImageName 图片高亮名
+ @param name 图片名
  @param target 监听者
  @param action 执行函数
+ @param highlightedName 图片高亮名
  @param margin 间隙（见：特别说明）
  @param size 控件大小
  @return 数组
  */
-+ (NSArray<UIBarButtonItem *> *)yu_barButtonWithImage:(NSString *)imageName
-                                     highlightedImage:(NSString *)highlightedImageName
-                                               target:(id)target
-                                               action:(SEL)action
-                                               margin:(CGFloat)margin
-                                                 size:(CGSize)size;
++ (NSArray<UIBarButtonItem *> *)yu_barWithImage:(NSString *)name
+                                         target:(id)target
+                                         action:(SEL)action
+                               highlightedImage:(NSString *)highlightedName
+                                         margin:(CGFloat)margin
+                                           size:(CGSize)size;
+/**
+ *  1.1 图片
+ */
++ (NSArray<UIBarButtonItem *> *)yu_barWithImage:(NSString *)name
+                                         target:(id)target
+                                         action:(SEL)action;
+/**
+ *  1.2 图片：有高亮图
+ */
++ (NSArray<UIBarButtonItem *> *)yu_barWithImage:(NSString *)name
+                                         target:(id)target
+                                         action:(SEL)action
+                               highlightedImage:(NSString *)highlightedName;
+/**
+ *  1.3 图片：调整间隙
+ */
++ (NSArray<UIBarButtonItem *> *)yu_barWithImage:(NSString *)name
+                                         target:(id)target
+                                         action:(SEL)action
+                                         margin:(CGFloat)margin;
+/**
+ *  1.4 图片：有高亮图，调整间隙
+ */
++ (NSArray<UIBarButtonItem *> *)yu_barWithImage:(NSString *)name
+                                         target:(id)target
+                                         action:(SEL)action
+                               highlightedImage:(NSString *)highlightedName
+                                         margin:(CGFloat)margin;
 
 
 /**
- *  2.只有文字
+ *  2.0 文字：自定义颜色、字体、间隙、高亮文字、高亮颜色、字体排列方式、控件大小
  */
-+ (UIBarButtonItem *)yu_barButtonWithTitle:(NSString *)title
-                                    target:(id)target
-                                    action:(SEL)action;
++ (NSArray<UIBarButtonItem *> *)yu_barWithTitle:(NSString *)title
+                                         target:(id)target
+                                         action:(SEL)action
+                                          color:(UIColor *)color
+                                           font:(UIFont *)font
+                                         margin:(CGFloat)margin
+                               highlightedTitle:(NSString *)highlightedTitle
+                               highlightedColor:(UIColor *)highlightedColor
+                                  textAlignment:(NSTextAlignment)textAlignment
+                                           size:(CGSize)size;
 /**
- *  2.只有文字，自定义字体、颜色、宽高
+ *  2.1 文字
  */
-+ (UIBarButtonItem *)yu_barButtonWithTitle:(NSString *)title
-                                    target:(id)target
-                                    action:(SEL)action
-                                      font:(UIFont *)font
-                                     color:(UIColor *)color
-                                      size:(CGSize)size;
-
++ (NSArray<UIBarButtonItem *> *)yu_barWithTitle:(NSString *)title
+                                         target:(id)target
+                                         action:(SEL)action;
 /**
- *  3.图片在左，文字在右
+ *  2.2 文字：自定义颜色、字体
  */
-+ (UIBarButtonItem *)yu_barButtonWithImage:(NSString *)imageName
-                                     title:(NSString *)title
-                                    target:(id)target
-                                    action:(SEL)action;
-
++ (NSArray<UIBarButtonItem *> *)yu_barWithTitle:(NSString *)title
+                                         target:(id)target
+                                         action:(SEL)action
+                                          color:(UIColor *)color
+                                           font:(UIFont *)font;
 /**
- *  4.文字在左，图片在右
+ *  2.3 文字：自定义颜色、字体、间隙、字体排列方式
  */
-+ (UIBarButtonItem *)yu_barButtonWithTitle:(NSString *)title
-                                     image:(NSString *)imageName
-                                    target:(id)target
-                                    action:(SEL)action;
-
++ (NSArray<UIBarButtonItem *> *)yu_barWithTitle:(NSString *)title
+                                         target:(id)target
+                                         action:(SEL)action
+                                          color:(UIColor *)color
+                                           font:(UIFont *)font
+                                         margin:(CGFloat)margin
+                                  textAlignment:(NSTextAlignment)textAlignment;
 @end
