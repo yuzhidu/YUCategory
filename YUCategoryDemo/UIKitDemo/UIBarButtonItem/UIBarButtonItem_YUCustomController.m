@@ -7,31 +7,50 @@
 //
 
 #import "UIBarButtonItem_YUCustomController.h"
+#import "UIBarButtonItemDetailController.h"
 
 @interface UIBarButtonItem_YUCustomController ()
-
+/** 标题 */
+@property (nonatomic, strong) NSArray<NSString *> *itemsTitle;
 @end
 
 @implementation UIBarButtonItem_YUCustomController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.itemsTitle count];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *identifer = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifer];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifer];
+    }
+    cell.detailTextLabel.text = self.itemsTitle[indexPath.row];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    return cell;
 }
-*/
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UIBarButtonItemDetailController *detailC = [[UIBarButtonItemDetailController alloc] init];
+    detailC.row = indexPath.row;
+    [self.navigationController pushViewController:detailC animated:YES];
+}
+
+- (NSArray<NSString *> *)itemsTitle {
+    if (_itemsTitle == nil) {
+        _itemsTitle = @[
+                        @"1.1 只有图片",
+                        @"1.2 只有图片，调整间隙",
+                        @"1.3 只有图片，调整间隙，有高亮图",
+                        @"1.4 只有图片，调整间隙，有高亮图，自定义宽高"];
+    }
+    return _itemsTitle;
+}
 
 @end

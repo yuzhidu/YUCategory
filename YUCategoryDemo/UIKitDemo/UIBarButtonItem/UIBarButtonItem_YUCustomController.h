@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIBarButtonItem_YUCustomController : UIViewController
+@interface UIBarButtonItem_YUCustomController : UITableViewController
 
 @end

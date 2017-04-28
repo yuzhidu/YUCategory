@@ -57,7 +57,9 @@
     UIViewController *controller = [[class alloc] init];
     controller.title = name;
     controller.view.backgroundColor = kColorBackground;
-    controller.navigationItem.leftBarButtonItem = [UIBarButtonItem yu_barButtonWithImage:@"arrowBack" target:self action:@selector(leftBarButtonItemClick)];
+    controller.navigationItem.leftBarButtonItems = [UIBarButtonItem yu_barButtonWithImage:@"arrowBack"
+                                                                                   target:self
+                                                                                   action:@selector(leftBarButtonItemClick)];
     [self.navigationController pushViewController:controller animated:YES];
 }
 - (void)leftBarButtonItemClick {
