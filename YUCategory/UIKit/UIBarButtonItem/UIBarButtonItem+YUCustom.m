@@ -123,6 +123,7 @@
 {
     UIButton *btn = [[UIButton alloc] init];
     [btn setTitle:title forState:UIControlStateNormal];
+    btn.titleLabel.font = font;
     if (highlightedTitle != nil) {
         [btn setTitle:highlightedTitle forState:UIControlStateHighlighted];
     }
@@ -143,31 +144,7 @@
     return arr;
 }
 /**
- *  2.1 文字
- */
-+ (NSArray<UIBarButtonItem *> *)yu_barWithTitle:(NSString *)title
-                                         target:(id)target
-                                         action:(SEL)action
-{
-    NSDictionary *attrs = @{NSFontAttributeName : [UIFont systemFontOfSize:kFontSize]};
-    CGSize maxSize = CGSizeMake(MAXFLOAT, kMaxHeight);
-    CGSize controlSize = [title boundingRectWithSize:maxSize
-                                             options:NSStringDrawingUsesLineFragmentOrigin
-                                          attributes:attrs
-                                             context:nil].size;
-    return [UIBarButtonItem yu_barWithTitle:title
-                                     target:target
-                                     action:action
-                                      color:[UIColor whiteColor]
-                                       font:[UIFont systemFontOfSize:kFontSize]
-                                     margin:kMinMargin
-                           highlightedTitle:nil
-                           highlightedColor:nil
-                              textAlignment:NSTextAlignmentCenter
-                                       size:CGSizeMake(controlSize.width+10, kFontSize)];
-}
-/**
- *  2.2 文字：自定义颜色、字体
+ *  2.1 文字：自定义颜色、字体
  */
 + (NSArray<UIBarButtonItem *> *)yu_barWithTitle:(NSString *)title
                                          target:(id)target
@@ -190,11 +167,10 @@
                            highlightedTitle:nil
                            highlightedColor:nil
                               textAlignment:NSTextAlignmentCenter
-                                       size:CGSizeMake(controlSize.width+10, kFontSize)];
+                                       size:CGSizeMake(controlSize.width+22, kFontSize)];
 }
-
 /**
- *  2.3 文字：自定义颜色、字体、间隙、字体排列方式
+ *  2.2 文字：自定义颜色、字体、间隙
  */
 + (NSArray<UIBarButtonItem *> *)yu_barWithTitle:(NSString *)title
                                          target:(id)target
@@ -202,7 +178,6 @@
                                           color:(UIColor *)color
                                            font:(UIFont *)font
                                          margin:(CGFloat)margin
-                                  textAlignment:(NSTextAlignment)textAlignment
 {
     NSDictionary *attrs = @{NSFontAttributeName : font};
     CGSize maxSize = CGSizeMake(MAXFLOAT, kMaxHeight);
@@ -219,16 +194,16 @@
                            highlightedTitle:nil
                            highlightedColor:nil
                               textAlignment:NSTextAlignmentCenter
-                                       size:CGSizeMake(controlSize.width+10, kFontSize)];
+                                       size:CGSizeMake(controlSize.width+22, kFontSize)];
 }
 
 /**
  *  3.图片在左，文字在右
  */
-+ (UIBarButtonItem *)yu_barButtonWithImage:(NSString *)imageName
-                                     title:(NSString *)title
-                                    target:(id)target
-                                    action:(SEL)action {
++ (UIBarButtonItem *)yu_barWithImage:(NSString *)imageName
+                               title:(NSString *)title
+                              target:(id)target
+                              action:(SEL)action {
     
     UIControl *control = [[UIControl alloc] init];
     [control addTarget:target
@@ -264,10 +239,10 @@
 /**
  *  4.文字在左，图片在右
  */
-+ (UIBarButtonItem *)yu_barButtonWithTitle:(NSString *)title
-                                     image:(NSString *)imageName
-                                    target:(id)target
-                                    action:(SEL)action {
++ (UIBarButtonItem *)yu_barWithTitle:(NSString *)title
+                               image:(NSString *)imageName
+                              target:(id)target
+                              action:(SEL)action {
     
     UIControl *control = [[UIControl alloc] init];
     [control addTarget:target

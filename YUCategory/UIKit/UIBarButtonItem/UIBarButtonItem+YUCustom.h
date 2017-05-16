@@ -79,13 +79,7 @@
                                   textAlignment:(NSTextAlignment)textAlignment
                                            size:(CGSize)size;
 /**
- *  2.1 文字
- */
-+ (NSArray<UIBarButtonItem *> *)yu_barWithTitle:(NSString *)title
-                                         target:(id)target
-                                         action:(SEL)action;
-/**
- *  2.2 文字：自定义颜色、字体
+ *  2.1 文字：自定义颜色、字体
  */
 + (NSArray<UIBarButtonItem *> *)yu_barWithTitle:(NSString *)title
                                          target:(id)target
@@ -93,13 +87,12 @@
                                           color:(UIColor *)color
                                            font:(UIFont *)font;
 /**
- *  2.3 文字：自定义颜色、字体、间隙、字体排列方式
+ *  2.2 文字：自定义颜色、字体、间隙
  */
 + (NSArray<UIBarButtonItem *> *)yu_barWithTitle:(NSString *)title
                                          target:(id)target
                                          action:(SEL)action
                                           color:(UIColor *)color
                                            font:(UIFont *)font
-                                         margin:(CGFloat)margin
-                                  textAlignment:(NSTextAlignment)textAlignment;
+                                         margin:(CGFloat)margin;
 @end
