@@ -58,14 +58,16 @@ pod 'YUCategory'
 ### NSArray 
 
 <div id="NSArray+YUFormatNSLog"></div>
-#### NSArray+YUFormatNSLog 
+#### NSArray+YUFormatNSLog
+
 ```
 重写了 descriptionWithLocale 方法，作用是排版控制台的输出内容
 - (NSString *)descriptionWithLocale:(id)locale;
 ```
 
 <div id="NSArray+YUSafeAccess"></div>
-#### NSArray+YUSafeAccess 
+#### NSArray+YUSafeAccess
+
 ```
 安全取出数组中的所对应类型的值
 - (id)yu_objectAtIndex:(NSUInteger)index;
@@ -107,6 +109,7 @@ pod 'YUCategory'
 
 <div id="NSArray+YUSerialization"></div>
 #### NSArray+YUSerialization 
+
 ```
 /**
  *  将“数组”序列化为 Json串
@@ -122,6 +125,7 @@ pod 'YUCategory'
 
 <div id="NSAttributedString+YUTextSize"></div>
 #### NSAttributedString+YUTextSize 
+
 ```
 /**
  *  计算 属性字符串 的大小
@@ -139,6 +143,7 @@ pod 'YUCategory'
 
 <div id="NSDate+YUFormat"></div>
 #### NSDate+YUFormat 
+
 ```
 常用的几种日期表示格式
 typedef NS_ENUM(NSInteger, DateFormatMode) {
@@ -211,6 +216,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 
 <div id="NSDate+YUJudge"></div>
 #### NSDate+YUJudge 
+
 ```
 /**
  *  是否为今天
@@ -233,6 +239,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 
 <div id="NSDate+YUOther"></div>
 #### NSDate+YUOther 
+
 ```
 /**
  *  获得与当前时间的差距
@@ -246,6 +253,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 
 <div id="NSDictionary+YUFormatNSLog"></div>
 #### NSDictionary+YUFormatNSLog 
+
 ```
 格式化（“美化”）控制台输出
 重写 - (NSString *)descriptionWithLocale:(id)locale; 方法
@@ -253,6 +261,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 
 <div id="NSDictionary+YUJSONString"></div>
 #### NSDictionary+YUJSONString 
+
 ```
 /**
  *  将“字典”序列化为 Json串
@@ -264,6 +273,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 
 <div id="NSDictionary+YUSafeAccess"></div>
 #### NSDictionary+YUSafeAccess 
+
 ```
 安全使用字典
 - (BOOL)yu_hasKey:(NSString *)key;
@@ -314,6 +324,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 
 <div id="NSObject+YUFileDelete"></div>
 #### NSObject+YUFileDelete 
+
 ```
 删除沙盒文件
 
@@ -346,6 +357,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 
 <div id="NSString+YUAppendPath"></div>
 #### NSString+YUAppendPath 
+
 ```
 在字符串之前追加路径，文件名在路径最后
 
@@ -361,6 +373,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 
 <div id="NSString+YUBase"></div>
 #### NSString+YUBase 
+
 ```
 /** base64编码 */
 - (NSString *)yu_base64Encode;
@@ -373,6 +386,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 #### NSString+YUEmoji 
 查询 emoji <http://emojipedia.org>
 表情符号替换表<http://www.emoji-cheat-sheet.com>
+
 ```
 /**
  返回一个字符串 
@@ -411,6 +425,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 
 <div id="NSString+YUEmpty"></div>
 #### NSString+YUEmpty 
+
 ```
 一个或者多个空格也算是空
 /** 判断字符串是否为空 */
@@ -419,6 +434,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 
 <div id="NSString+YUHash"></div>
 #### NSString+YUHash 
+
 ```
 /** MD5 加密(32位小) */
 @property (readonly) NSString *yu_md5String;
@@ -453,6 +469,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 
 <div id="NSString+YUMatch"></div>
 #### NSString+YUMatch 
+
 ```
 /**
  *  查找字符串中第一个匹配项
@@ -475,6 +492,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 
 <div id="NSString+YUOther"></div>
 #### NSString+YUOther 
+
 ```
 /**
  *  数字末尾去0
@@ -495,6 +513,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 
 <div id="NSString+YURegEx"></div>
 #### NSString+YURegEx 
+
 ```
 /**
  *  手机号码的有效性:分电信、联通、移动和小灵通
@@ -610,6 +629,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 
 <div id="NSString+YUSerialization"></div>
 #### NSString+YUSerialization 
+
 ```
 /**
  *  Json 串 反序列化为 NSDictionary
@@ -619,6 +639,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 
 <div id="NSString+YUSize"></div>
 #### NSString+YUSize 
+
 ```
 /**
  *  依据 "字体" 返回字符串所占用的尺寸
@@ -633,6 +654,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 
 <div id="NSString+YUTimeFormat"></div>
 #### NSString+YUTimeFormat 
+
 ```
 /**
  *  将 “秒数” 转换为 几天几小时几分几秒
@@ -654,6 +676,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 
 <div id="UIBarButtonItem+YUCustom"></div>
 #### UIBarButtonItem+YUCustom 
+
 ```
 自定义 BarButtonItem 样式
 
@@ -693,6 +716,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 
 <a id="UIImage+YUCompress"></a>
 #### UIImage+YUCompress 
+
 ```
 //  压缩图片
 //
@@ -775,6 +799,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 
 <div id="UIImage+YUCreateImage"></div>
 #### UIImage+YUCreateImage 
+
 ```
 /**
  用颜色生成图片，默认1x1
@@ -797,6 +822,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 
 <div id="UIImage+YUResize"></div>
 #### UIImage+YUResize 
+
 ```
 //  图片拉伸平铺
 //  注意：默认图片的模式是 UIImageResizingModeTile（瓦片）
@@ -837,6 +863,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 
 <div id="UILabel+YUTextSize"></div>
 #### UILabel+YUTextSize 
+
 ```
 /**
  *  计算Label的内容大小
@@ -849,6 +876,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 
 <div id="UIView+YUFrame"></div>
 #### UIView+YUFrame
+
 ```
 适用于使用Frame布局
 
