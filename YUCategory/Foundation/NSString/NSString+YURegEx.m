@@ -17,6 +17,29 @@
     NSPredicate *pre = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
     return [pre evaluateWithObject:self];
 }
+/**
+ 是否是纯数字
+ */
+- (BOOL)yu_isNum {
+    NSString *regex = @"[0-9]*";
+    return [self yu_isValidateByRegex:regex];
+}
+
+/**
+ 全字母
+ */
+- (BOOL)yu_isLetter {
+    NSString *regex = @"[a-zA-Z]*";
+    return [self yu_isValidateByRegex:regex];
+}
+
+/**
+ 字母或数字
+ */
+- (BOOL)yu_isLetterOrNum {
+    NSString *regex = @"[a-zA-Z0-9]*";
+    return [self yu_isValidateByRegex:regex];
+}
 
 /**
  *  手机号码的有效性:分电信、联通、移动和小灵通

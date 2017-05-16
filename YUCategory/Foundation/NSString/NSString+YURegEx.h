@@ -12,6 +12,20 @@
 #import <Foundation/Foundation.h>
 
 @interface NSString (YURegEx)
+/**
+ 是否是纯数字
+ */
+- (BOOL)yu_isNum;
+
+/**
+ 全字母
+ */
+- (BOOL)yu_isLetter;
+
+/**
+ 字母或数字
+ */
+- (BOOL)yu_isLetterOrNum;
 
 /**
  *  手机号码的有效性:分电信、联通、移动和小灵通
