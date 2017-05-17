@@ -13,31 +13,36 @@
 
 @interface NSString (YURegEx)
 /**
- 是否是纯数字
+ *  纯数字
  */
 - (BOOL)yu_isNum;
 
 /**
- 全字母
+ *  纯字母
  */
 - (BOOL)yu_isLetter;
 
 /**
- 字母或数字
+ *  纯汉字
+ */
+- (BOOL)yu_isChinese;
+
+/**
+ *  字母或数字
  */
 - (BOOL)yu_isLetterOrNum;
 
 /**
- *  手机号码的有效性:分电信、联通、移动和小灵通
+ *  手机号:分电信、联通、移动和小灵通
  */
 - (BOOL)yu_isMobileNumber;
 /**
- *  手机号正则验证(以1开头11位数字)
+ *  手机号:以1开头的11位数字
  */
 - (BOOL)yu_isMobileNumberSimpleRule;
 
 /**
- *  密码正则验证(6-32位字母或数字组合)
+ *  密码(6-32位字母或数字组合)
  */
 - (BOOL)yu_isPassword;
 
@@ -50,11 +55,6 @@
  *  6位数字(银行卡密码)
  */
 - (BOOL)yu_isSixNumber;
-
-/**
- *  纯汉字
- */
-- (BOOL)yu_isChinese;
 
 /**
  *  邮箱

@@ -18,7 +18,7 @@
     return [pre evaluateWithObject:self];
 }
 /**
- 是否是纯数字
+ *  纯数字
  */
 - (BOOL)yu_isNum {
     NSString *regex = @"[0-9]*";
@@ -26,7 +26,7 @@
 }
 
 /**
- 全字母
+ *  纯字母
  */
 - (BOOL)yu_isLetter {
     NSString *regex = @"[a-zA-Z]*";
@@ -34,7 +34,15 @@
 }
 
 /**
- 字母或数字
+ *  纯汉字
+ */
+- (BOOL)yu_isChinese {
+    NSString *chineseRegex = @"^[\u4e00-\u9fa5]+$";
+    return [self yu_isValidateByRegex:chineseRegex];
+}
+
+/**
+ *  字母或数字
  */
 - (BOOL)yu_isLetterOrNum {
     NSString *regex = @"[a-zA-Z0-9]*";
@@ -42,7 +50,7 @@
 }
 
 /**
- *  手机号码的有效性:分电信、联通、移动和小灵通
+ *  手机号:分电信、联通、移动和小灵通
  */
 - (BOOL)yu_isMobileNumber {
     /**
@@ -86,7 +94,7 @@
     }
 }
 /**
- *  手机号正则验证(以1开头11位数字)
+ *  手机号:以1开头的11位数字
  */
 - (BOOL)yu_isMobileNumberSimpleRule {
     NSString *pattern = @"^(1)\\d{10}$";
@@ -94,7 +102,7 @@
 }
 
 /**
- *  密码正则验证(6-32位字母或数字组合)
+ *  密码(6-32位字母或数字组合)
  */
 - (BOOL)yu_isPassword {
     NSString *pattern = @"^[a-zA-Z0-9]{6,32}"; // 6-32位字母或数字组合
@@ -177,14 +185,6 @@
 - (BOOL)yu_isSixNumber {
     NSString *pattern = @"^\\d{6}$";
     return [self yu_isValidateByRegex:pattern];
-}
-
-/**
- *  纯汉字
- */
-- (BOOL)yu_isChinese {
-    NSString *chineseRegex = @"^[\u4e00-\u9fa5]+$";
-    return [self yu_isValidateByRegex:chineseRegex];
 }
 
 /**
