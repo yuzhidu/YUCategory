@@ -31,7 +31,7 @@
                                                                                action:@selector(leftBarButtonItemClick)
                                                                      highlightedImage:@"share"
                                                                                margin:15
-                                                                                 size:CGSizeMake(30, 30)];
+                                                                                width:30];
         }
             break;
         case 1:
@@ -79,12 +79,12 @@
                                                                                 target:self
                                                                                 action:@selector(rightClick)
                                                                                  color:[UIColor whiteColor]
-                                                                                  font:[UIFont systemFontOfSize:12.f]
+                                                                                  font:[UIFont systemFontOfSize:14.f]
                                                                                 margin:-16
                                                                       highlightedTitle:@"金条"
                                                                       highlightedColor:[UIColor greenColor]
                                                                          textAlignment:NSTextAlignmentCenter
-                                                                                  size:CGSizeMake(80, 30)];
+                                                                                 width:80];
         }
             break;
         case 6:
@@ -96,7 +96,7 @@
                                                                                 target:self
                                                                                 action:@selector(rightClick)
                                                                                  color:[UIColor whiteColor]
-                                                                                  font:[UIFont systemFontOfSize:14.f]];
+                                                                                  font:[UIFont systemFontOfSize:15.f]];
         }
             break;
         case 7:

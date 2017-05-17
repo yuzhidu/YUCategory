@@ -34,7 +34,7 @@
                                          action:(SEL)action
                                highlightedImage:(NSString *)highlightedName
                                          margin:(CGFloat)margin
-                                           size:(CGSize)size;
+                                          width:(CGFloat)width;
 /**
  *  1.1 图片
  */
@@ -77,7 +77,7 @@
                                highlightedTitle:(NSString *)highlightedTitle
                                highlightedColor:(UIColor *)highlightedColor
                                   textAlignment:(NSTextAlignment)textAlignment
-                                           size:(CGSize)size;
+                                          width:(CGFloat)width;
 /**
  *  2.1 文字：自定义颜色、字体
  */

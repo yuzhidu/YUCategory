@@ -11,9 +11,10 @@
 
 #import "UIBarButtonItem+YUCustom.h"
 
-#define kMaxHeight      44.f
-#define kMinMargin      -16.f
-#define kFontSize       15.f
+#define kMaxHeight          44.f
+#define kDefaultWidth       40.f
+#define kMinMargin          -16.f
+#define kFontSize           15.f
 
 @implementation UIBarButtonItem (YUCustom)
 /**
@@ -24,7 +25,7 @@
                                          action:(SEL)action
                                highlightedImage:(NSString *)highlightedName
                                          margin:(CGFloat)margin
-                                           size:(CGSize)size
+                                          width:(CGFloat)width
 {
     UIButton *btn = [[UIButton alloc] init];
     btn.imageView.contentMode = UIViewContentModeCenter;
@@ -36,7 +37,7 @@
     }
     [btn addTarget:target
             action:action forControlEvents:UIControlEventTouchUpInside];
-    btn.frame = CGRectMake(0, 0, size.width, size.height);
+    btn.frame = CGRectMake(0, 0, width, kMaxHeight);
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
                                                                                     target:nil
@@ -57,7 +58,7 @@
                                      action:action
                            highlightedImage:nil
                                      margin:kMinMargin
-                                       size:CGSizeMake(kMaxHeight, kMaxHeight)];
+                                      width:kDefaultWidth];
 }
 /**
  *  1.2 图片：有高亮图
@@ -72,7 +73,7 @@
                                      action:action
                            highlightedImage:highlightedName
                                      margin:kMinMargin
-                                       size:CGSizeMake(kMaxHeight, kMaxHeight)];
+                                      width:kDefaultWidth];
 }
 /**
  *  1.3 图片：调整间隙
@@ -87,7 +88,7 @@
                                      action:action
                            highlightedImage:nil
                                      margin:margin
-                                       size:CGSizeMake(kMaxHeight, kMaxHeight)];
+                                      width:kDefaultWidth];
 }
 /**
  *  1.4 图片：有高亮图，调整间隙
@@ -103,7 +104,7 @@
                                      action:action
                            highlightedImage:highlightedName
                                      margin:margin
-                                       size:CGSizeMake(kMaxHeight, kMaxHeight)];
+                                      width:kDefaultWidth];
 }
 
 
@@ -119,7 +120,7 @@
                                highlightedTitle:(NSString *)highlightedTitle
                                highlightedColor:(UIColor *)highlightedColor
                                   textAlignment:(NSTextAlignment)textAlignment
-                                           size:(CGSize)size
+                                          width:(CGFloat)width
 {
     UIButton *btn = [[UIButton alloc] init];
     [btn setTitle:title forState:UIControlStateNormal];
@@ -134,7 +135,7 @@
     btn.titleLabel.textAlignment = textAlignment;
     [btn addTarget:target
             action:action forControlEvents:UIControlEventTouchUpInside];
-    btn.frame = CGRectMake(0, 0, size.width, size.height);
+    btn.frame = CGRectMake(0, 0, width, kMaxHeight);
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
                                                                                     target:nil
@@ -167,7 +168,7 @@
                            highlightedTitle:nil
                            highlightedColor:nil
                               textAlignment:NSTextAlignmentCenter
-                                       size:CGSizeMake(controlSize.width+22, kFontSize)];
+                                      width:(controlSize.width+22)];
 }
 /**
  *  2.2 文字：自定义颜色、字体、间隙
@@ -194,7 +195,7 @@
                            highlightedTitle:nil
                            highlightedColor:nil
                               textAlignment:NSTextAlignmentCenter
-                                       size:CGSizeMake(controlSize.width+22, kFontSize)];
+                                      width:(controlSize.width+22)];
 }
 
 /**
