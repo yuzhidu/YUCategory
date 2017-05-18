@@ -37,10 +37,10 @@
 		6A45FBBF1E56D90600A528A7 /* NSDate_YUJudgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A45FBBE1E56D90600A528A7 /* NSDate_YUJudgeController.m */; };
 		6A45FBC21E56E34B00A528A7 /* NSDictionary+YUJSONString.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A45FBC11E56E34B00A528A7 /* NSDictionary+YUJSONString.m */; };
 		6A45FBC51E56E48500A528A7 /* NSDictionary_YUJSONStringController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A45FBC41E56E48500A528A7 /* NSDictionary_YUJSONStringController.m */; };
+		6A4B2D7D1ECD997300F2F2F8 /* UIButton+YUClickInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4B2D7C1ECD997300F2F2F8 /* UIButton+YUClickInterval.m */; };
 		6A6DDA5F1EB3157C008BFE4B /* UIBarButtonItemDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6DDA5E1EB3157C008BFE4B /* UIBarButtonItemDetailController.m */; };
 		6A8694601C58CA3700442B7C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A86945F1C58CA3700442B7C /* CoreGraphics.framework */; };
 		6A963C2C1D38D50300DB3935 /* UIImage+YUCompress.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A963C2B1D38D50300DB3935 /* UIImage+YUCompress.m */; };
-		6A9B0E841ECD71BC007468E1 /* UIButton+YUClickInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A9B0E831ECD71BC007468E1 /* UIButton+YUClickInterval.m */; };
 		6A9B0E881ECD761A007468E1 /* UIButton_YUClickIntervalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A9B0E871ECD761A007468E1 /* UIButton_YUClickIntervalController.m */; };
 		6AAA01291D2CF64D00A43696 /* NSString+YURegEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAA01281D2CF64D00A43696 /* NSString+YURegEx.m */; };
 		6AAA012F1D2D0BC000A43696 /* UIView+YUFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAA012E1D2D0BC000A43696 /* UIView+YUFrame.m */; };
@@ -139,13 +139,13 @@
 		6A45FBC11E56E34B00A528A7 /* NSDictionary+YUJSONString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+YUJSONString.m"; sourceTree = "<group>"; };
 		6A45FBC31E56E48500A528A7 /* NSDictionary_YUJSONStringController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_YUJSONStringController.h; sourceTree = "<group>"; };
 		6A45FBC41E56E48500A528A7 /* NSDictionary_YUJSONStringController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_YUJSONStringController.m; sourceTree = "<group>"; };
+		6A4B2D7B1ECD997300F2F2F8 /* UIButton+YUClickInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+YUClickInterval.h"; sourceTree = "<group>"; };
+		6A4B2D7C1ECD997300F2F2F8 /* UIButton+YUClickInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+YUClickInterval.m"; sourceTree = "<group>"; };
 		6A6DDA5D1EB3157C008BFE4B /* UIBarButtonItemDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBarButtonItemDetailController.h; sourceTree = "<group>"; };
 		6A6DDA5E1EB3157C008BFE4B /* UIBarButtonItemDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBarButtonItemDetailController.m; sourceTree = "<group>"; };
 		6A86945F1C58CA3700442B7C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6A963C2A1D38D50300DB3935 /* UIImage+YUCompress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+YUCompress.h"; sourceTree = "<group>"; };
 		6A963C2B1D38D50300DB3935 /* UIImage+YUCompress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YUCompress.m"; sourceTree = "<group>"; };
-		6A9B0E821ECD71BC007468E1 /* UIButton+YUClickInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+YUClickInterval.h"; sourceTree = "<group>"; };
-		6A9B0E831ECD71BC007468E1 /* UIButton+YUClickInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+YUClickInterval.m"; sourceTree = "<group>"; };
 		6A9B0E861ECD761A007468E1 /* UIButton_YUClickIntervalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIButton_YUClickIntervalController.h; sourceTree = "<group>"; };
 		6A9B0E871ECD761A007468E1 /* UIButton_YUClickIntervalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIButton_YUClickIntervalController.m; sourceTree = "<group>"; };
 		6AAA01271D2CF64D00A43696 /* NSString+YURegEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YURegEx.h"; sourceTree = "<group>"; };
@@ -253,6 +253,7 @@
 				0C4EB7B51C57B44C00009C29 /* YUCategory */,
 				6A05ADEA1E53FC0400C2099E /* MainFiles */,
 				6AB0A68F1E559FFA0010E03D /* UIKitDemo */,
+				6A4B2D791ECD995300F2F2F8 /* UIKitStandby */,
 				6AB0A6A61E55A48F0010E03D /* FoundationDemo */,
 				0C1FE2831C57B3C1003434E3 /* Supporting Files */,
 			);
@@ -366,11 +367,19 @@
 			path = MainFiles;
 			sourceTree = "<group>";
 		};
-		6A9B0E811ECD70C3007468E1 /* UIButton */ = {
+		6A4B2D791ECD995300F2F2F8 /* UIKitStandby */ = {
 			isa = PBXGroup;
 			children = (
-				6A9B0E821ECD71BC007468E1 /* UIButton+YUClickInterval.h */,
-				6A9B0E831ECD71BC007468E1 /* UIButton+YUClickInterval.m */,
+				6A4B2D7A1ECD997300F2F2F8 /* UIButton */,
+			);
+			path = UIKitStandby;
+			sourceTree = "<group>";
+		};
+		6A4B2D7A1ECD997300F2F2F8 /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				6A4B2D7B1ECD997300F2F2F8 /* UIButton+YUClickInterval.h */,
+				6A4B2D7C1ECD997300F2F2F8 /* UIButton+YUClickInterval.m */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -430,7 +439,6 @@
 			isa = PBXGroup;
 			children = (
 				6AF199A01D31055400FC6C6D /* UIBarButtonItem */,
-				6A9B0E811ECD70C3007468E1 /* UIButton */,
 				0C56F3431D2D60F3007D0C83 /* UIImage */,
 				0C56F33B1D2D5CC4007D0C83 /* UILabel */,
 				6AAA012C1D2D0BAC00A43696 /* UIView */,
@@ -695,6 +703,7 @@
 				6AB0A6A51E559FFA0010E03D /* UIView_YUFrameController.m in Sources */,
 				0C56F35F1D2D6FCC007D0C83 /* NSString+YUAppendPath.m in Sources */,
 				6AB0A6D11E55A69A0010E03D /* NSString_YUBaseController.m in Sources */,
+				6A4B2D7D1ECD997300F2F2F8 /* UIButton+YUClickInterval.m in Sources */,
 				6AF199991D31034200FC6C6D /* NSDate+YUFormat.m in Sources */,
 				0C56F35C1D2D6D31007D0C83 /* NSString+YUHash.m in Sources */,
 				0C56F3341D2D5844007D0C83 /* NSDictionary+YUFormatNSLog.m in Sources */,
@@ -711,7 +720,6 @@
 				6AB0A6A31E559FFA0010E03D /* UIImage_YUResizeController.m in Sources */,
 				6AB0A6DA1E55A6CB0010E03D /* NSString_YUMatchController.m in Sources */,
 				6AB0A6E61E55A72D0010E03D /* NSString_YUSizeController.m in Sources */,
-				6A9B0E841ECD71BC007468E1 /* UIButton+YUClickInterval.m in Sources */,
 				6AB0A6D71E55A6BA0010E03D /* NSString_YUHashController.m in Sources */,
 				0C56F36E1D2D7551007D0C83 /* NSString+YUEmpty.m in Sources */,
 				6AF1999C1D31046500FC6C6D /* NSDate+YUJudge.m in Sources */,

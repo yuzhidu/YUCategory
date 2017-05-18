@@ -21,11 +21,6 @@ Pod::Spec.new do |s|
       sss.source_files = 'YUCategory/UIKit/UIBarButtonItem/*.{h,m}'
     end
 
-    ss.subspec 'UIButton' do |sss|
-      sss.ios.deployment_target = '7.0'
-      sss.source_files = 'YUCategory/UIKit/UIButton/*.{h,m}'
-    end
-
     ss.subspec 'UIImage' do |sss|
       sss.ios.deployment_target = '7.0'
       sss.source_files = 'YUCategory/UIKit/UIImage/*.{h,m}'
