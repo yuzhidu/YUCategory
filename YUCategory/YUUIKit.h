@@ -13,6 +13,8 @@
 
 #import "UIBarButtonItem+YUCustom.h"
 
+#import "UIButton+YUClickInterval.h"
+
 #import "UIImage+YUCompress.h"
 #import "UIImage+YUCreateImage.h"
 #import "UIImage+YUResize.h"

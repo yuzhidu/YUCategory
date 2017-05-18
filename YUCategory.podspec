@@ -16,14 +16,14 @@ Pod::Spec.new do |s|
   
   s.subspec 'UIKit' do |ss|
 
-    ss.subspec 'UIView' do |sss|
+    ss.subspec 'UIBarButtonItem' do |sss|
       sss.ios.deployment_target = '7.0'
-      sss.source_files = 'YUCategory/UIKit/UIView/*.{h,m}'
+      sss.source_files = 'YUCategory/UIKit/UIBarButtonItem/*.{h,m}'
     end
 
-    ss.subspec 'UILabel' do |sss|
+    ss.subspec 'UIButton' do |sss|
       sss.ios.deployment_target = '7.0'
-      sss.source_files = 'YUCategory/UIKit/UILabel/*.{h,m}'
+      sss.source_files = 'YUCategory/UIKit/UIButton/*.{h,m}'
     end
 
     ss.subspec 'UIImage' do |sss|
@@ -31,14 +31,39 @@ Pod::Spec.new do |s|
       sss.source_files = 'YUCategory/UIKit/UIImage/*.{h,m}'
     end
 
-    ss.subspec 'UIBarButtonItem' do |sss|
+    ss.subspec 'UILabel' do |sss|
       sss.ios.deployment_target = '7.0'
-      sss.source_files = 'YUCategory/UIKit/UIBarButtonItem/*.{h,m}'
+      sss.source_files = 'YUCategory/UIKit/UILabel/*.{h,m}'
+    end
+
+    ss.subspec 'UIView' do |sss|
+      sss.ios.deployment_target = '7.0'
+      sss.source_files = 'YUCategory/UIKit/UIView/*.{h,m}'
     end
 
   end
 
   s.subspec 'Foundation' do |ss|
+
+    ss.subspec 'NSArray' do |sss|
+      sss.ios.deployment_target = '7.0'
+      sss.source_files = 'YUCategory/Foundation/NSArray/*.{h,m}'
+    end
+
+    ss.subspec 'NSAttributedString' do |sss|
+      sss.ios.deployment_target = '7.0'
+      sss.source_files = 'YUCategory/Foundation/NSAttributedString/*.{h,m}'
+    end
+
+    ss.subspec 'NSDate' do |sss|
+      sss.ios.deployment_target = '7.0'
+      sss.source_files = 'YUCategory/Foundation/NSDate/*.{h,m}'
+    end
+
+    ss.subspec 'NSDictionary' do |sss|
+      sss.ios.deployment_target = '7.0'
+      sss.source_files = 'YUCategory/Foundation/NSDictionary/*.{h,m}'
+    end
 
     ss.subspec 'NSObject' do |sss|
       sss.ios.deployment_target = '7.0'
@@ -50,25 +75,6 @@ Pod::Spec.new do |s|
       sss.source_files = 'YUCategory/Foundation/NSString/*.{h,m}'
     end
 
-    ss.subspec 'NSAttributedString' do |sss|
-      sss.ios.deployment_target = '7.0'
-      sss.source_files = 'YUCategory/Foundation/NSAttributedString/*.{h,m}'
-    end
-
-    ss.subspec 'NSArray' do |sss|
-      sss.ios.deployment_target = '7.0'
-      sss.source_files = 'YUCategory/Foundation/NSArray/*.{h,m}'
-    end
-
-    ss.subspec 'NSDictionary' do |sss|
-      sss.ios.deployment_target = '7.0'
-      sss.source_files = 'YUCategory/Foundation/NSDictionary/*.{h,m}'
-    end
-
-    ss.subspec 'NSDate' do |sss|
-      sss.ios.deployment_target = '7.0'
-      sss.source_files = 'YUCategory/Foundation/NSDate/*.{h,m}'
-    end
   end
   
   

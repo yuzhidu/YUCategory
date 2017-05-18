@@ -70,6 +70,7 @@
     if (_itemsTitle == nil) {
         _itemsTitle = @[
                         @"UIBarButtonItem",
+                        @"UIButton",
                         @"UIImage",
                         @"UILabel",
                         @"UIView"];
@@ -80,6 +81,8 @@
     if (_itemsSubTitle == nil) {
         _itemsSubTitle = @[
                            @[@"UIBarButtonItem+YUCustom"],
+                           
+                           @[@"UIButton+YUClickInterval"],
                            
                            @[@"UIImage+YUCompress",
                              @"UIImage+YUCreateImage",
