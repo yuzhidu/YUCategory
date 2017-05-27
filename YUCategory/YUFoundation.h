@@ -25,6 +25,7 @@
 #import "NSDictionary+YUSafeAccess.h"
 #import "NSDictionary+YUJSONString.h"
 
+#import "NSObject+YUComputeSize.h"
 #import "NSObject+YUFileDelete.h"
 
 #import "NSString+YUAppendPath.h"
