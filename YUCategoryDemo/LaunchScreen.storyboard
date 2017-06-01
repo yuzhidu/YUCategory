@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Duc-tD-hX5">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="uOC-kR-ONM">
+            <objects>
+                <viewController id="Duc-tD-hX5" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gQ4-Aj-YWT"/>
+                        <viewControllerLayoutGuide type="bottom" id="BgO-Zz-X7h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hge-0u-ddc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="airplane" translatesAutoresizingMaskIntoConstraints="NO" id="zGf-bS-kjj">
+                                <rect key="frame" x="137" y="283" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="eys-hj-lpU"/>
+                                    <constraint firstAttribute="height" constant="100" id="qd7-Pp-rib"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zGf-bS-kjj" firstAttribute="centerY" secondItem="hge-0u-ddc" secondAttribute="centerY" id="Vlg-JY-fvu"/>
+                            <constraint firstItem="zGf-bS-kjj" firstAttribute="centerX" secondItem="hge-0u-ddc" secondAttribute="centerX" id="eNe-ax-UtM"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tLG-qk-669" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="41" y="124"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="airplane" width="200" height="200"/>
+    </resources>
+</document>
