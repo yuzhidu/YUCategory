@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0C1FE2851C57B3C1003434E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1FE2841C57B3C1003434E3 /* main.m */; };
 		0C1FE2901C57B3C1003434E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C1FE28F1C57B3C1003434E3 /* Assets.xcassets */; };
-		0C1FE2931C57B3C1003434E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C1FE2911C57B3C1003434E3 /* LaunchScreen.storyboard */; };
 		0C4F03141D3134C800A0AC15 /* NSDictionary+YUSafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4F03131D3134C800A0AC15 /* NSDictionary+YUSafeAccess.m */; };
 		0C56F3301D2D5805007D0C83 /* NSArray+YUFormatNSLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56F32F1D2D5805007D0C83 /* NSArray+YUFormatNSLog.m */; };
 		0C56F3341D2D5844007D0C83 /* NSDictionary+YUFormatNSLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56F3331D2D5844007D0C83 /* NSDictionary+YUFormatNSLog.m */; };
@@ -82,7 +81,6 @@
 		0C1FE2801C57B3C1003434E3 /* YUCategoryDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YUCategoryDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C1FE2841C57B3C1003434E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0C1FE28F1C57B3C1003434E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0C1FE2921C57B3C1003434E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C1FE2941C57B3C1003434E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C4EB7C81C57B44C00009C29 /* YUCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUCategory.h; sourceTree = "<group>"; };
 		0C4F03121D3134C800A0AC15 /* NSDictionary+YUSafeAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+YUSafeAccess.h"; sourceTree = "<group>"; };
@@ -268,7 +266,6 @@
 			children = (
 				6AAACA491E52AB6700A16B9C /* PrefixHeader.pch */,
 				0C1FE28F1C57B3C1003434E3 /* Assets.xcassets */,
-				0C1FE2911C57B3C1003434E3 /* LaunchScreen.storyboard */,
 				0C1FE2941C57B3C1003434E3 /* Info.plist */,
 				0C1FE2841C57B3C1003434E3 /* main.m */,
 			);
@@ -693,7 +690,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C1FE2931C57B3C1003434E3 /* LaunchScreen.storyboard in Resources */,
 				0C1FE2901C57B3C1003434E3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -775,17 +771,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		0C1FE2911C57B3C1003434E3 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0C1FE2921C57B3C1003434E3 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0C1FE2951C57B3C1003434E3 /* Debug */ = {
@@ -878,6 +863,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = DG9N8C5AP3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = YUCategoryDemo/PrefixHeader.pch;
@@ -889,6 +875,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuzhidu.www.YUCategoryDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -896,6 +883,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = DG9N8C5AP3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = YUCategoryDemo/PrefixHeader.pch;
@@ -907,6 +895,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuzhidu.www.YUCategoryDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
