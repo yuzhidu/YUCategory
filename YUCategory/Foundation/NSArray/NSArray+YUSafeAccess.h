@@ -79,14 +79,6 @@
 - (NSUInteger)yu_unsignedIntegerAtIndex:(NSUInteger)index;
 
 /**
- 取出数组中的 bool值
- 
- @param index 索引
- @return BOOL
- */
-- (BOOL)yu_boolAtIndex:(NSUInteger)index;
-
-/**
  取出数组中的 int16_t值
  
  @param index 索引

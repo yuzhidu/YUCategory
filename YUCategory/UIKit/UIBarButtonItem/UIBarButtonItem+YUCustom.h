@@ -20,14 +20,6 @@
 @interface UIBarButtonItem (YUCustom)
 /**
  1.0 图片：调整间隙，有高亮图，自定义宽高
- 
- @param name 图片名
- @param target 监听者
- @param action 执行函数
- @param highlightedName 图片高亮名
- @param margin 间隙（见：特别说明）
- @param size 控件大小
- @return 数组
  */
 + (NSArray<UIBarButtonItem *> *)yu_barWithImage:(NSString *)name
                                          target:(id)target
