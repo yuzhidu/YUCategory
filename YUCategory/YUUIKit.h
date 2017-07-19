@@ -21,6 +21,8 @@
 
 #import "UILabel+YUTextSize.h"
 
+#import "UISearchBar+YULeftPlaceholder.h"
+
 #import "UIView+YUFrame.h"
 
 

@@ -39,6 +39,7 @@
 		6A4B2D7D1ECD997300F2F2F8 /* UIButton+YUClickInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4B2D7C1ECD997300F2F2F8 /* UIButton+YUClickInterval.m */; };
 		6A573A651EDFC4DD0064FEE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A573A641EDFC4DD0064FEE3 /* LaunchScreen.storyboard */; };
 		6A6DDA5F1EB3157C008BFE4B /* UIBarButtonItemDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6DDA5E1EB3157C008BFE4B /* UIBarButtonItemDetailController.m */; };
+		6A7146BD1F1F46BF00D053A4 /* UISearchBar+YULeftPlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7146BC1F1F46BE00D053A4 /* UISearchBar+YULeftPlaceholder.m */; };
 		6A8694601C58CA3700442B7C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A86945F1C58CA3700442B7C /* CoreGraphics.framework */; };
 		6A963C2C1D38D50300DB3935 /* UIImage+YUCompress.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A963C2B1D38D50300DB3935 /* UIImage+YUCompress.m */; };
 		6A9B0E881ECD761A007468E1 /* UIButton_YUClickIntervalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A9B0E871ECD761A007468E1 /* UIButton_YUClickIntervalController.m */; };
@@ -144,6 +145,8 @@
 		6A573A641EDFC4DD0064FEE3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A6DDA5D1EB3157C008BFE4B /* UIBarButtonItemDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBarButtonItemDetailController.h; sourceTree = "<group>"; };
 		6A6DDA5E1EB3157C008BFE4B /* UIBarButtonItemDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBarButtonItemDetailController.m; sourceTree = "<group>"; };
+		6A7146BB1F1F46BE00D053A4 /* UISearchBar+YULeftPlaceholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+YULeftPlaceholder.h"; sourceTree = "<group>"; };
+		6A7146BC1F1F46BE00D053A4 /* UISearchBar+YULeftPlaceholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+YULeftPlaceholder.m"; sourceTree = "<group>"; };
 		6A86945F1C58CA3700442B7C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6A963C2A1D38D50300DB3935 /* UIImage+YUCompress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+YUCompress.h"; sourceTree = "<group>"; };
 		6A963C2B1D38D50300DB3935 /* UIImage+YUCompress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YUCompress.m"; sourceTree = "<group>"; };
@@ -389,6 +392,15 @@
 			path = UIButton;
 			sourceTree = "<group>";
 		};
+		6A7146BA1F1F468400D053A4 /* UISearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				6A7146BB1F1F46BE00D053A4 /* UISearchBar+YULeftPlaceholder.h */,
+				6A7146BC1F1F46BE00D053A4 /* UISearchBar+YULeftPlaceholder.m */,
+			);
+			path = UISearchBar;
+			sourceTree = "<group>";
+		};
 		6A9B0E851ECD7597007468E1 /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -446,6 +458,7 @@
 				6AF199A01D31055400FC6C6D /* UIBarButtonItem */,
 				0C56F3431D2D60F3007D0C83 /* UIImage */,
 				0C56F33B1D2D5CC4007D0C83 /* UILabel */,
+				6A7146BA1F1F468400D053A4 /* UISearchBar */,
 				6AAA012C1D2D0BAC00A43696 /* UIView */,
 			);
 			path = UIKit;
@@ -707,6 +720,7 @@
 			files = (
 				6AB0A6A51E559FFA0010E03D /* UIView_YUFrameController.m in Sources */,
 				0C56F35F1D2D6FCC007D0C83 /* NSString+YUAppendPath.m in Sources */,
+				6A7146BD1F1F46BF00D053A4 /* UISearchBar+YULeftPlaceholder.m in Sources */,
 				6AB0A6D11E55A69A0010E03D /* NSString_YUBaseController.m in Sources */,
 				6A4B2D7D1ECD997300F2F2F8 /* UIButton+YUClickInterval.m in Sources */,
 				6AF199991D31034200FC6C6D /* NSDate+YUFormat.m in Sources */,
