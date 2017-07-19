@@ -1,4 +1,4 @@
-version = "2.0.7";
+version = "2.0.8";
 
 Pod::Spec.new do |s|
   s.name     = 'YUCategory'
@@ -29,6 +29,11 @@ Pod::Spec.new do |s|
     ss.subspec 'UILabel' do |sss|
       sss.ios.deployment_target = '7.0'
       sss.source_files = 'YUCategory/UIKit/UILabel/*.{h,m}'
+    end
+
+    ss.subspec 'UISearchBar' do |sss|
+      sss.ios.deployment_target = '7.0'
+      sss.source_files = 'YUCategory/UIKit/UISearchBar/*.{h,m}'
     end
 
     ss.subspec 'UIView' do |sss|
