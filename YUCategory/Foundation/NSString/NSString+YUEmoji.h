@@ -21,6 +21,16 @@
 @interface NSString (YUEmoji)
 
 /**
+ 编码
+ */
+- (NSString *)yu_emojiEncoding;
+
+/**
+ 解码
+ */
+- (NSString *)yu_emojiDecoding;
+
+/**
  返回一个字符串 
  如果发现替换代码在表情符号替换表<http://www.emoji-cheat-sheet.com>中出现，
  就会替换成相应的字符编码。

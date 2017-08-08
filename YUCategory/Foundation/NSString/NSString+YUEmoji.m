@@ -13,10 +13,22 @@
 //  查询 emoji <http://emojipedia.org>
 
 #import "NSString+YUEmoji.h"
-
-@implementation NSString (YUEmoji)
 static NSDictionary * yu_s_unicodeToCheatCodes = nil;
 static NSDictionary * yu_s_cheatCodesToUnicode = nil;
+
+@implementation NSString (YUEmoji)
+
+- (NSString *)yu_emojiEncoding {
+    NSString *uniStr = [NSString stringWithUTF8String:[self UTF8String]];
+    NSData *uniData = [uniStr dataUsingEncoding:NSNonLossyASCIIStringEncoding];
+    return [[NSString alloc] initWithData:uniData encoding:NSUTF8StringEncoding];
+}
+
+- (NSString *)yu_emojiDecoding {
+    const char *jsonString = [self UTF8String];
+    NSData *jsonData = [NSData dataWithBytes:jsonString length:strlen(jsonString)];
+    return [[NSString alloc] initWithData:jsonData encoding:NSNonLossyASCIIStringEncoding];
+}
 
 + (void)yu_initializeEmojiCheatCodes {
     NSDictionary *forwardMap = @{
