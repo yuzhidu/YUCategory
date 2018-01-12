@@ -20,48 +20,52 @@
 
 @interface NSString (YUEmoji)
 
-/**
- 编码
- */
-- (NSString *)yu_emojiEncoding;
+- (BOOL)yubo_emojiContained;
 
-/**
- 解码
- */
-- (NSString *)yu_emojiDecoding;
-
-/**
- 返回一个字符串 
- 如果发现替换代码在表情符号替换表<http://www.emoji-cheat-sheet.com>中出现，
- 就会替换成相应的字符编码。
- 例如：
- "This is a smiley face :smiley:"
- 会被以下字符串替换：
- "This is a smiley face \U0001F604"
- */
-- (NSString *)yu_emojiCheatCodesReplacingWithUnicode;
-
-/**
- 返回一个字符串 
- 如果发现替换代码在表情符号替换表<http://www.emoji-cheat-sheet.com>中出现，
- 就会替换成相应的字符编码。
- 
- 例如：
- "This is a smiley face \U0001F604"
- 会被以下字符串替换：
- "This is a smiley face :smiley:"
- */
-- (NSString *)yu_emojiUnicodeReplacingWithCheatCodes;
-
-
-/**
- 是否包含 emoji
- */
-- (BOOL)yu_emojiIsIncluded;
-
-/**
- 删除掉包含的emoji
- */
-- (instancetype)yu_emojiRemoved;
+- (NSString *)yu_emojiRemovedAll;
 
 @end
+
+///**
+// 编码
+// */
+//- (NSString *)yu_emojiEncoding;
+//
+///**
+// 解码
+// */
+//- (NSString *)yu_emojiDecoding;
+//
+///**
+// 返回一个字符串
+// 如果发现替换代码在表情符号替换表<http://www.emoji-cheat-sheet.com>中出现，
+// 就会替换成相应的字符编码。
+// 例如：
+// "This is a smiley face :smiley:"
+// 会被以下字符串替换：
+// "This is a smiley face \U0001F604"
+// */
+//- (NSString *)yu_emojiCheatCodesReplacingWithUnicode;
+//
+///**
+// 返回一个字符串
+// 如果发现替换代码在表情符号替换表<http://www.emoji-cheat-sheet.com>中出现，
+// 就会替换成相应的字符编码。
+//
+// 例如：
+// "This is a smiley face \U0001F604"
+// 会被以下字符串替换：
+// "This is a smiley face :smiley:"
+// */
+//- (NSString *)yu_emojiUnicodeReplacingWithCheatCodes;
+//
+//
+///**
+// 是否包含 emoji
+// */
+//- (BOOL)yu_emojiIsIncluded;
+//
+///**
+// 删除掉包含的emoji
+// */
+//- (instancetype)yu_emojiRemoved;

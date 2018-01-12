@@ -679,7 +679,7 @@
 				TargetAttributes = {
 					0C1FE27F1C57B3C1003434E3 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = DG9N8C5AP3;
+						DevelopmentTeam = PR9VB73X55;
 					};
 				};
 			};
@@ -881,7 +881,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = DG9N8C5AP3;
+				DEVELOPMENT_TEAM = PR9VB73X55;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = YUCategoryDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = YUCategoryDemo/Info.plist;
@@ -900,7 +900,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = DG9N8C5AP3;
+				DEVELOPMENT_TEAM = PR9VB73X55;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = YUCategoryDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = YUCategoryDemo/Info.plist;
