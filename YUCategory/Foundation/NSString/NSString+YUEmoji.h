@@ -20,9 +20,17 @@
 
 @interface NSString (YUEmoji)
 
-- (BOOL)yubo_emojiContained;
+/**
+ 字符串中是否包含Emoji
+ */
+- (BOOL)yu_emojiContain;
 
-- (NSString *)yu_emojiRemovedAll;
+/**
+ 移除所有Emoji
+
+ @return 返回删除后的字符串
+ */
+- (NSString *)yu_emojiDelete;
 
 @end
 

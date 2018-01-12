@@ -21,17 +21,17 @@
 
 @implementation NSString (YUEmoji)
 
-- (BOOL)yubo_emojiContained {
+- (BOOL)yu_emojiContain {
     BOOL boo = ((BOOL(*)(id,SEL))objc_msgSend)(self, NSSelectorFromString(@"_containsEmoji"));
     return boo;
 }
 
-- (NSString *)yu_emojiRemovedAll {
+- (NSString *)yu_emojiDelete {
     __block NSString *tempString = @"";
     [self enumerateSubstringsInRange:NSMakeRange(0, self.length)
                              options:NSStringEnumerationByComposedCharacterSequences
                           usingBlock:^(NSString * _Nullable substring, NSRange substringRange, NSRange enclosingRange, BOOL * _Nonnull stop) {
-                              if (![substring yubo_emojiContained]) {
+                              if (![substring yu_emojiContain]) {
                                   tempString = [tempString stringByAppendingString:substring];
                               }
                           }];
