@@ -13,6 +13,8 @@
 //  查询 emoji <http://emojipedia.org>
 
 #import "NSString+YUEmoji.h"
+#import <objc/runtime.h>
+#import <objc/message.h>
 
 //static NSDictionary * yu_s_unicodeToCheatCodes = nil;
 //static NSDictionary * yu_s_cheatCodesToUnicode = nil;

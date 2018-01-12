@@ -9,11 +9,6 @@
 #ifndef YUCategory_h
 #define YUCategory_h
 
-// 系统库
-#import <CoreGraphics/CoreGraphics.h>
-#import <objc/runtime.h>
-#import <objc/message.h>
-
 #import "YUFoundation.h"
 #import "YUUIKit.h"
 
