@@ -34,7 +34,7 @@
 
 @end
 
-///**
+///** 稍后修改
 // 编码
 // */
 //- (NSString *)yu_emojiEncoding;
