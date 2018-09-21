@@ -40,7 +40,6 @@
 		6A573A651EDFC4DD0064FEE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A573A641EDFC4DD0064FEE3 /* LaunchScreen.storyboard */; };
 		6A6DDA5F1EB3157C008BFE4B /* UIBarButtonItemDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6DDA5E1EB3157C008BFE4B /* UIBarButtonItemDetailController.m */; };
 		6A7146BD1F1F46BF00D053A4 /* UISearchBar+YULeftPlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7146BC1F1F46BE00D053A4 /* UISearchBar+YULeftPlaceholder.m */; };
-		6A8694601C58CA3700442B7C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A86945F1C58CA3700442B7C /* CoreGraphics.framework */; };
 		6A963C2C1D38D50300DB3935 /* UIImage+YUCompress.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A963C2B1D38D50300DB3935 /* UIImage+YUCompress.m */; };
 		6A9B0E881ECD761A007468E1 /* UIButton_YUClickIntervalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A9B0E871ECD761A007468E1 /* UIButton_YUClickIntervalController.m */; };
 		6AAA01291D2CF64D00A43696 /* NSString+YURegEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAA01281D2CF64D00A43696 /* NSString+YURegEx.m */; };
@@ -71,6 +70,7 @@
 		6AB0A6E31E55A71A0010E03D /* NSString_YUSerializationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0A6E21E55A71A0010E03D /* NSString_YUSerializationController.m */; };
 		6AB0A6E61E55A72D0010E03D /* NSString_YUSizeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0A6E51E55A72D0010E03D /* NSString_YUSizeController.m */; };
 		6AB0A6E91E55A7450010E03D /* NSString_YUTimeFormatController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0A6E81E55A7450010E03D /* NSString_YUTimeFormatController.m */; };
+		6AB3B1FD2154E644008B7218 /* UIImageView+YUAsyncLoadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB3B1FC2154E644008B7218 /* UIImageView+YUAsyncLoadImage.m */; };
 		6AD145051ED961AE00787773 /* NSObject+YUComputeSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD145041ED961AE00787773 /* NSObject+YUComputeSize.m */; };
 		6AD3F5421DE590A1003D3819 /* UIImage+YUCreateImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD3F5411DE590A1003D3819 /* UIImage+YUCreateImage.m */; };
 		6AF199991D31034200FC6C6D /* NSDate+YUFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF199981D31034200FC6C6D /* NSDate+YUFormat.m */; };
@@ -129,7 +129,6 @@
 		6A05ADF21E53FC0400C2099E /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		6A05ADF31E53FC0400C2099E /* UIKitController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIKitController.h; sourceTree = "<group>"; };
 		6A05ADF41E53FC0400C2099E /* UIKitController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIKitController.m; sourceTree = "<group>"; };
-		6A2695641D2E1E8700F787D5 /* YUFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUFoundation.h; sourceTree = "<group>"; };
 		6A45FBB61E569D9A00A528A7 /* NSArray+YUSafeAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+YUSafeAccess.h"; sourceTree = "<group>"; };
 		6A45FBB71E569D9A00A528A7 /* NSArray+YUSafeAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YUSafeAccess.m"; sourceTree = "<group>"; };
 		6A45FBB91E56D6AC00A528A7 /* NSArray_YUSafeAccessController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArray_YUSafeAccessController.h; sourceTree = "<group>"; };
@@ -147,7 +146,6 @@
 		6A6DDA5E1EB3157C008BFE4B /* UIBarButtonItemDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBarButtonItemDetailController.m; sourceTree = "<group>"; };
 		6A7146BB1F1F46BE00D053A4 /* UISearchBar+YULeftPlaceholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+YULeftPlaceholder.h"; sourceTree = "<group>"; };
 		6A7146BC1F1F46BE00D053A4 /* UISearchBar+YULeftPlaceholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+YULeftPlaceholder.m"; sourceTree = "<group>"; };
-		6A86945F1C58CA3700442B7C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6A963C2A1D38D50300DB3935 /* UIImage+YUCompress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+YUCompress.h"; sourceTree = "<group>"; };
 		6A963C2B1D38D50300DB3935 /* UIImage+YUCompress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YUCompress.m"; sourceTree = "<group>"; };
 		6A9B0E861ECD761A007468E1 /* UIButton_YUClickIntervalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIButton_YUClickIntervalController.h; sourceTree = "<group>"; };
@@ -156,7 +154,6 @@
 		6AAA01281D2CF64D00A43696 /* NSString+YURegEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YURegEx.m"; sourceTree = "<group>"; };
 		6AAA012D1D2D0BC000A43696 /* UIView+YUFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YUFrame.h"; sourceTree = "<group>"; };
 		6AAA012E1D2D0BC000A43696 /* UIView+YUFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YUFrame.m"; sourceTree = "<group>"; };
-		6AAA01301D2D0C9700A43696 /* YUUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUUIKit.h; sourceTree = "<group>"; };
 		6AAACA491E52AB6700A16B9C /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		6AAE52831E5FDA90001664BC /* NSString+YUEmoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YUEmoji.h"; sourceTree = "<group>"; };
 		6AAE52841E5FDA90001664BC /* NSString+YUEmoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YUEmoji.m"; sourceTree = "<group>"; };
@@ -210,6 +207,8 @@
 		6AB0A6E51E55A72D0010E03D /* NSString_YUSizeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSString_YUSizeController.m; sourceTree = "<group>"; };
 		6AB0A6E71E55A7450010E03D /* NSString_YUTimeFormatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSString_YUTimeFormatController.h; sourceTree = "<group>"; };
 		6AB0A6E81E55A7450010E03D /* NSString_YUTimeFormatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSString_YUTimeFormatController.m; sourceTree = "<group>"; };
+		6AB3B1FB2154E644008B7218 /* UIImageView+YUAsyncLoadImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+YUAsyncLoadImage.h"; sourceTree = "<group>"; };
+		6AB3B1FC2154E644008B7218 /* UIImageView+YUAsyncLoadImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+YUAsyncLoadImage.m"; sourceTree = "<group>"; };
 		6AD145031ED961AE00787773 /* NSObject+YUComputeSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YUComputeSize.h"; sourceTree = "<group>"; };
 		6AD145041ED961AE00787773 /* NSObject+YUComputeSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YUComputeSize.m"; sourceTree = "<group>"; };
 		6AD3F5401DE590A1003D3819 /* UIImage+YUCreateImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+YUCreateImage.h"; sourceTree = "<group>"; };
@@ -229,7 +228,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A8694601C58CA3700442B7C /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +237,6 @@
 		0C1FE2771C57B3C1003434E3 = {
 			isa = PBXGroup;
 			children = (
-				6A86945F1C58CA3700442B7C /* CoreGraphics.framework */,
 				0C1FE2821C57B3C1003434E3 /* YUCategoryDemo */,
 				0C1FE2811C57B3C1003434E3 /* Products */,
 			);
@@ -284,8 +281,6 @@
 				6AAA012B1D2D0BAC00A43696 /* UIKit */,
 				6AAA01251D2CF5F600A43696 /* Foundation */,
 				0C4EB7C81C57B44C00009C29 /* YUCategory.h */,
-				6A2695641D2E1E8700F787D5 /* YUFoundation.h */,
-				6AAA01301D2D0C9700A43696 /* YUUIKit.h */,
 			);
 			path = YUCategory;
 			sourceTree = SOURCE_ROOT;
@@ -457,6 +452,7 @@
 			children = (
 				6AF199A01D31055400FC6C6D /* UIBarButtonItem */,
 				0C56F3431D2D60F3007D0C83 /* UIImage */,
+				6AB3B1FA2154E644008B7218 /* UIImageView */,
 				0C56F33B1D2D5CC4007D0C83 /* UILabel */,
 				6A7146BA1F1F468400D053A4 /* UISearchBar */,
 				6AAA012C1D2D0BAC00A43696 /* UIView */,
@@ -626,6 +622,15 @@
 			path = NSString;
 			sourceTree = "<group>";
 		};
+		6AB3B1FA2154E644008B7218 /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				6AB3B1FB2154E644008B7218 /* UIImageView+YUAsyncLoadImage.h */,
+				6AB3B1FC2154E644008B7218 /* UIImageView+YUAsyncLoadImage.m */,
+			);
+			path = UIImageView;
+			sourceTree = "<group>";
+		};
 		6AF199961D31032900FC6C6D /* NSDate */ = {
 			isa = PBXGroup;
 			children = (
@@ -674,7 +679,7 @@
 		0C1FE2781C57B3C1003434E3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = mayubo;
 				TargetAttributes = {
 					0C1FE27F1C57B3C1003434E3 = {
@@ -777,6 +782,7 @@
 				6AAE52851E5FDA90001664BC /* NSString+YUEmoji.m in Sources */,
 				6AB0A6C31E55A60D0010E03D /* NSDictionary_YUSafeAccessController.m in Sources */,
 				6AB0A6E01E55A6FC0010E03D /* NSString_YURegExController.m in Sources */,
+				6AB3B1FD2154E644008B7218 /* UIImageView+YUAsyncLoadImage.m in Sources */,
 				0C56F3531D2D6978007D0C83 /* NSString+YUSize.m in Sources */,
 				0C56F33E1D2D5CDC007D0C83 /* UILabel+YUTextSize.m in Sources */,
 				6AB0A6B11E55A51E0010E03D /* NSAttributedString_YUTextSizeController.m in Sources */,
@@ -799,14 +805,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -845,14 +859,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
