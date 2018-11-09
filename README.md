@@ -1,5 +1,3 @@
-# YUCategory
-
 使用时只需导入 YUCategory.h 头文件，包含了大部分常用的分类
 
 支持 CocoaPods
@@ -9,70 +7,25 @@ pod 'YUCategory'
 
 **注意：分类按字母排序，可根据字母快速找到对应分类**
 
-目录:
-- Foundation
-	- [NSArray](#NSArray)
-		- [NSArray+YUFormatNSLog](#NSArray+YUFormatNSLog)
-		- [NSArray+YUSafeAccess](#NSArray+YUSafeAccess)
-		- [NSArray+YUSerialization](#NSArray+YUSerialization)
-	- [NSAttributedString](#NSAttributedString)
-		- [NSAttributedString+YUTextSize](#NSAttributedString+YUTextSize)
-	- [NSDate](#NSDate)
-		- [NSDate+YUFormat](#NSDate+YUFormat)
-		- [NSDate+YUJudge](#NSDate+YUJudge)
-		- [NSDate+YUOther](#NSDate+YUOther)
-	- [NSDictionary](#NSDictionary)
-		- [NSDictionary+YUFormatNSLog](#NSDictionary+YUFormatNSLog)
-		- [NSDictionary+YUJSONString](#NSDictionary+YUJSONString)
-		- [NSDictionary+YUSafeAccess](#NSDictionary+YUSafeAccess)
-	- [NSObject](#NSObject)
-		- [NSObject+YUFileDelete](#NSObject+YUFileDelete)
-	- [NSString](#NSString)
-		- [NSString+YUAppendPath](#NSString+YUAppendPath)
-		- [NSString+YUBase](#NSString+YUBase)
-		- [NSString+YUEmoji](#NSString+YUEmoji)
-		- [NSString+YUEmpty](#NSString+YUEmpty)
-		- [NSString+YUHash](#NSString+YUHash)
-		- [NSString+YUMatch](#NSString+YUMatch)
-		- [NSString+YUOther](#NSString+YUOther)
-		- [NSString+YURegEx](#NSString+YURegEx)
-		- [NSString+YUSerialization](#NSString+YUSerialization)
-		- [NSString+YUSize](#NSString+YUSize)
-		- [NSString+YUTimeFormat](#NSString+YUTimeFormat)
-- UIKit
-	- [UIBarButtonItem](#UIBarButtonItem)
-		- [UIBarButtonItem+YUCustom](#UIBarButtonItem+YUCustom)
-	- [UIImage](#UIImage)
-		- [UIImage+YUCompress](#UIImage+YUCompress)
-		- [UIImage+YUCreateImage](#UIImage+YUCreateImage)
-		- [UIImage+YUResize](#UIImage+YUResize)
-	- [UILabel](#UILabel)
-		- [UILabel+YUTextSize](#UILabel+YUTextSize)
-	- [UIView](#UIView)
-		- [UIView+YUFrame](#UIView+YUFrame)
+**目录:**
 
+[TOC]
 
-## 1. Foundation 
-
-<div id="NSArray"></div>
+## 1. Foundation
 
 ### NSArray 
 
-<div id="NSArray+YUFormatNSLog"></div>
-
 #### NSArray+YUFormatNSLog
 
-```objectivec
-重写了 descriptionWithLocale 方法，作用是排版控制台的输出内容
+``` objc
+// 重写了 descriptionWithLocale 方法，作用是排版控制台的输出内容
 - (NSString *)descriptionWithLocale:(id)locale;
 ```
 
-<div id="NSArray+YUSafeAccess"></div>
-
 #### NSArray+YUSafeAccess
 
-```objectivec
-安全取出数组中的所对应类型的值
+``` objc
+// 安全取出数组中的所对应类型的值
 - (id)yu_objectAtIndex:(NSUInteger)index;
 - (NSString *)yu_stringAtIndex:(NSUInteger)index;
 - (NSNumber *)yu_numberAtIndex:(NSUInteger)index;
@@ -95,7 +48,7 @@ pod 'YUCategory'
 - (CGSize)yu_sizeAtIndex:(NSUInteger)index;
 - (CGRect)yu_rectAtIndex:(NSUInteger)index;
 
-其中，包括了 NSMutableArray 的添加对象安全访问
+// 其中，包括了 NSMutableArray 的添加对象安全访问
 - (void)yu_addObj:(id)obj;
 - (void)yu_addString:(NSString *)string;
 - (void)yu_addBool:(BOOL)bo;
@@ -110,11 +63,9 @@ pod 'YUCategory'
 - (void)yu_addRect:(CGRect)rect;
 ```
 
-<div id="NSArray+YUSerialization"></div>
-
 #### NSArray+YUSerialization 
 
-```objectivec
+``` objc
 /**
  *  将“数组”序列化为 Json串
  *
@@ -123,16 +74,11 @@ pod 'YUCategory'
 - (NSString *)yu_serializationNSArrayToJson;
 ```
 
-
-<div id="NSAttributedString"></div>
-
 ### NSAttributedString 
 
-<div id="NSAttributedString+YUTextSize"></div>
+#### NSAttributedString+YUTextSize
 
-#### NSAttributedString+YUTextSize 
-
-```objectivec
+``` objc
 /**
  *  计算 属性字符串 的大小
  *
@@ -143,17 +89,12 @@ pod 'YUCategory'
 - (CGSize)yu_sizeWithMaxSize:(CGSize)maxSize;
 ```
 
-
-<div id="NSDate"></div>
-
-### NSDate 
-
-<div id="NSDate+YUFormat"></div>
+### NSDate
 
 #### NSDate+YUFormat 
 
-```objectivec
-常用的几种日期表示格式
+``` objc
+// 常用的几种日期表示格式
 typedef NS_ENUM(NSInteger, DateFormatMode) {
     /** 年月日  例如:20160101 */
     DateFormatModeNumber,
@@ -222,60 +163,36 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 + (NSString *)yu_dateAppendWeekWith:(NSDate *)date dateFormat:(NSString *)dateFormat;
 ```
 
-<div id="NSDate+YUJudge"></div>
-
 #### NSDate+YUJudge 
 
-```objectivec
-/**
- *  是否为今天
- */
+``` objc
+// 是否为今天
 - (BOOL)yu_isToday;
-/**
- *  是否为昨天
- */
+// 是否为昨天
 - (BOOL)yu_isYesterday;
-/**
- *  是否为今年
- */
+// 是否为今年
 - (BOOL)yu_isThisYear;
 
-/**
- *  返回一个只有年月日的时间 @"yyyy-MM-dd"
- */
+// 返回一个只有年月日的时间 @"yyyy-MM-dd"
 - (NSDate *)yu_dateWithYMD;
 ```
 
-<div id="NSDate+YUOther"></div>
-
 #### NSDate+YUOther 
 
-```objectivec
-/**
- *  获得与当前时间的差距
- */
+``` objc
+// 获得与当前时间的差距
 - (NSDateComponents *)yu_deltaWithNow;
 ```
 
-
-<div id="NSDictionary"></div>
-
 ### NSDictionary 
-
-<div id="NSDictionary+YUFormatNSLog"></div>
 
 #### NSDictionary+YUFormatNSLog 
 
-```objectivec
-格式化（“美化”）控制台输出
-重写 - (NSString *)descriptionWithLocale:(id)locale; 方法
-```
-
-<div id="NSDictionary+YUJSONString"></div>
+格式化控制台输出，重写`- (NSString *)descriptionWithLocale:(id)locale` 方法。
 
 #### NSDictionary+YUJSONString 
 
-```objectivec
+``` objc
 /**
  *  将“字典”序列化为 Json串
  *
@@ -284,12 +201,10 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 - (NSString *)yu_serializationNSDictionaryToJson;
 ```
 
-<div id="NSDictionary+YUSafeAccess"></div>
-
 #### NSDictionary+YUSafeAccess 
 
-```objectivec
-安全使用字典
+``` objc
+// 安全使用字典
 - (BOOL)yu_hasKey:(NSString *)key;
 - (NSString *)yu_stringForKey:(id)key;
 - (NSNumber *)yu_numberForKey:(id)key;
@@ -315,7 +230,7 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 - (CGSize)yu_sizeForKey:(id)key;
 - (CGRect)yu_rectForKey:(id)key;
 
-其中，包括了 NSMutableDictionary 的添加对象安全访问
+// 其中，包括了 NSMutableDictionary 的添加对象安全访问
 - (void)yu_setObj:(id)obj forKey:(NSString *)key;
 - (void)yu_setString:(NSString *)string forKey:(NSString *)key;
 - (void)yu_setBool:(BOOL)i forKey:(NSString *)key;
@@ -332,53 +247,32 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 - (void)yu_setRect:(CGRect)o forKey:(NSString *)key;
 ```
 
-
-<div id="NSObject"></div>
-
 ### NSObject 
-
-<div id="NSObject+YUFileDelete"></div>
 
 #### NSObject+YUFileDelete 
 
-```objectivec
 删除沙盒文件
 
-/**
- *  1.删除 Document 目录下文件
- */
+``` objc
+// 1.删除 Document 目录下
 - (BOOL)yu_deleteDocumentFileWith:(NSString *)fileName;
-/**
- *  2.删除 Library 目录下文件
- */
+// 2.删除 Library 目录下文件
 - (BOOL)yu_deleteLibraryFileWith:(NSString *)fileName;
-/**
- *  3.删除 Caches 目录下文件
- */
+// 3.删除 Caches 目录下文件
 - (BOOL)yu_deleteCachesFileWith:(NSString *)fileName;
-/**
- *  4.删除 Tmp 目录下文件
- */
+// 4.删除 Tmp 目录下文件
 - (BOOL)yu_deleteTmpFileWith:(NSString *)fileName;
-
-/**
- *  5.删除 指定目录下 文件
- */
+// 5.删除 指定目录下 文件
 - (BOOL)yu_deleteFileWithPathStr:(NSString *)pathStr fileName:(NSString *)fileName;
 ```
 
-
-<div id="NSString"></div>
-
 ### NSString 
-
-<div id="NSString+YUAppendPath"></div>
 
 #### NSString+YUAppendPath 
 
-```objectivec
 在字符串之前追加路径，文件名在路径最后
 
+``` objc
 /** 追加缓存路径 */
 - (NSString *)yu_appendPathCache;
 
@@ -389,11 +283,9 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 - (NSString *)yu_appendPathDocument;
 ```
 
-<div id="NSString+YUBase"></div>
-
 #### NSString+YUBase 
 
-```objectivec
+``` objc
 /** base64编码 */
 - (NSString *)yu_base64Encode;
 
@@ -401,13 +293,12 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 - (NSString *)yu_base64Decode;
 ```
 
-<div id="NSString+YUEmoji"></div>
-
 #### NSString+YUEmoji 
+
 查询 emoji <http://emojipedia.org>
 表情符号替换表<http://www.emoji-cheat-sheet.com>
 
-```objectivec
+``` objc
 /**
  返回一个字符串 
  如果发现替换代码在表情符号替换表<http://www.emoji-cheat-sheet.com>中出现，
@@ -431,7 +322,6 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
  */
 - (NSString *)yu_emojiUnicodeReplacingWithCheatCodes;
 
-
 /**
  是否包含 emoji
  */
@@ -443,21 +333,17 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 - (instancetype)yu_emojiRemoved;
 ```
 
-<div id="NSString+YUEmpty"></div>
-
 #### NSString+YUEmpty 
 
-```objectivec
+``` objc
 一个或者多个空格也算是空
 /** 判断字符串是否为空 */
 - (BOOL)yu_isEmpty;
 ```
 
-<div id="NSString+YUHash"></div>
-
 #### NSString+YUHash 
 
-```objectivec
+``` objc
 /** MD5 加密(32位小) */
 @property (readonly) NSString *yu_md5String;
 /** sha1 哈希算法 */
@@ -489,11 +375,9 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
  */
 ```
 
-<div id="NSString+YUMatch"></div>
-
 #### NSString+YUMatch 
 
-```objectivec
+``` objc
 /**
  *  查找字符串中第一个匹配项
  *
@@ -513,11 +397,9 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 - (NSArray *)yu_matchsWithPattern:(NSString *)pattern;
 ```
 
-<div id="NSString+YUOther"></div>
-
 #### NSString+YUOther 
 
-```objectivec
+``` objc
 /**
  *  数字末尾去0
  *
@@ -535,11 +417,9 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 - (NSString *)yu_trimString;
 ```
 
-<div id="NSString+YURegEx"></div>
-
 #### NSString+YURegEx 
 
-```objectivec
+``` objc
 /**
  *  手机号码的有效性:分电信、联通、移动和小灵通
  */
@@ -613,7 +493,6 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
  */
 - (BOOL)yu_isTaxNo;
 
-
 /**
  *  登录账号有效性
  *  @brief  是否符合最小长度、最长长度，是否包含中文,首字母是否可以为数字
@@ -652,22 +531,18 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
              firstCannotBeDigtal:(BOOL)firstCannotBeDigtal;
 ```
 
-<div id="NSString+YUSerialization"></div>
-
 #### NSString+YUSerialization 
 
-```objectivec
+``` objc
 /**
  *  Json 串 反序列化为 NSDictionary
  */
 - (NSDictionary *)yu_serializationJsonStringToDictionary;
 ```
 
-<div id="NSString+YUSize"></div>
-
 #### NSString+YUSize 
 
-```objectivec
+``` objc
 /**
  *  依据 "字体" 返回字符串所占用的尺寸
  */
@@ -679,11 +554,9 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 - (CGSize)yu_sizeWithAttributes:(NSDictionary *)attrs maxSize:(CGSize)maxSize;
 ```
 
-<div id="NSString+YUTimeFormat"></div>
-
 #### NSString+YUTimeFormat 
 
-```objectivec
+``` objc
 /**
  *  将 “秒数” 转换为 几天几小时几分几秒
  */
@@ -695,35 +568,27 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 + (NSString *)yu_timeFormattedColon:(NSInteger)totalSeconds;
 ```
 
-
-
 ## 2. UIKit
-
-<div id="UIBarButtonItem"></div>
 
 ### UIBarButtonItem 
 
-<div id="UIBarButtonItem+YUCustom"></div>
-
 #### UIBarButtonItem+YUCustom 
 
-```objectivec
 自定义 BarButtonItem 样式
 
+``` objc
 /**
  *  1.只有图片
  */
 + (UIBarButtonItem *)yu_barButtonWithImage:(NSString *)imageName
                                     target:(id)target
                                     action:(SEL)action;
-
 /**
  *  2.只有文字
  */
 + (UIBarButtonItem *)yu_barButtonWithTitle:(NSString *)title
                                     target:(id)target
                                     action:(SEL)action;
-
 /**
  *  3.图片在左，文字在右
  */
@@ -731,7 +596,6 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
                                      title:(NSString *)title
                                     target:(id)target
                                     action:(SEL)action;
-
 /**
  *  4.文字在左，图片在右
  */
@@ -741,15 +605,11 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
                                     action:(SEL)action;
 ```
 
-<span id="UIImage"></span>
-
 ### UIImage 
-
-<a id="UIImage+YUCompress"></a>
 
 #### UIImage+YUCompress 
 
-```objectivec
+``` objc
 //  压缩图片
 //
 //  图片的压缩其实是俩概念:
@@ -829,11 +689,9 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 + (NSInteger)yu_computeBytesByJPEG:(UIImage *)sourceImage;
 ```
 
-<div id="UIImage+YUCreateImage"></div>
-
 #### UIImage+YUCreateImage 
 
-```objectivec
+``` objc
 /**
  用颜色生成图片，默认1x1
 
@@ -841,7 +699,6 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
  @return 生成的图片
  */
 + (UIImage *)yu_createImageWithColor:(UIColor *)color;
-
 
 /**
  用颜色生成图片
@@ -853,11 +710,9 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 + (UIImage *)yu_createImageWithColor:(UIColor *)color size:(CGSize)size;
 ```
 
-<div id="UIImage+YUResize"></div>
-
 #### UIImage+YUResize 
 
-```objectivec
+``` objc
 //  图片拉伸平铺
 //  注意：默认图片的模式是 UIImageResizingModeTile（瓦片）
 //
@@ -892,32 +747,24 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
                       resizingMode:(UIImageResizingMode)resizingMode;
 ```
 
-<div id="UILabel"></div>
-
 ### UILabel 
-
-<div id="UILabel+YUTextSize"></div>
 
 #### UILabel+YUTextSize 
 
-```objectivec
+``` objc
 /**
  *  计算Label的内容大小
  */
 - (CGSize)yu_textSize;
 ```
 
-<div id="UIView"></div>
-
 ### UIView 
-
-<div id="UIView+YUFrame"></div>
 
 #### UIView+YUFrame
 
-```objectivec
 适用于使用Frame布局
 
+``` objc
 /** 1.当前View的x值*/
 @property (nonatomic, assign) CGFloat yu_x;
 
@@ -959,9 +806,6 @@ typedef NS_ENUM(NSInteger, DateFormatMode) {
 /** 9.当前View的大小*/
 @property (nonatomic, assign) CGSize yu_size;
 ```
-
-
-
 
 欢迎关注我的新浪微博： 柚子橙黄
 工作QQ：1632212092
