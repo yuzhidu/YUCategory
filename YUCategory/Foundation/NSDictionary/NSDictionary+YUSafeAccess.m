@@ -13,19 +13,138 @@
 
 @implementation NSDictionary (YUSafeAccess)
 
-/**
- 字典是否有key
- */
+#pragma mark - KeyType 为 字符串类型 不可变对象
+
 - (BOOL)yu_hasKey:(NSString *)key {
-    return [self objectForKey:key] != nil;
+    if (![key isKindOfClass:[NSString class]]) {
+        return NO;
+    }
+    return [self yu_hasKeyOfUnlimitedType:key];
 }
 
-/**
- 根据key取出字典中的 string
- 
- @return nil/NSString
- */
-- (NSString *)yu_stringForKey:(id)key {
+- (id)yu_objForKey:(NSString *)key {
+    if (![self yu_hasKey:key]) {
+        return nil;
+    }
+    return [self yu_objForKeyCommonMethod:key];
+}
+
+- (NSDictionary *)yu_dictionaryForKey:(NSString *)key {
+    if (![self yu_hasKey:key]) {
+        return nil;
+    }
+    return [self yu_dictionaryForKeyCommonMethod:key];
+}
+
+- (NSArray *)yu_arrayForKey:(NSString *)key {
+    if (![self yu_hasKey:key]) {
+        return nil;
+    }
+    return [self yu_arrayForKeyCommonMethod:key];
+}
+
+- (NSString *)yu_stringForKey:(NSString *)key {
+    if (![self yu_hasKey:key]) {
+        return nil;
+    }
+    return [self yu_stringForKeyCommonMethod:key];
+}
+
+- (BOOL)yu_boolForKey:(NSString *)key {
+    if (![self yu_hasKey:key]) {
+        return NO;
+    }
+    return [self yu_boolForKeyCommonMethod:key];
+}
+
+- (NSNumber *)yu_numberForKey:(NSString *)key {
+    if (![self yu_hasKey:key]) {
+        return nil;
+    }
+    return [self yu_numberForKeyCommonMethod:key];
+}
+
+#pragma mark - KeyType 为 任意类型 不可变对象(不推荐,一般不用非字符串对象作为字典的键)
+
+- (BOOL)yu_hasKeyOfUnlimitedType:(id)key {
+    return [self.allKeys containsObject:key];
+}
+
+- (id)yu_objForKeyOfUnlimitedType:(id)key {
+    if (![self yu_hasKeyOfUnlimitedType:key]) {
+        return nil;
+    }
+    return [self yu_objForKeyCommonMethod:key];
+}
+
+- (NSDictionary *)yu_dictionaryForKeyOfUnlimitedType:(id)key {
+    if (![self yu_hasKeyOfUnlimitedType:key]) {
+        return nil;
+    }
+    return [self yu_dictionaryForKeyCommonMethod:key];
+}
+
+- (NSArray *)yu_arrayForKeyOfUnlimitedType:(id)key {
+    if (![self yu_hasKeyOfUnlimitedType:key]) {
+        return nil;
+    }
+    return [self yu_arrayForKeyCommonMethod:key];
+}
+
+- (NSString *)yu_stringForKeyOfUnlimitedType:(id)key {
+    if (![self yu_hasKeyOfUnlimitedType:key]) {
+        return nil;
+    }
+    return [self yu_stringForKeyCommonMethod:key];
+}
+
+- (BOOL)yu_boolForKeyOfUnlimitedType:(id)key {
+    if (![self yu_hasKeyOfUnlimitedType:key]) {
+        return NO;
+    }
+    return [self yu_boolForKeyCommonMethod:key];
+}
+
+- (NSNumber *)yu_numberForKeyOfUnlimitedType:(id)key {
+    if (![self yu_hasKeyOfUnlimitedType:key]) {
+        return nil;
+    }
+    return [self yu_numberForKeyCommonMethod:key];
+}
+
+#pragma mark - Private Common Method
+
+- (id)yu_objForKeyCommonMethod:(id)key {
+    id value = [self objectForKey:key];
+    if (value == nil || value == [NSNull null]) {
+        return nil;
+    }
+    return value;
+}
+
+- (NSDictionary *)yu_dictionaryForKeyCommonMethod:(id)key {
+    id value = [self objectForKey:key];
+    if (value == nil || value == [NSNull null]) {
+        return nil;
+    }
+    if ([value isKindOfClass:[NSDictionary class]]) {
+        return (NSDictionary *)value;
+    }
+    return nil;
+}
+
+- (NSArray *)yu_arrayForKeyCommonMethod:(id)key {
+    id value = [self objectForKey:key];
+    if (value == nil || value == [NSNull null]) {
+        return nil;
+    }
+    if ([value isKindOfClass:[NSArray class]]) {
+        return (NSArray *)value;
+    }
+    return nil;
+}
+
+- (NSString *)yu_stringForKeyCommonMethod:(id)key {
     id value = [self objectForKey:key];
     if (value == nil || value == [NSNull null]) {
         return nil;
@@ -39,115 +158,7 @@
     return nil;
 }
 
-/**
- 根据key取出字典中的 NSNumber
- 
- @return nil/NSNumber
- */
-- (NSNumber *)yu_numberForKey:(id)key {
-    id value = [self objectForKey:key];
-    if ([value isKindOfClass:[NSNumber class]]) {
-        return (NSNumber *)value;
-    }
-    if ([value isKindOfClass:[NSString class]]) {
-        NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
-        [f setNumberStyle:NSNumberFormatterDecimalStyle];
-        return [f numberFromString:(NSString *)value];
-    }
-    return nil;
-}
-
-/**
- 根据key取出字典中的 十进制NSNumber
- 
- @return nil/NSDecimalNumber
- */
-- (NSDecimalNumber *)yu_decimalNumberForKey:(id)key {
-    id value = [self objectForKey:key];
-    if ([value isKindOfClass:[NSDecimalNumber class]]) {
-        return value;
-    }
-    if ([value isKindOfClass:[NSNumber class]]) {
-        NSNumber *number = (NSNumber *)value;
-        return [NSDecimalNumber decimalNumberWithDecimal:[number decimalValue]];
-    }
-    if ([value isKindOfClass:[NSString class]]) {
-        NSString * str = (NSString*)value;
-        return [str isEqualToString:@""] ? nil : [NSDecimalNumber decimalNumberWithString:str];
-    }
-    return nil;
-}
-
-/**
- 根据key取出字典中的 NSArray
- 
- @return nil/NSArray
- */
-- (NSArray *)yu_arrayForKey:(id)key {
-    id value = [self objectForKey:key];
-    if (value == nil || value == [NSNull null]) {
-        return nil;
-    }
-    if ([value isKindOfClass:[NSArray class]]) {
-        return value;
-    }
-    return nil;
-}
-
-/**
- 根据key取出字典中的 NSDictionary
- 
- @return nil/NSDictionary
- */
-- (NSDictionary *)yu_dictionaryForKey:(id)key {
-    id value = [self objectForKey:key];
-    if (value == nil || value == [NSNull null]) {
-        return nil;
-    }
-    if ([value isKindOfClass:[NSDictionary class]]) {
-        return value;
-    }
-    return nil;
-}
-
-/**
- 根据key取出字典中的 NSInteger
- 
- @return 0/NSInteger
- */
-- (NSInteger)yu_integerForKey:(id)key {
-    id value = [self objectForKey:key];
-    if (value == nil || value == [NSNull null]) {
-        return 0;
-    }
-    if ([value isKindOfClass:[NSString class]] || [value isKindOfClass:[NSNumber class]]) {
-        return [value integerValue];
-    }
-    return 0;
-}
-
-/**
- 根据key取出字典中的 NSUInteger
- 
- @return 0/NSUInteger
- */
-- (NSUInteger)yu_unsignedIntegerForKey:(id)key {
-    id value = [self objectForKey:key];
-    if (value == nil || value == [NSNull null]) {
-        return 0;
-    }
-    if ([value isKindOfClass:[NSString class]] || [value isKindOfClass:[NSNumber class]]) {
-        return [value unsignedIntegerValue];
-    }
-    return 0;
-}
-
-/**
- 根据key取出字典中的 BOOL
- 
- @return BOOL
- */
-- (BOOL)yu_boolForKey:(id)key {
+- (BOOL)yu_boolForKeyCommonMethod:(id)key {
     id value = [self objectForKey:key];
     if (value == nil || value == [NSNull null]) {
         return NO;
@@ -161,267 +172,108 @@
     return NO;
 }
 
-/**
- 根据key取出字典中的 int16_t
- 
- @return 0/int16_t
- */
-- (int16_t)yu_int16ForKey:(id)key {
-    id value = [self objectForKey:key];
-    if (value == nil || value == [NSNull null]) {
-        return 0;
-    }
-    if ([value isKindOfClass:[NSNumber class]]) {
-        return [value shortValue];
-    }
-    if ([value isKindOfClass:[NSString class]]) {
-        return [value intValue];
-    }
-    return 0;
-}
-
-/**
- 根据key取出字典中的 int32_t
- 
- @return 0/int32_t
- */
-- (int32_t)yu_int32ForKey:(id)key {
-    id value = [self objectForKey:key];
-    if (value == nil || value == [NSNull null]) {
-        return 0;
-    }
-    if ([value isKindOfClass:[NSNumber class]] || [value isKindOfClass:[NSString class]]) {
-        return [value intValue];
-    }
-    return 0;
-}
-
-/**
- 根据key取出字典中的 int64_t
- 
- @return 0/int64_t
- */
-- (int64_t)yu_int64ForKey:(id)key {
-    id value = [self objectForKey:key];
-    if (value == nil || value == [NSNull null]) {
-        return 0;
-    }
-    if ([value isKindOfClass:[NSNumber class]] || [value isKindOfClass:[NSString class]]) {
-        return [value longLongValue];
-    }
-    return 0;
-}
-
-/**
- 根据key取出字典中的 char
- 
- @return 0/char
- */
-- (char)yu_charForKey:(id)key {
-    id value = [self objectForKey:key];
-    if (value == nil || value == [NSNull null]) {
-        return 0;
-    }
-    if ([value isKindOfClass:[NSNumber class]] || [value isKindOfClass:[NSString class]])
-    {
-        return [value charValue];
-    }
-    return 0;
-}
-
-/**
- 根据key取出字典中的 short
- 
- @return 0/short
- */
-- (short)yu_shortForKey:(id)key {
-    id value = [self objectForKey:key];
-    if (value == nil || value == [NSNull null]) {
-        return 0;
-    }
-    if ([value isKindOfClass:[NSNumber class]]) {
-        return [value shortValue];
-    }
-    if ([value isKindOfClass:[NSString class]]) {
-        return [value intValue];
-    }
-    return 0;
-}
-
-/**
- 根据key取出字典中的 float
- 
- @return 0/float
- */
-- (float)yu_floatForKey:(id)key {
-    id value = [self objectForKey:key];
-    if (value == nil || value == [NSNull null]) {
-        return 0;
-    }
-    if ([value isKindOfClass:[NSNumber class]] || [value isKindOfClass:[NSString class]]) {
-        return [value floatValue];
-    }
-    return 0;
-}
-
-/**
- 根据key取出字典中的 double
- 
- @return 0/double
- */
-- (double)yu_doubleForKey:(id)key {
-    id value = [self objectForKey:key];
-    if (value == nil || value == [NSNull null]) {
-        return 0;
-    }
-    if ([value isKindOfClass:[NSNumber class]] || [value isKindOfClass:[NSString class]]) {
-        return [value doubleValue];
-    }
-    return 0;
-}
-
-/**
- 根据key取出字典中的 long long
- 
- @return 0/long long
- */
-- (long long)yu_longLongForKey:(id)key {
-    id value = [self objectForKey:key];
-    if ([value isKindOfClass:[NSString class]] || [value isKindOfClass:[NSNumber class]]) {
-        return [value longLongValue];
-    }
-    return 0;
-}
-
-/**
- 根据key取出字典中的 unsigned long long
- 
- @return 0/unsigned long long
- */
-- (unsigned long long)yu_unsignedLongLongForKey:(id)key {
-    id value = [self objectForKey:key];
-    if ([value isKindOfClass:[NSString class]]) {
-        NSNumberFormatter *nf = [[NSNumberFormatter alloc] init];
-        value = [nf numberFromString:value];
-        return [value unsignedLongLongValue];
-    }
-    if ([value isKindOfClass:[NSNumber class]]) {
-        return [value unsignedLongLongValue];
-    }
-    return 0;
-}
-
-/**
- 根据key取出字典中的 NSDate
- 
- @param dateFormat 日期格式
- @return nil/NSDate
- */
-- (NSDate *)yu_dateForKey:(id)key
-               dateFormat:(NSString *)dateFormat {
-    NSDateFormatter *formater = [[NSDateFormatter alloc]init];
-    formater.dateFormat = dateFormat;
+- (NSNumber *)yu_numberForKeyCommonMethod:(id)key {
     id value = [self objectForKey:key];
     if (value == nil || value == [NSNull null]) {
         return nil;
     }
-    if ([value isKindOfClass:[NSString class]] && ![value isEqualToString:@""] && !dateFormat) {
-        return [formater dateFromString:value];
+    if ([value isKindOfClass:[NSNumber class]]) {
+        return (NSNumber *)value;
     }
     return nil;
 }
 
-/**
- 根据key取出字典中的 CGFloat
- 
- @return CGFloat
- */
-- (CGFloat)yu_CGFloatForKey:(id)key {
-    CGFloat f = [self[key] doubleValue];
-    return f;
-}
-
-/**
- 根据key取出字典中的 CGFloat
- 
- @return CGFloat
- */
-- (CGPoint)yu_pointForKey:(id)key {
-    CGPoint point = CGPointFromString(self[key]);
-    return point;
-}
-
-/**
- 根据key取出字典中的 CGSize
- 
- @return CGSize
- */
-- (CGSize)yu_sizeForKey:(id)key {
-    CGSize size = CGSizeFromString(self[key]);
-    return size;
-}
-
-/**
- 根据key取出字典中的 CGRect
- 
- @return CGRect
- */
-- (CGRect)yu_rectForKey:(id)key {
-    CGRect rect = CGRectFromString(self[key]);
-    return rect;
-}
-
 @end
 
-
-#pragma mark - NSMutableDictionary setter
 @implementation NSMutableDictionary (YUSafeAccess)
 
-- (void)yu_setObj:(id)obj forKey:(NSString *)key {
-    if (obj != nil) {
-        self[key] = obj;
+#pragma mark - set / add
+
+- (BOOL)yu_setObj:(id)obj forKey:(NSString *)key {
+    if ([self keyIsAvailable:key]) {
+        return NO;
     }
-}
-- (void)yu_setString:(NSString *)string forKey:(NSString *)key {
-    if (string != nil) {
-        [self setValue:string forKey:key];
+    if (obj == nil) {
+        return NO;
     }
+    if ([obj isKindOfClass:[NSNull class]]) {
+        return NO;
+    }
+    [self setObject:obj forKey:key];
+    return YES;
 }
-- (void)yu_setBool:(BOOL)i forKey:(NSString *)key {
-    self[key] = @(i);
+
+- (BOOL)yu_setDictionary:(NSDictionary *)dict forKey:(NSString *)key {
+    if ([self keyIsAvailable:key]) {
+        return NO;
+    }
+    if (![dict isKindOfClass:[NSDictionary class]]) {
+        return NO;
+    }
+    [self setObject:dict forKey:key];
+    return YES;
 }
-- (void)yu_setInt:(int)i forKey:(NSString *)key {
-    self[key] = @(i);
+
+- (BOOL)yu_setArray:(NSArray *)array forKey:(NSString *)key {
+    if ([self keyIsAvailable:key]) {
+        return NO;
+    }
+    if (![array isKindOfClass:[NSArray class]]) {
+        return NO;
+    }
+    [self setObject:array forKey:key];
+    return YES;
 }
-- (void)yu_setInteger:(NSInteger)i forKey:(NSString *)key {
-    self[key] = @(i);
+
+- (BOOL)yu_setString:(NSString *)string forKey:(NSString *)key {
+    if ([self keyIsAvailable:key]) {
+        return NO;
+    }
+    if (![string isKindOfClass:[NSString class]]) {
+        return NO;
+    }
+    [self setObject:string forKey:key];
+    return YES;
 }
-- (void)yu_setUnsignedInteger:(NSUInteger)i forKey:(NSString *)key {
-    self[key] = @(i);
+
+- (BOOL)yu_setNumber:(NSNumber *)number forKey:(NSString *)key {
+    if ([self keyIsAvailable:key]) {
+        return NO;
+    }
+    if (![number isKindOfClass:[NSNumber class]]) {
+        return NO;
+    }
+    [self setObject:number forKey:key];
+    return YES;
 }
-- (void)yu_setCGFloat:(CGFloat)f forKey:(NSString *)key {
-    self[key] = @(f);
+
+#pragma mark - remove
+
+- (BOOL)yu_removeObjectForKey:(NSString *)key {
+    if ([self keyIsAvailable:key]) {
+        return NO;
+    }
+    [self removeObjectForKey:key];
+    return YES;
 }
-- (void)yu_setChar:(char)c forKey:(NSString *)key {
-    self[key] = @(c);
-}
-- (void)yu_setFloat:(float)i forKey:(NSString *)key {
-    self[key] = @(i);
-}
-- (void)yu_setDouble:(double)i forKey:(NSString *)key {
-    self[key] = @(i);
-}
-- (void)yu_setLongLong:(long long)i forKey:(NSString *)key {
-    self[key] = @(i);
-}
-- (void)yu_setPoint:(CGPoint)o forKey:(NSString *)key {
-    self[key] = NSStringFromCGPoint(o);
-}
-- (void)yu_setSize:(CGSize)o forKey:(NSString *)key {
-    self[key] = NSStringFromCGSize(o);
-}
-- (void)yu_setRect:(CGRect)o forKey:(NSString *)key {
-    self[key] = NSStringFromCGRect(o);
+
+#pragma mark - check key
+
+/**
+ key 必须为字符串, 且字符串长度 > 0,
+ 不允许无意义的字符串作为key, 例如 @""
+ */
+- (BOOL)keyIsAvailable:(NSString *)key {
+    if (key == nil) {
+        return NO;
+    }
+    if (![key isKindOfClass:[NSString class]]) {
+        return NO;
+    }
+    if (key.length == 0) {
+        return NO;
+    }
+    return NO;
 }
 
 @end

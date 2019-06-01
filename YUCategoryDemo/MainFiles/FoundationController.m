@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = kColorBackground;
+    self.view.backgroundColor = mColorBackground;
     
     self.navigationItem.title = @"Foundation分类(按字母排序)";
 }
@@ -56,7 +56,7 @@
     Class class = NSClassFromString(className);
     UIViewController *controller = [[class alloc] init];
     controller.title = name;
-    controller.view.backgroundColor = kColorBackground;
+    controller.view.backgroundColor = mColorBackground;
     controller.navigationItem.leftBarButtonItems = [UIBarButtonItem yu_barWithImage:@"arrowBack"
                                                                              target:self
                                                                              action:@selector(leftBarButtonItemClick)];

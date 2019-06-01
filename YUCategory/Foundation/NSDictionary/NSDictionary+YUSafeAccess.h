@@ -1,199 +1,140 @@
 //
-//
 //  关注微博：裕之都
 //  微博地址：http://weibo.com/gou9527
 //
 //  Github：https://github.com/yuzhidu
 //  Copyright © 裕之都. All rights reserved.
 //
-//  安全使用字典
+//  NSDictionary 中的 key 和 value 必须都是对象.
+//  在iOS中, 只要是不为 nil 的 OC 不可变对象类型, 都可以作为 NSDictionary<KeyType, ObjectType> 的 KeyType.
+//  比如 NSNumber, NSArray, NSMutableArray, NSDictionary, 甚至 NSNull 等等
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 
 @interface NSDictionary (YUSafeAccess)
 
+#pragma mark - KeyType 为 字符串类型 不可变对象
+
 /**
- 字典是否有key
+ 字典的 key 是否存在, 如果字典的 keyType 不是字符串,则返回 NO.
+ Apple 建议使用 NSSting 类型作为字典的 keyType(键类型), 通常我们也是这样做的.
  */
 - (BOOL)yu_hasKey:(NSString *)key;
 
 /**
- 根据key取出字典中的 string
- 
- @return nil/NSString
+ 取出字典中的对象, 用于自定义对象类型 NSData NSObject
+ 返回 nil 的情况:
+ 1. key 不存在
+ 2. value 不存在
+ 3. value 为 NSNull 类型
  */
-- (NSString *)yu_stringForKey:(id)key;
+- (id)yu_objForKey:(id)key;
 
 /**
- 根据key取出字典中的 NSNumber
- 
- @return nil/NSNumber
+ 取出字典中的字典对象
+ 返回 nil 的情况:
+ 1. key 不存在
+ 2. value 不存在
+ 3. value 为 NSNull 类型
+ 4. value 为 非 NSDictionary 类型
  */
-- (NSNumber *)yu_numberForKey:(id)key;
+- (NSDictionary *)yu_dictionaryForKey:(NSString *)key;
 
 /**
- 根据key取出字典中的 十进制NSNumber
- 
- @return nil/NSDecimalNumber
+ 取出字典中的数组对象
+ 返回 nil 的情况:
+ 1. key 不存在
+ 2. value 不存在
+ 3. value 为 NSNull 类型
+ 4. value 为 非 NSArray 类型
  */
-- (NSDecimalNumber *)yu_decimalNumberForKey:(id)key;
+- (NSArray *)yu_arrayForKey:(NSString *)key;
 
 /**
- 根据key取出字典中的 NSArray
- 
- @return nil/NSArray
+ 取出字典中的字符串, nil/NSString
+ 返回 nil 的情况:
+ 1. key 不存在
+ 2. value 不存在
+ 3. value 为 NSNull 类型
+ 4. value 为 非 NSString 或非 NSNumber 类型
  */
-- (NSArray *)yu_arrayForKey:(id)key;
+- (NSString *)yu_stringForKey:(NSString *)key;
 
 /**
- 根据key取出字典中的 NSDictionary
+ 取出字典中的布尔值
  
- @return nil/NSDictionary
+ 返回 NO 的情况:
+ 1. key 不存在
+ 2. value 不存在
+ 3. value 为 NSNull 类型
+ 4. value 为 非 NSString 或非 NSNumber 类型
+ 5. value 为 NSString 类型, 且字符串内容为 @"NO" @"no" @"0" @"false" @"FALSE"
+ 6. value 为 NSString 类型, 内容为字母和(或)其它字符组合, 即非纯数字集合,
+    例如 @"a" @"jack" @"o2o"
+ 7.value 为 NSNumber 类型, 且值为0
+ 
+ 返回 YES 的情况:
+ 1.value 为字符串 @"yes" @"YES" @"true" @"TRUE"
+ 2.value 为由纯数字组成的字符串 @"1" @"123" @"2019"
+ 3.value 为 NSNumber 类型, 且值为非0
  */
-- (NSDictionary *)yu_dictionaryForKey:(id)key;
+- (BOOL)yu_boolForKey:(NSString *)key;
 
 /**
- 根据key取出字典中的 NSInteger
- 
- @return 0/NSInteger
+ 取出字典中的 NSNumber 对象, 推荐使用 NSNumber 取数字.
+ 返回 nil 的情况:
+ 1. key 不存在
+ 2. value 不存在
+ 3. value 为 NSNull 类型
+ 4. value 为 非 NSNumber 类型
  */
-- (NSInteger)yu_integerForKey:(id)key;
+- (NSNumber *)yu_numberForKey:(NSString *)key;
+
+#pragma mark - KeyType 为 任意类型 不可变对象(不推荐,一般不用非字符串对象作为字典的键)
 
 /**
- 根据key取出字典中的 NSUInteger
- 
- @return 0/NSUInteger
+ 字典的 key 是否存在
+ 不推荐:字典的 keyType 可能是任意类型的对象.
  */
-- (NSUInteger)yu_unsignedIntegerForKey:(id)key;
+- (BOOL)yu_hasKeyOfUnlimitedType:(id)key;
 
-/**
- 根据key取出字典中的 BOOL
- 
- @return BOOL
- */
-- (BOOL)yu_boolForKey:(id)key;
+- (id)yu_objForKeyOfUnlimitedType:(id)key;
 
-/**
- 根据key取出字典中的 int16_t
- 
- @return 0/int16_t
- */
-- (int16_t)yu_int16ForKey:(id)key;
+- (NSDictionary *)yu_dictionaryForKeyOfUnlimitedType:(id)key;
 
-/**
- 根据key取出字典中的 int32_t
- 
- @return 0/int32_t
- */
-- (int32_t)yu_int32ForKey:(id)key;
+- (NSArray *)yu_arrayForKeyOfUnlimitedType:(id)key;
 
-/**
- 根据key取出字典中的 int64_t
- 
- @return 0/int64_t
- */
-- (int64_t)yu_int64ForKey:(id)key;
+- (NSString *)yu_stringForKeyOfUnlimitedType:(id)key;
 
-/**
- 根据key取出字典中的 char
- 
- @return 0/char
- */
-- (char)yu_charForKey:(id)key;
+- (BOOL)yu_boolForKeyOfUnlimitedType:(id)key;
 
-/**
- 根据key取出字典中的 short
- 
- @return 0/short
- */
-- (short)yu_shortForKey:(id)key;
+- (NSNumber *)yu_numberForKeyOfUnlimitedType:(id)key;
 
-/**
- 根据key取出字典中的 float
- 
- @return 0/float
- */
-- (float)yu_floatForKey:(id)key;
-
-/**
- 根据key取出字典中的 double
- 
- @return 0/double
- */
-- (double)yu_doubleForKey:(id)key;
-
-/**
- 根据key取出字典中的 long long
- 
- @return 0/long long
- */
-- (long long)yu_longLongForKey:(id)key;
-
-/**
- 根据key取出字典中的 unsigned long long
- 
- @return 0/unsigned long long
- */
-- (unsigned long long)yu_unsignedLongLongForKey:(id)key;
-
-/**
- 根据key取出字典中的 NSDate
- 
- @param dateFormat 日期格式
- @return nil/NSDate
- */
-- (NSDate *)yu_dateForKey:(id)key
-               dateFormat:(NSString *)dateFormat;
-
-/**
- 根据key取出字典中的 CGFloat
- 
- @return CGFloat
- */
-- (CGFloat)yu_CGFloatForKey:(id)key;
-
-/**
- 根据key取出字典中的 CGFloat
- 
- @return CGFloat
- */
-- (CGPoint)yu_pointForKey:(id)key;
-
-/**
- 根据key取出字典中的 CGSize
- 
- @return CGSize
- */
-- (CGSize)yu_sizeForKey:(id)key;
-
-/**
- 根据key取出字典中的 CGRect
- 
- @return CGRect
- */
-- (CGRect)yu_rectForKey:(id)key;
 @end
-
-
-#pragma mark - NSMutableDictionary setter
 
 @interface NSMutableDictionary(YUSafeAccess)
 
-- (void)yu_setObj:(id)obj forKey:(NSString *)key;
-- (void)yu_setString:(NSString *)string forKey:(NSString *)key;
-- (void)yu_setBool:(BOOL)i forKey:(NSString *)key;
-- (void)yu_setInt:(int)i forKey:(NSString *)key;
-- (void)yu_setInteger:(NSInteger)i forKey:(NSString *)key;
-- (void)yu_setUnsignedInteger:(NSUInteger)i forKey:(NSString *)key;
-- (void)yu_setCGFloat:(CGFloat)f forKey:(NSString *)key;
-- (void)yu_setChar:(char)c forKey:(NSString *)key;
-- (void)yu_setFloat:(float)i forKey:(NSString *)key;
-- (void)yu_setDouble:(double)i forKey:(NSString *)key;
-- (void)yu_setLongLong:(long long)i forKey:(NSString *)key;
-- (void)yu_setPoint:(CGPoint)o forKey:(NSString *)key;
-- (void)yu_setSize:(CGSize)o forKey:(NSString *)key;
-- (void)yu_setRect:(CGRect)o forKey:(NSString *)key;
+/// key 必须为字符串, 且字符串长度 > 0
+/// 不允许无意义的字符串作为key, 例如 @""
+
+#pragma mark - set / add
+
+/// value 不为 nil, 不为 Null
+/// 注意: 如果字典中无 key 对应的对象, 会新增此 key和value
+
+- (BOOL)yu_setObj:(id)obj forKey:(NSString *)key;
+
+- (BOOL)yu_setDictionary:(NSDictionary *)dict forKey:(NSString *)key;
+
+- (BOOL)yu_setArray:(NSArray *)array forKey:(NSString *)key;
+
+- (BOOL)yu_setString:(NSString *)string forKey:(NSString *)key;
+
+- (BOOL)yu_setNumber:(NSNumber *)number forKey:(NSString *)key;
+
+#pragma mark - remove
+
+- (BOOL)yu_removeObjectForKey:(NSString *)key;
 
 @end
