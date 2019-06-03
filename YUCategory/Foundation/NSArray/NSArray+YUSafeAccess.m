@@ -72,6 +72,7 @@
         return NO;
     }
     if (index > self.count) {
+        // index == self.count 可以正常插入
         return NO;
     }
     [self insertObject:anObject atIndex:index];
@@ -79,7 +80,8 @@
 }
 
 - (BOOL)yu_removeObjectAtIndex:(NSUInteger)index {
-    if (index > self.count) {
+    if (index >= self.count) {
+        // index == self.count 删除会数组越界,崩溃
         return NO;
     }
     [self removeObjectAtIndex:index];
@@ -90,7 +92,8 @@
     if (anObject == nil) {
         return NO;
     }
-    if (index > self.count) {
+    if (index >= self.count) {
+        // index == self.count 删除会数组越界,崩溃
         return NO;
     }
     [self replaceObjectAtIndex:index withObject:anObject];
