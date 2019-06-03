@@ -1,0 +1,6 @@
+framework module YUCategory {
+  umbrella header "YUCategory-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,44 @@
+PODS:
+  - YUCategory (2.2.3):
+    - YUCategory/Foundation (= 2.2.3)
+    - YUCategory/UIKit (= 2.2.3)
+  - YUCategory/Foundation (2.2.3):
+    - YUCategory/Foundation/NSArray (= 2.2.3)
+    - YUCategory/Foundation/NSAttributedString (= 2.2.3)
+    - YUCategory/Foundation/NSDate (= 2.2.3)
+    - YUCategory/Foundation/NSDictionary (= 2.2.3)
+    - YUCategory/Foundation/NSObject (= 2.2.3)
+    - YUCategory/Foundation/NSString (= 2.2.3)
+  - YUCategory/Foundation/NSArray (2.2.3)
+  - YUCategory/Foundation/NSAttributedString (2.2.3)
+  - YUCategory/Foundation/NSDate (2.2.3)
+  - YUCategory/Foundation/NSDictionary (2.2.3)
+  - YUCategory/Foundation/NSObject (2.2.3)
+  - YUCategory/Foundation/NSString (2.2.3)
+  - YUCategory/UIKit (2.2.3):
+    - YUCategory/UIKit/UIBarButtonItem (= 2.2.3)
+    - YUCategory/UIKit/UIImage (= 2.2.3)
+    - YUCategory/UIKit/UIImageView (= 2.2.3)
+    - YUCategory/UIKit/UILabel (= 2.2.3)
+    - YUCategory/UIKit/UISearchBar (= 2.2.3)
+    - YUCategory/UIKit/UIView (= 2.2.3)
+  - YUCategory/UIKit/UIBarButtonItem (2.2.3)
+  - YUCategory/UIKit/UIImage (2.2.3)
+  - YUCategory/UIKit/UIImageView (2.2.3)
+  - YUCategory/UIKit/UILabel (2.2.3)
+  - YUCategory/UIKit/UISearchBar (2.2.3)
+  - YUCategory/UIKit/UIView (2.2.3)
+
+DEPENDENCIES:
+  - YUCategory (from `../YUCategory`)
+
+EXTERNAL SOURCES:
+  YUCategory:
+    :path: "../YUCategory"
+
+SPEC CHECKSUMS:
+  YUCategory: 545611912b804acc5fdf0970b5325807ec13ae32
+
+PODFILE CHECKSUM: 13c274eb7421321630affbf22ae5348ac6624da8
+
+COCOAPODS: 1.7.1
