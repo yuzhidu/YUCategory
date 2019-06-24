@@ -21,12 +21,12 @@
     
     UITextField *textF = [[UITextField alloc] init];
     self.textF = textF;
-    textF.backgroundColor = mColorRandom;
+    textF.backgroundColor = YU_ColorRandom;
     textF.frame = CGRectMake(20,100, self.view.yu_width-40, 32);
     [self.view addSubview:textF];
     
     UIButton *btn = [[UIButton alloc] init];
-    btn.backgroundColor = mColorRandom;
+    btn.backgroundColor = YU_ColorRandom;
     btn.frame = CGRectMake(30, textF.yu_yMax+20, self.view.yu_width-60, 30);
     [btn setTitle:@"检测" forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
@@ -34,7 +34,7 @@
     
     UILabel *resultLab = [[UILabel alloc] init];
     self.resultLab = resultLab;
-    resultLab.backgroundColor = mColorRandom;
+    resultLab.backgroundColor = YU_ColorRandom;
     resultLab.textAlignment = NSTextAlignmentCenter;
     resultLab.frame = CGRectMake(10, btn.yu_yMax+20, self.view.yu_width-20, 100);
     [self.view addSubview:resultLab];

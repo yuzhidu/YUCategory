@@ -8,6 +8,7 @@
 //
 
 #import "UIImage+YUCreateImage.h"
+#import <CoreGraphics/CoreGraphics.h>
 
 @implementation UIImage (YUCreateImage)
 

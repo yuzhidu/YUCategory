@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		003F3C1F5CCF2FBFDA631C5D1DEAF435 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4DE496E832B4D7CF1E663A293A98D0 /* Foundation.framework */; };
+		0CD02EA922B7BA8300B68174 /* NSString+YUSafeAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C95D8EB22B7BA0600A4FCE4 /* NSString+YUSafeAccess.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0CD02EAA22B7BA8700B68174 /* NSString+YUSafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C95D8EA22B7BA0600A4FCE4 /* NSString+YUSafeAccess.m */; };
 		168E1DD6BB5AECD9FCED2BDA2D9A03CA /* NSObject+YUComputeSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 94DD2D76B3B24BCC2C0EE5C6CFB90106 /* NSObject+YUComputeSize.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C7A17DD702B921FD36A7E7009F89825 /* NSString+YURegEx.h in Headers */ = {isa = PBXBuildFile; fileRef = BBF1AD1FA102B0B2050A3630170AED5E /* NSString+YURegEx.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		208ADDB5D1F518C022543CDF3BBDEB80 /* NSString+YUHash.h in Headers */ = {isa = PBXBuildFile; fileRef = 27CB27BD672561B9E73001962D8D9322 /* NSString+YUHash.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -97,6 +99,8 @@
 		040D10887C67E4BBE2F4968883E1627E /* UIImage+YUCreateImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+YUCreateImage.h"; path = "YUCategory/UIKit/UIImage/UIImage+YUCreateImage.h"; sourceTree = "<group>"; };
 		0B8CD962A07B04096EE957AA8EF4632D /* NSString+YUSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+YUSerialization.m"; path = "YUCategory/Foundation/NSString/NSString+YUSerialization.m"; sourceTree = "<group>"; };
 		0BB5F8DDFFC329FA6A35FF154EB900F0 /* NSDate+YUJudge.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+YUJudge.m"; path = "YUCategory/Foundation/NSDate/NSDate+YUJudge.m"; sourceTree = "<group>"; };
+		0C95D8EA22B7BA0600A4FCE4 /* NSString+YUSafeAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+YUSafeAccess.m"; path = "YUCategory/Foundation/NSString/NSString+YUSafeAccess.m"; sourceTree = "<group>"; };
+		0C95D8EB22B7BA0600A4FCE4 /* NSString+YUSafeAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+YUSafeAccess.h"; path = "YUCategory/Foundation/NSString/NSString+YUSafeAccess.h"; sourceTree = "<group>"; };
 		0D6D3019B3F6144AF33C8E08E78B5D55 /* NSDictionary+YUFormatNSLog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+YUFormatNSLog.m"; path = "YUCategory/Foundation/NSDictionary/NSDictionary+YUFormatNSLog.m"; sourceTree = "<group>"; };
 		10442D699E23A44916B50A11CCFC4313 /* UILabel+YUTextSize.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UILabel+YUTextSize.h"; path = "YUCategory/UIKit/UILabel/UILabel+YUTextSize.h"; sourceTree = "<group>"; };
 		1957D50591CD7077F0EC57EBED49F7A3 /* YUCategory.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YUCategory.xcconfig; sourceTree = "<group>"; };
@@ -411,6 +415,8 @@
 				292EE6F668992BA7821D3D13C1776793 /* NSString+YUOther.m */,
 				BBF1AD1FA102B0B2050A3630170AED5E /* NSString+YURegEx.h */,
 				438AA8402DA2070441FEE0E8CE69EA94 /* NSString+YURegEx.m */,
+				0C95D8EB22B7BA0600A4FCE4 /* NSString+YUSafeAccess.h */,
+				0C95D8EA22B7BA0600A4FCE4 /* NSString+YUSafeAccess.m */,
 				C4751FF750862399759A1008AF43D62C /* NSString+YUSerialization.h */,
 				0B8CD962A07B04096EE957AA8EF4632D /* NSString+YUSerialization.m */,
 				FD3A0DD6F96C1EBECD1B6BCA7F469F83 /* NSString+YUSize.h */,
@@ -532,6 +538,7 @@
 				EFEDF65824770AE875203F37B78516E8 /* UILabel+YUTextSize.h in Headers */,
 				39A740AAF6EA281A774F077CB15EB132 /* UISearchBar+YULeftPlaceholder.h in Headers */,
 				7A70713AEC35A0CC96852702CCCEF657 /* UIView+YUFrame.h in Headers */,
+				0CD02EA922B7BA8300B68174 /* NSString+YUSafeAccess.h in Headers */,
 				29982BF46A4C70C057001B28FAC508E0 /* YUCategory-umbrella.h in Headers */,
 				EB3379E13B906CFCAB50EDAFD5A2A93C /* YUCategory.h in Headers */,
 			);
@@ -657,6 +664,7 @@
 				81391CC76F0D3A90CB2A513C5C28838B /* NSString+YURegEx.m in Sources */,
 				8A6914BFF00EF465249B3591520B4A41 /* NSString+YUSerialization.m in Sources */,
 				94EC70D3BE107631A6575CCF569F6B53 /* NSString+YUSize.m in Sources */,
+				0CD02EAA22B7BA8700B68174 /* NSString+YUSafeAccess.m in Sources */,
 				8F6F759B85AED9F6166AD7EFBA5E55EF /* NSString+YUTimeFormat.m in Sources */,
 				340FB33C6149A87FFBF8D2527D576637 /* UIBarButtonItem+YUCustom.m in Sources */,
 				412B2914CE8C3DFC288C647C7859E156 /* UIImage+YUCompress.m in Sources */,

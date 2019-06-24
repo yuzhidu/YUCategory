@@ -36,6 +36,7 @@
 #import "NSString+YUMatch.h"
 #import "NSString+YUOther.h"
 #import "NSString+YURegEx.h"
+#import "NSString+YUSafeAccess.h"
 #import "NSString+YUSerialization.h"
 #import "NSString+YUSize.h"
 #import "NSString+YUTimeFormat.h"
@@ -47,7 +48,8 @@
 //#import "UIButton+YUClickInterval.h"
 
 #import "UIImage+YUCompress.h"
-#import "UIImage+YUCreateImage.h"
+//#import "UIImage+YUCreateImage.h"
+#import <YUCategory/UIImage+YUCreateImage.h>
 #import "UIImage+YUResize.h"
 
 #import "UIImageView+YUAsyncLoadImage.h"

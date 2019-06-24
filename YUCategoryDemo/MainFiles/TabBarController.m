@@ -27,14 +27,14 @@
 //    [[UITabBar appearance] setBarTintColor:[UIColor redColor]];
     [[UITabBar appearance] setTranslucent:YES];
     [[UITabBar appearance] setShadowImage:[UIImage new]];
-    [[UITabBar appearance] setBackgroundImage:[UIImage yu_createImageWithColor:mColorWithRGB(233, 233, 233)]];
+//    [[UITabBar appearance] setBackgroundImage:[UIImage yu_createImageWithColor:YU_ColorRGB(233, 233, 233)]];
     
     // 普通状态下的文字属性
     NSMutableDictionary *normalAttrs = [NSMutableDictionary dictionary];
-    normalAttrs[NSForegroundColorAttributeName] = mColorWithRGB(102, 102, 102);
+    normalAttrs[NSForegroundColorAttributeName] = YU_ColorRGB(102, 102, 102);
     // 选中状态下的文字属性
     NSMutableDictionary *selectedAttrs = [NSMutableDictionary dictionary];
-    selectedAttrs[NSForegroundColorAttributeName] = mColorTheme;
+    selectedAttrs[NSForegroundColorAttributeName] = YU_ColorTheme;
     
     // 设置文字属性
     [[UITabBarItem appearance] setTitleTextAttributes:normalAttrs forState:UIControlStateNormal];

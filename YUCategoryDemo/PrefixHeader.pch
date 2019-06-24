@@ -9,41 +9,45 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
-/********************** 1.Log宏 ***************/
+#pragma mark - 日志
+
 #ifdef DEBUG
 #define YULog(fmt, ...)  NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 #else
 #define YULog(...)
 #endif
 
-/********************** 2.颜色 ***************/
+#pragma mark - 颜色
+
 // 随机生成颜色
-#define mColorRandom                ([UIColor colorWithRed:arc4random_uniform(255)/255.f green:arc4random_uniform(255)/255.f blue:arc4random_uniform(255)/255.f alpha:1.f])
+#define YU_ColorRandom             ([UIColor colorWithRed:arc4random_uniform(255)/255.f green:arc4random_uniform(255)/255.f blue:arc4random_uniform(255)/255.f alpha:1.f])
 // 设置RGB色值
-#define mColorWithRGB(r, g, b)      ([UIColor colorWithRed:(r)/255.f green:(g)/255.f blue:(b)/255.f alpha:1.f])
-#define mColorWithRGBA(r, g, b, a)  ([UIColor colorWithRed:(r)/255.f green:(g)/255.f blue:(b)/255.f alpha:(a)])
+#define YU_ColorRGB(r, g, b)       ([UIColor colorWithRed:(r)/255.f green:(g)/255.f blue:(b)/255.f alpha:1.f])
+#define YU_ColorRGBA(r, g, b, a)   ([UIColor colorWithRed:(r)/255.f green:(g)/255.f blue:(b)/255.f alpha:(a)])
 // 主题色值(天蓝色)
-#define mColorTheme                 ([UIColor colorWithRed:(0)/255.f green:(192)/255.f blue:(255)/255.f alpha:1.f])
+#define YU_ColorTheme              ([UIColor colorWithRed:(0)/255.f green:(192)/255.f blue:(255)/255.f alpha:1.f])
 // 背景色值(浅灰)
-#define mColorBackground            ([UIColor colorWithRed:(246)/255.f green:(246)/255.f blue:(246)/255.f alpha:1.f])
+#define YU_ColorBackground         ([UIColor colorWithRed:(246)/255.f green:(246)/255.f blue:(246)/255.f alpha:1.f])
 // 分割线颜色
-#define mColorDriveLine             ([UIColor colorWithRed:(221)/255.f green:(221)/255.f blue:(221)/255.f alpha:1.f])
+#define YU_ColorDriveLine          ([UIColor colorWithRed:(221)/255.f green:(221)/255.f blue:(221)/255.f alpha:1.f])
 // 遮罩视图颜色
-#define mColorShade                 ([UIColor colorWithRed:0 green:0 blue:0 alpha:0.3f])
+#define YU_ColorShade              ([UIColor colorWithRed:0 green:0 blue:0 alpha:0.3f])
 
-/********************** 3.尺寸宏 ***************/
+#pragma mark - 尺寸
+
 // 当前屏幕宽和高
-#define mScreenWidth            ([UIScreen mainScreen].bounds.size.width)
-#define mScreenHeight           ([UIScreen mainScreen].bounds.size.height)
-#define mScreenWidthHalf        ([UIScreen mainScreen].bounds.size.width/2)
-#define mScreenHeightHalf       ([UIScreen mainScreen].bounds.size.height/2)
-#define mDriveLineH             0.5f
+#define YU_ScreenWidth            ([UIScreen mainScreen].bounds.size.width)
+#define YU_ScreenHeight           ([UIScreen mainScreen].bounds.size.height)
+#define YU_ScreenWidthHalf        ([UIScreen mainScreen].bounds.size.width/2)
+#define YU_ScreenHeightHalf       ([UIScreen mainScreen].bounds.size.height/2)
+#define YU_DriveLineH             0.5f
 
-#define mIsInchFour              ([UIScreen mainScreen].bounds.size.width == 320.f)
-#define mIsInchFourPointSeven    ([UIScreen mainScreen].bounds.size.width == 375.f)
-#define mIsInchFivePointFive     ([UIScreen mainScreen].bounds.size.width == 414.f)
+#define YU_IsInchFour              ([UIScreen mainScreen].bounds.size.width == 320.f)
+#define YU_IsInchFourPointSeven    ([UIScreen mainScreen].bounds.size.width == 375.f)
+#define YU_IsInchFivePointFive     ([UIScreen mainScreen].bounds.size.width == 414.f)
 
-/********************** 4.常用 ***************/
+#pragma mark - 常用
+
 #import <YUCategory/YUCategory.h>
 
 #endif /* PrefixHeader_pch */

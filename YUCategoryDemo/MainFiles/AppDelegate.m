@@ -25,7 +25,7 @@
     TabBarController *rootVC = [[TabBarController alloc] init];
     self.window.rootViewController = rootVC;
     [self.window makeKeyAndVisible];
-    
+    YULog(@"%p", rootVC);
     return YES;
 }
 
